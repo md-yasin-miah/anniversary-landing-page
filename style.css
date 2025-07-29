@@ -2,8 +2,10 @@
 
 :root {
   --color-colorbtn: #2F2F25;
+  --color-offWhite: #F9F7EC;
 }
 
 @theme {
   --color-colorbtn: #2F2F25;
+  --color-offWhite: #F9F7EC;
 }
