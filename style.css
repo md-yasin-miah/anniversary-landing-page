@@ -1,11 +1,8 @@
-@import url('https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4');
-
-:root {
-  --color-colorbtn: #2F2F25;
-  --color-offWhite: #F9F7EC;
+* {
+  box-sizing: border-box;
 }
 
-@theme {
+:root {
   --color-colorbtn: #2F2F25;
   --color-offWhite: #F9F7EC;
 }
