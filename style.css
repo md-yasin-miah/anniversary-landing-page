@@ -1,0 +1,9 @@
+@import url('https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4');
+
+:root {
+  --color-colorbtn: #2F2F25;
+}
+
+@theme {
+  --color-colorbtn: #2F2F25;
+}

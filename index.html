@@ -5,20 +5,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Anniversary Landing Page</title>
-  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Poppins', sans-serif;
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="stylesheet" href="./style.css">
+  <style type="text/tailwindcss">
+    @theme {
+      --color-colorbtn: #2F2F25;
     }
   </style>
 </head>
 
 <body>
-  <div class="w-full h-screen bg-orange-50 rounded-b-[20px]">
-    <div class="w-full h-full flex justify-center items-center gap-12">
+  <div class="w-full h-[calc(100vh-20px)] bg-orange-50 relative">
+    <div
+      class="w-fit h-fit flex justify-center items-center gap-12 absolute top-2/5 left-1/2 -translate-x-1/2 -translate-y-1/2">
       <!-- Nulsen Logo -->
       <div class="w-[368.66px] h-[183.58px]">
         <svg xmlns="http://www.w3.org/2000/svg" width="370" height="185" viewBox="0 0 370 185" fill="none">
@@ -129,8 +131,24 @@
         </svg>
       </div>
     </div>
+    <div
+      class="p-[43px] flex justify-between items-center bg-orange-50 absolute -bottom-5 left-0 w-full rounded-b-[20px]">
+      <img src="./assets/vector/logo-with-years.svg" alt="logo-with-years">
+      <div data-property-1="Default" class="inline-flex justify-start items-center">
+        <div class="h-12 px-4 py-3.5 bg-colorbtn rounded-md inline-flex flex-col justify-center items-center gap-2.5">
+          <div class="justify-start text-orange-50 text-sm font-medium font-['Acherus_Grotesque']">menu</div>
+        </div>
+        <div class="p-3.5 bg-colorbtn rounded-md inline-flex flex-col justify-center items-center gap-2.5">
+          <div class="flex flex-col justify-start items-start gap-2.5">
+            <div class="w-5 h-0 outline-[2.40px] outline-offset-[-1.20px] outline-white"></div>
+            <div class="w-5 h-0 outline-[2.40px] outline-offset-[-1.20px] outline-white"></div>
+            <div class="w-5 h-0 outline-[2.40px] outline-offset-[-1.20px] outline-white"></div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="w-full h-[800.55px] relative -z-10 -translate-y-5">
+  <div class="w-full h-[800.55px] relative">
     <div class="w-full h-[739.49px] px-10 py-52 flex gap-8 justify-center items-center">
       <div>
         <div
@@ -173,6 +191,45 @@
       </div>
     </div>
     <img src="./assets/vector/sectionBG.svg" alt="image" class="w-full h-full object-cover absolute top-0 left-0 -z-10">
+  </div>
+  <div class="w-full h-[1786.77px] bg-gradient-to-b from-slate-500 to-blue-300">
+    <div class="w-full h-[795px] relative p-[68px] justify-center flex gap-[214px]">
+      <div class="w-96 inline-flex flex-col justify-start items-start gap-9">
+        <img class="w-96 h-96 rounded-[300px]" src="./images/ceo-profile.png" />
+        <div class="self-stretch flex flex-col justify-center items-center gap-2.5">
+          <div
+            class="self-stretch text-center justify-start text-orange-50 text-2xl font-bold font-['Acherus_Grotesque'] leading-loose">
+            Caroline Watt</div>
+          <div
+            class="self-stretch text-center justify-start text-orange-50 text-lg font-medium font-['Acherus_Grotesque'] leading-normal">
+            Chief Executive Officer  Nulsen Disability Services </div>
+        </div>
+      </div>
+      <div class="w-[678.86px] inline-flex flex-col justify-start items-start gap-10">
+        <div class="self-stretch justify-start"><span
+            class="text-orange-50 text-2xl font-medium font-['Acherus_Grotesque'] leading-loose">On 18 October 2024,
+            Nulsen celebrates 70 years of supporting people with complex disability in Western Australia.</span><span
+            class="text-orange-50 text-base font-medium font-['Acherus_Grotesque'] leading-normal"><br />Starting as the
+            family-founded Mental Incurable Children’s Association in 1954, Nulsen has evolved and adapted to an
+            everchanging landscape into a leading organisation that today, supports around 200 people across 60+
+            residential settings with a 700-strong team of employees.<br />This timeline is a snapshot of some of the
+            key moments in our journey. There are many more events, people and achievements throughout Nulsen’s history
+            that would sit equally among those featured.<br />Most of the events not in this timeline are, in fact,
+            included in the compendium publication The Nulsen Story: 70 years of empowering people to live their best
+            life published as part of our official 70-year anniversary celebrations.<br /><br />This document and The
+            Nulsen Story seek to capture seven decades of unwavering commitment to supporting people with respect,
+            dignity and compassion. Through these publications, we honour the resilience and achievements of all who has
+            walked this path with us – our employees, families, community partners, and all who have made our work
+            possible.<br /><br />Most importantly, we honour the people that Nulsen supports now and over the years. You
+            are the reason we exist, and we shall forever be grateful for the love and joy you provide so
+            freely.<br /><br />We hope that we’ve given you the best we’ve had, and that you’ve breathed easier because
+            of our existence.</span></div>
+        <img src="./assets/vector/signature.svg" alt="signature">
+      </div>
+      <div
+        class="w-[568.42px] h-[493.86px] left-[30.27px] top-[201.17px] absolute outline outline-[1.50px] outline-offset-[-0.75px] outline-white/0">
+      </div>
+    </div>
   </div>
 </body>
 
