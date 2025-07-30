@@ -156,18 +156,80 @@ const wrapper = document.querySelector(".wrapper");
 const boxes = gsap.utils.toArray(".box");
 
 let activeElement;
+let isAutoScrolling = true;
+let isDragging = false;
+
 const loop = horizontalLoop(boxes, {
-  paused: true,
+  paused: false, // Start with auto-scroll enabled
   draggable: true, // make it draggable
   center: true, // active element is the one in the center of the container rather than th left edge
+  speed: 1.4, // Control auto-scroll speed (lower = slower)
+  repeat: -1, // Infinite repeat
   onChange: (element, index) => { // when the active element changes, this function gets called.
     activeElement && activeElement.classList.remove("active");
     element.classList.add("active");
     activeElement = element;
   },
-  paddingRight: 0
+  paddingRight: 0 // Add some padding to ensure smooth transition
 });
 
+// Add rotation animation during drag
+if (loop.draggable) {
+  const cards = document.querySelectorAll('.card');
+  let startX = 0;
+
+  // Function to apply directional rotation based on drag
+  function applyDirectionalRotation(dragDistance) {
+    const rotationAmount = Math.min(Math.abs(dragDistance) * 0.1, 2.7); // Max 3 degrees
+    const direction = dragDistance > 0 ? 1 : -1;
+
+    cards.forEach((card, index) => {
+      // Apply rotation based on drag direction and card position
+      const cardRotation = rotationAmount * direction * (1 + index * 0.1);
+
+      gsap.to(card, {
+        rotation: cardRotation,
+        duration: 0.5,
+        ease: "power2.out",
+        scrub: 2,
+      });
+    });
+  }
+
+  // Function to reset rotation with bouncy effect
+  function resetRotationWithBounce() {
+    cards.forEach((card, index) => {
+      gsap.to(card, {
+        rotation: 0,
+        duration: 0.8,
+        ease: "power2.out",
+        delay: index * 0.05, // Stagger the bounce effect
+        onComplete: () => {
+          // Ensure exact reset
+          gsap.set(card, { rotation: 0 });
+        }
+      });
+    });
+  }
+
+  // Track drag start
+  loop.draggable.addEventListener("press", () => {
+    startX = loop.draggable.x;
+    currentDragDirection = 0;
+  });
+
+  // Update rotation during drag
+  loop.draggable.addEventListener("drag", () => {
+    const dragDistance = loop.draggable.x - startX;
+    currentDragDirection = dragDistance;
+    applyDirectionalRotation(dragDistance);
+  });
+
+  // Bouncy reset on drag end
+  loop.draggable.addEventListener("release", () => {
+    resetRotationWithBounce();
+  });
+}
 // boxes.forEach((box, i) => box.addEventListener("click", () => loop.toIndex(i, { duration: 0.8, ease: "power1.inOut" })));
 
 // document.querySelector(".toggle").addEventListener("click", () => wrapper.classList.toggle("show-overflow"));
