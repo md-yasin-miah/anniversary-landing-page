@@ -180,7 +180,7 @@ if (loop.draggable) {
 
   // Function to apply directional rotation based on drag
   function applyDirectionalRotation(dragDistance) {
-    const rotationAmount = Math.min(Math.abs(dragDistance) * 0.1, 2.7); // Max 3 degrees
+    const rotationAmount = Math.min(Math.abs(dragDistance) * 0.1, -1); // Max 3 degrees
     const direction = dragDistance > 0 ? 1 : -1;
 
     cards.forEach((card, index) => {
