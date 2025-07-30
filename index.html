@@ -402,54 +402,39 @@
           </button>
         </div>
       </div>
-      <!-- <ul class="w-full flex justify-start items-center gap-[18px] overflow-x-auto gallery-list">
-        <li class="min-w-[325.35px] min-h-[323.47px] rounded-[20px] overflow-hidden">
-          <img class="w-full h-full object-cover" src="./assets/images/gallery1.png" />
-        </li>
-        <li class="min-w-[325.35px] min-h-[323.47px] rounded-[20px] overflow-hidden">
-          <img class="w-full h-full object-cover" src="./assets/images/gallery2.png" />
-        </li>
-        <li class="min-w-[325.35px] min-h-[323.47px] rounded-[20px] overflow-hidden">
-          <img class="w-full h-full object-cover" src="./assets/images/gallery3.png" />
-        </li>
-        <li class="min-w-[325.35px] min-h-[323.47px] rounded-[20px] overflow-hidden">
-          <img class="w-full h-full object-cover" src="./assets/images/gallery4.png" />
-        </li>
-        <li class="min-w-[325.35px] min-h-[323.47px] rounded-[20px] overflow-hidden">
-          <img class="w-full h-full object-cover" src="./assets/images/gallery5.png" />
-        </li>
-        <li class="min-w-[325.35px] min-h-[323.47px] rounded-[20px] overflow-hidden">
-          <img class="w-full h-full object-cover" src="./assets/images/gallery6.png" />
-        </li>
-        <li class="min-w-[325.35px] min-h-[323.47px] rounded-[20px] overflow-hidden">
-          <img class="w-full h-full object-cover" src="./assets/images/gallery1.png" />
-        </li>
-        <li class="min-w-[325.35px] min-h-[323.47px] rounded-[20px] overflow-hidden">
-          <img class="w-full h-full object-cover" src="./assets/images/gallery2.png" />
-        </li>
-        <li class="min-w-[325.35px] min-h-[323.47px] rounded-[20px] overflow-hidden">
-          <img class="w-full h-full object-cover" src="./assets/images/gallery3.png" />
-        </li>
-        <li class="min-w-[325.35px] min-h-[323.47px] rounded-[20px] overflow-hidden">
-          <img class="w-full h-full object-cover" src="./assets/images/gallery4.png" />
-        </li>
-        <li class="min-w-[325.35px] min-h-[323.47px] rounded-[20px] overflow-hidden">
-          <img class="w-full h-full object-cover" src="./assets/images/gallery5.png" />
-        </li>
-        <li class="min-w-[325.35px] min-h-[323.47px] rounded-[20px] overflow-hidden">
-          <img class="w-full h-full object-cover" src="./assets/images/gallery6.png" />
-        </li>
-      </ul> -->
-      <section class="carousel-section">
-        <div class="carousel" id="carousel">
-          <figure class="card"><img src="./assets/images/gallery1.png" alt=""></figure>
-          <figure class="card"><img src="./assets/images/gallery2.png" alt=""></figure>
-          <figure class="card"><img src="./assets/images/gallery3.png" alt=""></figure>
-          <figure class="card"><img src="./assets/images/gallery4.png" alt=""></figure>
-          <figure class="card"><img src="./assets/images/gallery5.png" alt=""></figure>
-          <figure class="card"><img src="./assets/images/gallery6.png" alt=""></figure>
+      <!-- gallery carousel -->
+      <div class="wrapper">
+        <div class="box">
+          <div class="box__inner">
+            <figure class="card"><img src="./assets/images/gallery1.png" alt=""></figure>
+          </div>
         </div>
-      </section>
+        <div class="box">
+          <div class="box__inner">
+            <figure class="card"><img src="./assets/images/gallery2.png" alt=""></figure>
+          </div>
+        </div>
+        <div class="box">
+          <div class="box__inner">
+            <figure class="card"><img src="./assets/images/gallery3.png" alt=""></figure>
+          </div>
+        </div>
+        <div class="box">
+          <div class="box__inner">
+            <figure class="card"><img src="./assets/images/gallery4.png" alt=""></figure>
+          </div>
+        </div>
+        <div class="box">
+          <div class="box__inner">
+            <figure class="card"><img src="./assets/images/gallery5.png" alt=""></figure>
+          </div>
+        </div>
+        <div class="box">
+          <div class="box__inner">
+            <figure class="card"><img src="./assets/images/gallery6.png" alt=""></figure>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <!-- </div> -->
@@ -474,68 +459,6 @@
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <!-- custom js -->
   <script src="./script.js"></script>
-  <script>
-    const carousel = document.querySelector(".carousel");
-    const cards = gsap.utils.toArray(".card");
-    const cardWidth = cards[0].offsetWidth + 40; // card + margin
-    const totalCards = cards.length;
-    let offsetX = 0;
-
-    // 👇 Clone enough cards to make it infinite
-    cards.forEach((card) => {
-      const clone = card.cloneNode(true);
-      carousel.appendChild(clone);
-    });
-
-    // 🌀 Auto scroll using gsap.ticker
-    gsap.ticker.add(() => {
-      offsetX -= 1; // speed
-      if (Math.abs(offsetX) >= cardWidth * totalCards) {
-        offsetX = 0;
-      }
-      carousel.style.transform = `translateX(${offsetX}px)`;
-
-      // ➰ Rotation
-      document.querySelectorAll('.card').forEach(card => {
-        const cardRect = card.getBoundingClientRect();
-        const cardCenter = cardRect.left + cardRect.width / 2;
-        const screenCenter = window.innerWidth / 2;
-        const dist = (cardCenter - screenCenter) / screenCenter;
-        const rotate = dist * 10;
-        card.style.transform = `rotateY(${rotate}deg)`;
-      });
-    });
-
-    // 🖱️ Drag support
-    let isDragging = false;
-    let startX = 0;
-
-    carousel.addEventListener("mousedown", (e) => {
-      isDragging = true;
-      startX = e.clientX;
-      gsap.ticker.remove(autoScroll); // Pause auto scroll while dragging
-    });
-
-    window.addEventListener("mousemove", (e) => {
-      if (!isDragging) return;
-      const moveX = e.clientX - startX;
-      offsetX += moveX;
-      startX = e.clientX;
-    });
-
-    window.addEventListener("mouseup", () => {
-      isDragging = false;
-      gsap.ticker.add(autoScroll);
-    });
-
-    function autoScroll() {
-      offsetX -= 1;
-      if (Math.abs(offsetX) >= cardWidth * totalCards) {
-        offsetX = 0;
-      }
-      carousel.style.transform = `translateX(${offsetX}px)`;
-    }
-  </script>
 </body>
 
 </html>
