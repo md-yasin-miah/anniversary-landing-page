@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Create the main timeline
   const tl = gsap.timeline({
-    repeat: -1,
+    // repeat: -1,
     repeatDelay: 4
   });
 
@@ -136,3 +136,16 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 });
+
+gsap.to(".event-gallery-text p", {
+  transform: "translateX(-70%)",
+  scrollTrigger: {
+    trigger: ".event-gallery-text p",
+    scroller: "body",
+    start: "top 60%",
+    end: "top 10%",
+    markers: true,
+    scrub: 2,
+    smoothScroll: true,
+  }
+})
