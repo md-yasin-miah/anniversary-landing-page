@@ -146,7 +146,6 @@ gsap.to(".event-gallery-text p", {
     end: "top 5%",
     // markers: true,
     scrub: 2,
-    smoothScroll: true,
   }
 })
 
@@ -158,9 +157,9 @@ gsap.to(".years-gallery-text p", {
     start: "top 60%",
     end: "top 10%",
     scrub: 2,
-    smoothScroll: true,
   }
 })
+
 gsap.to(".horizontal-section-container .horizontal-section", {
   transform: "translateX(-100%)",
   scrollTrigger: {
@@ -168,10 +167,9 @@ gsap.to(".horizontal-section-container .horizontal-section", {
     scroller: "body",
     start: "top 0%",
     end: "top -7000%",
-    markers: true,
+    // markers: true,
     pin: true,
     scrub: 2,
-    smoothScroll: true,
   }
 })
 

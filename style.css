@@ -107,7 +107,7 @@
 /* ***********HORIZONTAL SECTION START********* */
 
 .horizontal-section-container {
-  overflow-y: hidden;
+  overflow: hidden;
 }
 
 .horizontal-section {
