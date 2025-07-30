@@ -138,13 +138,13 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 gsap.to(".event-gallery-text p", {
-  transform: "translateX(-70%)",
+  transform: "translateX(-90%)",
   scrollTrigger: {
     trigger: ".event-gallery-text p",
     scroller: "body",
     start: "top 60%",
     end: "top 10%",
-    markers: true,
+    // markers: true,
     scrub: 2,
     smoothScroll: true,
   }

@@ -5,12 +5,70 @@
 :root {
   --color-colorbtn: #2F2F25;
   --color-offWhite: #F9F7EC;
+  --color-purple: #8E64AA;
+  --color-white: #FFF;
+}
+
+.primary-btn {
+  /* @apply h-[48px] px-[18px] py-[6px] bg-purple rounded-[4px] flex justify-start items-center gap-[10px]; */
+  border-radius: 4px;
+  background: var(--color-purple);
+  display: flex;
+  height: 48px;
+  padding: 6px 18px;
+  align-items: center;
+  gap: 10px;
+
+  color: var(--color-white);
+  font-family: "Acherus Grotesque";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 14px;
 }
 
 .second-part-body {
   width: 100%;
-  height: 1000px;
+  height: 100%;
   background-image: url('data:image/svg+xml;utf8,<svg viewBox=\'0 0 1440 4039\' xmlns=\'http://www.w3.org/2000/svg\' preserveAspectRatio=\'none\'><g transform=\'matrix(121.4 777.6 -193.37 756.52 595.15 2354.9)\' opacity=\'1\'><rect height=\'45.501\' width=\'73.484\' fill=\'url(%23grad)\' id=\'quad\' shape-rendering=\'crispEdges\'/><use href=\'%23quad\' transform=\'scale(1 -1)\'/><use href=\'%23quad\' transform=\'scale(-1 1)\'/><use href=\'%23quad\' transform=\'scale(-1 -1)\'/></g><defs><linearGradient id=\'grad\' gradientUnits=\'userSpaceOnUse\' x2=\'5\' y2=\'5\'><stop stop-color=\'rgba(247,157,132,1)\' offset=\'0\'/><stop stop-color=\'rgba(244,128,102,1)\' offset=\'0.27885\'/><stop stop-color=\'rgba(193,114,136,1)\' offset=\'0.44594\'/><stop stop-color=\'rgba(142,100,170,1)\' offset=\'0.61304\'/><stop stop-color=\'rgba(140,155,189,1)\' offset=\'0.73733\'/><stop stop-color=\'rgba(138,210,207,1)\' offset=\'0.86161\'/></linearGradient></defs></svg>');
   background-repeat: no-repeat;
   background-size: 100% 100%;
+}
+
+.carousel-section {
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel {
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 18px;
+}
+
+.carousel .card {
+  min-width: 325.35px;
+  min-height: 323.47px;
+  border-radius: 20px;
+  overflow: hidden;
+  flex-shrink: 0;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.carousel .card:nth-child(odd) {
+  margin-top: 30px;
+}
+
+.carousel .card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery-list li:nth-child(even) {
+  padding-top: 30px;
 }
