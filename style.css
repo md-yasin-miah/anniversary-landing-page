@@ -10,7 +10,6 @@
 }
 
 .primary-btn {
-  /* @apply h-[48px] px-[18px] py-[6px] bg-purple rounded-[4px] flex justify-start items-center gap-[10px]; */
   border-radius: 4px;
   background: var(--color-purple);
   display: flex;
@@ -81,7 +80,7 @@
   border-radius: 20px;
   overflow: hidden;
   flex-shrink: 0;
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  /* box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); */
   pointer-events: auto;
   transform-style: preserve-3d;
   perspective: 1000px;
@@ -104,3 +103,40 @@
 .show-overflow {
   overflow: visible;
 }
+
+/* ***********HORIZONTAL SECTION START********* */
+
+.horizontal-section-container {
+  overflow-y: hidden;
+}
+
+.horizontal-section {
+  background: linear-gradient(to bottom right, #F9DED1 0%, #F9DED1 8%, #E1DBEB 20%, #EBF1D5 28%, #E0EAD8 35%, #E0EAD8 45%) bottom right / 50% 50% no-repeat, linear-gradient(to bottom left, #F9DED1 0%, #F9DED1 8%, #E1DBEB 20%, #EBF1D5 28%, #E0EAD8 35%, #E0EAD8 45%) bottom left / 50% 50% no-repeat, linear-gradient(to top left, #F9DED1 0%, #F9DED1 8%, #E1DBEB 20%, #EBF1D5 28%, #E0EAD8 35%, #E0EAD8 45%) top left / 50% 50% no-repeat, linear-gradient(to top right, #F9DED1 0%, #F9DED1 8%, #E1DBEB 20%, #EBF1D5 28%, #E0EAD8 35%, #E0EAD8 45%) top right / 50% 50% no-repeat;
+  width: 74195.719px;
+  max-height: 820px;
+  height: 100vh;
+  flex-shrink: 0;
+  padding: 36px 0;
+}
+
+.horizontal-section .description {
+  align-self: stretch;
+  color: #22221B;
+  font-size: 16px;
+  font-family: Acherus Grotesque;
+  font-weight: 500;
+  line-height: 24px;
+  word-wrap: break-word
+}
+
+.horizontal-section .title {
+  width: 545.45px;
+  color: #22221B;
+  font-size: 36px;
+  font-family: Acherus Grotesque;
+  font-weight: 600;
+  line-height: 44px;
+  word-wrap: break-word
+}
+
+/* ***********HORIZONTAL SECTION END********* */
