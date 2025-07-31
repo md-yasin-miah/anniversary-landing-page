@@ -113,19 +113,19 @@
 /* ***********HORIZONTAL SECTION START********* */
 
 .horizontal-section-container {
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .horizontal-section {
   background-image: url(./assets/vector/horizontal-bg.svg);
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  width: 100%;
+  width: fit-content;
   max-height: 820px;
   height: 100vh;
   flex-shrink: 0;
   padding: 36px 0;
-  overflow-x: scroll;
+  overflow-x: hidden;
 }
 
 .horizontal-section .description {

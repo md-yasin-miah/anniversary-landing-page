@@ -137,6 +137,18 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 
+
+gsap.to(".horizontal-section-container .horizontal-section", {
+  transform: "translateX(-100%)",
+  scrollTrigger: {
+    trigger: ".horizontal-section-container",
+    scroller: "body",
+    start: "top 0%",
+    end: "top -700%",
+    pin: true,
+    scrub: 2,
+  }
+})
 gsap.to(".event-gallery-text p", {
   transform: "translateX(-145%)",
   scrollTrigger: {
@@ -144,7 +156,6 @@ gsap.to(".event-gallery-text p", {
     scroller: "body",
     start: "top 70%",
     end: "top 5%",
-    // markers: true,
     scrub: 2,
   }
 })
@@ -160,18 +171,7 @@ gsap.to(".years-gallery-text p", {
   }
 })
 
-// gsap.to(".horizontal-section-container .horizontal-section", {
-//   transform: "translateX(-100%)",
-//   scrollTrigger: {
-//     trigger: ".horizontal-section-container",
-//     scroller: "body",
-//     start: "top 0%",
-//     end: "top -7000%",
-//     // markers: true,
-//     pin: true,
-//     scrub: 2,
-//   }
-// })
+
 
 
 
