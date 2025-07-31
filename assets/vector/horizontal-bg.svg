@@ -1,0 +1,31 @@
+<svg width="32769" height="363" viewBox="0 0 32769 363" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g filter="url(#filter0_n_539_2637)">
+<g clip-path="url(#paint0_diamond_539_2637_clip_path)" data-figma-skip-parse="true"><g transform="matrix(32.3175 0.0145098 0.00292387 -3.08791 1560.32 181.075)"><rect x="0" y="0" width="965.677" height="63.3206" fill="url(#paint0_diamond_539_2637)" opacity="1" shape-rendering="crispEdges"/><rect x="0" y="0" width="965.677" height="63.3206" transform="scale(1 -1)" fill="url(#paint0_diamond_539_2637)" opacity="1" shape-rendering="crispEdges"/><rect x="0" y="0" width="965.677" height="63.3206" transform="scale(-1 1)" fill="url(#paint0_diamond_539_2637)" opacity="1" shape-rendering="crispEdges"/><rect x="0" y="0" width="965.677" height="63.3206" transform="scale(-1)" fill="url(#paint0_diamond_539_2637)" opacity="1" shape-rendering="crispEdges"/></g></g><rect width="74195.7" height="820" transform="matrix(0.441646 0 0 -0.441646 -0.220823 362.149)" data-figma-gradient-fill="{&#34;type&#34;:&#34;GRADIENT_DIAMOND&#34;,&#34;stops&#34;:[{&#34;color&#34;:{&#34;r&#34;:0.97647058963775635,&#34;g&#34;:0.87058824300765991,&#34;b&#34;:0.81960785388946533,&#34;a&#34;:1.0},&#34;position&#34;:0.0},{&#34;color&#34;:{&#34;r&#34;:0.97647058963775635,&#34;g&#34;:0.87058824300765991,&#34;b&#34;:0.81960785388946533,&#34;a&#34;:1.0},&#34;position&#34;:0.15865384042263031},{&#34;color&#34;:{&#34;r&#34;:0.88235294818878174,&#34;g&#34;:0.85882353782653809,&#34;b&#34;:0.92156863212585449,&#34;a&#34;:1.0},&#34;position&#34;:0.39423078298568726},{&#34;color&#34;:{&#34;r&#34;:0.92156863212585449,&#34;g&#34;:0.94509804248809814,&#34;b&#34;:0.83529412746429443,&#34;a&#34;:1.0},&#34;position&#34;:0.55288463830947876},{&#34;color&#34;:{&#34;r&#34;:0.87843137979507446,&#34;g&#34;:0.91764706373214722,&#34;b&#34;:0.84705883264541626,&#34;a&#34;:1.0},&#34;position&#34;:0.70673078298568726},{&#34;color&#34;:{&#34;r&#34;:0.87843137979507446,&#34;g&#34;:0.91764706373214722,&#34;b&#34;:0.84705883264541626,&#34;a&#34;:1.0},&#34;position&#34;:0.90810298919677734}],&#34;stopsVar&#34;:[{&#34;color&#34;:{&#34;r&#34;:0.97647058963775635,&#34;g&#34;:0.87058824300765991,&#34;b&#34;:0.81960785388946533,&#34;a&#34;:1.0},&#34;position&#34;:0.0},{&#34;color&#34;:{&#34;r&#34;:0.97647058963775635,&#34;g&#34;:0.87058824300765991,&#34;b&#34;:0.81960785388946533,&#34;a&#34;:1.0},&#34;position&#34;:0.15865384042263031},{&#34;color&#34;:{&#34;r&#34;:0.88235294818878174,&#34;g&#34;:0.85882353782653809,&#34;b&#34;:0.92156863212585449,&#34;a&#34;:1.0},&#34;position&#34;:0.39423078298568726},{&#34;color&#34;:{&#34;r&#34;:0.92156863212585449,&#34;g&#34;:0.94509804248809814,&#34;b&#34;:0.83529412746429443,&#34;a&#34;:1.0},&#34;position&#34;:0.55288463830947876},{&#34;color&#34;:{&#34;r&#34;:0.87843137979507446,&#34;g&#34;:0.91764706373214722,&#34;b&#34;:0.84705883264541626,&#34;a&#34;:1.0},&#34;position&#34;:0.70673078298568726},{&#34;color&#34;:{&#34;r&#34;:0.87843137979507446,&#34;g&#34;:0.91764706373214722,&#34;b&#34;:0.84705883264541626,&#34;a&#34;:1.0},&#34;position&#34;:0.90810298919677734}],&#34;transform&#34;:{&#34;m00&#34;:64635.03906250,&#34;m01&#34;:5.8477396965026855,&#34;m02&#34;:-30760.1250,&#34;m10&#34;:29.019699096679688,&#34;m11&#34;:-6175.8144531250,&#34;m12&#34;:3254.472167968750},&#34;opacity&#34;:1.0,&#34;blendMode&#34;:&#34;NORMAL&#34;,&#34;visible&#34;:true}"/>
+</g>
+<defs>
+<filter id="filter0_n_539_2637" x="-0.220823" y="0" width="32768.2" height="362.149" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feTurbulence type="fractalNoise" baseFrequency="2 2" stitchTiles="stitch" numOctaves="3" result="noise" seed="9030" />
+<feColorMatrix in="noise" type="luminanceToAlpha" result="alphaNoise" />
+<feComponentTransfer in="alphaNoise" result="coloredNoise1">
+<feFuncA type="discrete" tableValues="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 "/>
+</feComponentTransfer>
+<feComposite operator="in" in2="shape" in="coloredNoise1" result="noise1Clipped" />
+<feFlood flood-color="rgba(0, 0, 0, 0.2)" result="color1Flood" />
+<feComposite operator="in" in2="noise1Clipped" in="color1Flood" result="color1" />
+<feMerge result="effect1_noise_539_2637">
+<feMergeNode in="shape" />
+<feMergeNode in="color1" />
+</feMerge>
+</filter>
+<clipPath id="paint0_diamond_539_2637_clip_path"><rect width="74195.7" height="820" transform="matrix(0.441646 0 0 -0.441646 -0.220823 362.149)"/></clipPath><linearGradient id="paint0_diamond_539_2637" x1="0" y1="0" x2="500" y2="500" gradientUnits="userSpaceOnUse">
+<stop stop-color="#F9DED1"/>
+<stop offset="0.158654" stop-color="#F9DED1"/>
+<stop offset="0.394231" stop-color="#E1DBEB"/>
+<stop offset="0.552885" stop-color="#EBF1D5"/>
+<stop offset="0.706731" stop-color="#E0EAD8"/>
+<stop offset="0.908103" stop-color="#E0EAD8"/>
+</linearGradient>
+</defs>
+</svg>

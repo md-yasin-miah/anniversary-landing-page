@@ -160,18 +160,18 @@ gsap.to(".years-gallery-text p", {
   }
 })
 
-gsap.to(".horizontal-section-container .horizontal-section", {
-  transform: "translateX(-100%)",
-  scrollTrigger: {
-    trigger: ".horizontal-section-container",
-    scroller: "body",
-    start: "top 0%",
-    end: "top -7000%",
-    // markers: true,
-    pin: true,
-    scrub: 2,
-  }
-})
+// gsap.to(".horizontal-section-container .horizontal-section", {
+//   transform: "translateX(-100%)",
+//   scrollTrigger: {
+//     trigger: ".horizontal-section-container",
+//     scroller: "body",
+//     start: "top 0%",
+//     end: "top -7000%",
+//     // markers: true,
+//     pin: true,
+//     scrub: 2,
+//   }
+// })
 
 
 

@@ -9,6 +9,12 @@
   --color-white: #FFF;
 }
 
+.section-container {
+  width: 100%;
+  max-width: 1356px;
+  margin: 0 auto;
+}
+
 .primary-btn {
   border-radius: 4px;
   background: var(--color-purple);
@@ -111,12 +117,15 @@
 }
 
 .horizontal-section {
-  background: linear-gradient(to bottom right, #F9DED1 0%, #F9DED1 8%, #E1DBEB 20%, #EBF1D5 28%, #E0EAD8 35%, #E0EAD8 45%) bottom right / 50% 50% no-repeat, linear-gradient(to bottom left, #F9DED1 0%, #F9DED1 8%, #E1DBEB 20%, #EBF1D5 28%, #E0EAD8 35%, #E0EAD8 45%) bottom left / 50% 50% no-repeat, linear-gradient(to top left, #F9DED1 0%, #F9DED1 8%, #E1DBEB 20%, #EBF1D5 28%, #E0EAD8 35%, #E0EAD8 45%) top left / 50% 50% no-repeat, linear-gradient(to top right, #F9DED1 0%, #F9DED1 8%, #E1DBEB 20%, #EBF1D5 28%, #E0EAD8 35%, #E0EAD8 45%) top right / 50% 50% no-repeat;
-  width: 74195.719px;
+  background-image: url(./assets/vector/horizontal-bg.svg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 100%;
   max-height: 820px;
   height: 100vh;
   flex-shrink: 0;
   padding: 36px 0;
+  overflow-x: scroll;
 }
 
 .horizontal-section .description {
