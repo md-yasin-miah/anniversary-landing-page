@@ -5,6 +5,7 @@
 :root {
   --color-colorbtn: #2F2F25;
   --color-offWhite: #F9F7EC;
+  --color-offBlack: #22221B;
   --color-purple: #8E64AA;
   --color-darkPurple: #43324E;
   --color-white: #FFF;
@@ -12,7 +13,9 @@
   /* spacing */
   --horizontal-section-padding-top: 20px;
   --horizontal-section-padding-bottom: 20px;
+
   --horizontal-section-center-line-gap: 20px;
+  --horizontal-section-history-item-gap: 40px;
 }
 
 .section-container {
@@ -139,7 +142,7 @@
 
 .horizontal-section .description {
   align-self: stretch;
-  color: #22221B;
+  color: var(--color-offBlack);
   font-size: 16px;
   font-family: Acherus Grotesque;
   font-weight: 500;
@@ -149,7 +152,7 @@
 
 .horizontal-section .title {
   width: 545.45px;
-  color: #22221B;
+  color: var(--color-offBlack);
   font-size: 36px;
   font-family: Acherus Grotesque;
   font-weight: 600;
@@ -179,10 +182,100 @@
 .timeline-title-3 {
   color: var(--color-darkPurple);
   font-family: Acherus Grotesque;
-  font-size: 16px;
+  font-size: 20px;
   font-style: normal;
   font-weight: 500;
+  white-space: nowrap;
 }
+
+.history-item.have-figure .timeline-title-3 {
+  white-space: normal;
+}
+
+.history-item-content {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding-left: 30px;
+  position: relative;
+  width: 290px;
+}
+
+.history-item-content.have-figure {
+  width: 100%;
+}
+
+
+
+.history-item-content .indicator {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -5px;
+  width: 30px;
+  border-left: 1px solid var(--color-purple);
+  border-style: dashed;
+  height: 100%;
+}
+
+.history-item-content .indicator::before,
+.history-item-content .indicator::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--color-purple);
+}
+
+.history-item-content::before::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -5px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--color-purple);
+}
+
+.history-item:nth-child(even) .history-item-content .indicator {
+  border-top: 1px solid var(--color-purple);
+  border-style: dashed;
+  transform: translateY(14px);
+  height: calc(100% + var(--horizontal-section-center-line-gap) - 14px);
+}
+
+.history-item:nth-child(odd) .history-item-content .indicator {
+  border-bottom: 1px solid var(--color-purple);
+  border-style: dashed;
+  transform: translateY(-23px);
+  height: calc(var(--horizontal-section-center-line-gap) + var(--horizontal-section-history-item-gap) + 20px);
+}
+
+.history-item:nth-child(even) .history-item-content .indicator::before {
+  top: 0px;
+  right: 0;
+  transform: translateY(-50%);
+}
+
+.history-item:nth-child(even) .history-item-content .indicator::after {
+  bottom: -3px;
+  transform: translateX(-50%);
+}
+
+.history-item:nth-child(odd) .history-item-content .indicator::before {
+  top: 0px;
+  left: 0;
+  transform: translateX(-50%);
+}
+
+.history-item:nth-child(odd) .history-item-content .indicator::after {
+  bottom: -3px;
+  right: 0;
+  /* transform: translateX(50%); */
+}
+
 
 .timeline-section .history-area {
   display: flex;
@@ -191,15 +284,48 @@
 
 .history-area .history-item {
   height: fit-content;
-  text-align: center;
 }
 
 .history-item.have-figure {
+  text-align: center;
   margin: 0 40px;
+}
+
+.history-item-content.have-figure {
+  flex-direction: row;
 }
 
 .history-area .history-item:nth-child(even) {
   transform: translateY(calc(-100% - var(--horizontal-section-padding-top) - var(--horizontal-section-center-line-gap)));
 }
+
+.history-area .history-item:nth-child(even) .history-item-content {
+  padding-bottom: var(--horizontal-section-history-item-gap);
+}
+
+.history-area .history-item:nth-child(odd) .history-item-content {
+  padding-top: var(--horizontal-section-history-item-gap);
+}
+
+.history-item.have-additional-content {
+  display: flex;
+}
+
+.history-item.have-additional-content figure {
+  min-width: 150px;
+}
+
+.history-item.have-additional-content .additional-content-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.history-item.have-additional-content .additional-content-row {
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+}
+
+
 
 /* ***********HORIZONTAL SECTION END********* */
