@@ -198,6 +198,11 @@
   gap: 18px;
   padding-left: 30px;
   position: relative;
+}
+
+.history-item .history-item-content .description,
+.history-item .additional-content-col .description,
+.history-item .additional-content-row .description {
   width: 290px;
 }
 
@@ -312,7 +317,11 @@
 }
 
 .history-item.have-additional-content figure {
-  min-width: 150px;
+  max-width: 192px;
+}
+
+.history-item.have-additional-content.row-content {
+  width: 500px;
 }
 
 .history-item.have-additional-content .additional-content-col {
@@ -325,7 +334,6 @@
   flex-direction: row;
   align-items: end;
 }
-
 
 
 /* ***********HORIZONTAL SECTION END********* */
