@@ -87,7 +87,7 @@
   },
   {
     "type": "full-video",
-    "videoSrc": "https://www.youtube.com/embed/F2YwQYmwCZQ?si=psOfR2OJoD9kQoCL?start=6&autoplay=1&mute=1"
+    "videoSrc": "https://www.youtube.com/embed/-xw_gLsaSbg?si=h_WbiK42sexsQ6Oq?start=6&autoplay=1&mute=1"
   },
   {
     "type": "timeline-header",
@@ -139,5 +139,61 @@
         "description": "Listen to Ea anim laboris sit laborum pariatur consectetur nostrud id aliquip cupidatat esse dolor do qui duis."
       }
     ]
+  },
+  {
+    "type": "full-video",
+    "videoSrc": "https://www.youtube.com/embed/F2YwQYmwCZQ?si=psOfR2OJoD9kQoCL?start=6&autoplay=1&mute=1",
+    "class": "mr-[120px]"
+  },
+  {
+    "type": "history-area",
+    "items": [
+      {
+        "itemType": "basic",
+        "title": "1981",
+        "description": "“Normalisation” formally adopted at Nulsen based on standards and principles embodied in report submitted by the Murdoch Group."
+      },
+      {
+        "itemType": "basic",
+        "title": "2 October 1983",
+        "description": "MICA formally becomes Nulsen Haven Association Inc (for the training and care of severely and profoundly Intellectually Handicapped People)."
+      },
+      {
+        "itemType": "basic",
+        "title": "January 1987",
+        "description": "Six residents from urgent wait list move into experimental group home at Yorna Road, Kalamunda."
+      },
+      {
+        "itemType": "basic",
+        "title": "July 1987",
+        "description": "Landmark legislation Disability Services Act 1986 comes into effect."
+      },
+      {
+        "itemType": "basic",
+        "title": "April 1988",
+        "description": "Implementation of 10-year Transition Plan commences with key components - the Personal Future Planning process, PASSING workshops and in-service workshops aimed at providing “information and inspiration”."
+      },
+      {
+        "itemType": "basic",
+        "title": "8 May 1989",
+        "description": "The first two residents move into their own home in the community, in Willetton."
+      },
+      {
+        "itemType": "basic",
+        "title": "May 1989",
+        "description": "Independent Living Services commences, with around 40 community activities in place within 2 years."
+      }
+    ]
+  },
+  {
+    "type": "timeline-header",
+    "title1": "1990-1994",
+    "title2": "Big jump"
+  },
+  {
+    "type": "graphical-section",
+    "imageSrc": "./assets/vector/nulsan-logo-yellow.svg",
+    "imageAlt": "nulsan-logo",
+    "class": "min-w-[555px] flex justify-center items-center"
   }
 ]

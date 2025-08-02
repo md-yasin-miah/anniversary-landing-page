@@ -1,5 +1,7 @@
 class TimelineRenderer {
-  constructor(containerSelector = '.timeline-section') {
+  constructor(
+    containerSelector = '.timeline-section'
+  ) {
     this.container = document.querySelector(containerSelector);
     this.timelineData = [];
   }
@@ -28,8 +30,6 @@ class TimelineRenderer {
       this.renderSection(section, index);
     });
 
-    // GSAP animations will be initialized by timeline-usage.js
-    // No need to initialize here to avoid duplicates
   }
 
   // Render individual section based on type
@@ -43,6 +43,9 @@ class TimelineRenderer {
         break;
       case 'full-video':
         this.renderFullVideo(section);
+        break;
+      case 'graphical-section':
+        this.renderGraphicalSection(section);
         break;
       default:
         console.warn(`Unknown section type: ${section.type}`);
@@ -173,7 +176,7 @@ class TimelineRenderer {
   // Render full-width video section
   renderFullVideo(data) {
     const fullVideoHTML = `
-      <div class="h-full ml-12 z-10">
+      <div class="h-full ml-12 z-10 ${data.class || ''}">
         <iframe class="aspect-video rounded-[20px]" width="auto" height="100%"
           src="${data.videoSrc}" title="YouTube video player" frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -181,6 +184,16 @@ class TimelineRenderer {
       </div>
     `;
     this.container.insertAdjacentHTML('beforeend', fullVideoHTML);
+  }
+
+  // render graphical section
+  renderGraphicalSection(data) {
+    const graphicalSectionHTML = `
+      <div class="h-full z-10 ${data?.class || ''}">
+        <img src="${data?.imageSrc}" alt="${data?.imageAlt || ''}">
+      </div>
+    `;
+    this.container.insertAdjacentHTML('beforeend', graphicalSectionHTML);
   }
 
   // Add new section to timeline
@@ -209,141 +222,4 @@ class TimelineRenderer {
   getTimelineData() {
     return this.timelineData;
   }
-
-  // // Initialize GSAP animations for the timeline
-  // initializeGSAPAnimations() {
-  //   // Wait a bit for DOM to be ready
-  //   setTimeout(() => {
-  //     if (window.timelineGSAPManager) {
-  //       window.timelineGSAPManager.refreshAnimations();
-  //     } else {
-  //       // Fallback to direct GSAP setup if manager is not available
-  //       this.setupTimelineScrollAnimation();
-  //       this.setupHistoryItemAnimations();
-  //     }
-  //   }, 100);
-  // }
-
-  // // Setup horizontal scroll animation for timeline
-  // setupTimelineScrollAnimation() {
-  //   const timelineSection = this.container;
-  //   if (!timelineSection) return;
-
-  //   // Kill any existing ScrollTrigger animations
-  //   ScrollTrigger.getAll().forEach(trigger => {
-  //     if (trigger.vars.trigger === timelineSection) {
-  //       trigger.kill();
-  //     }
-  //   });
-
-  //   // Create new horizontal scroll animation
-  //   gsap.to(timelineSection, {
-  //     transform: "translateX(-100%)",
-  //     scrollTrigger: {
-  //       trigger: ".horizontal-section-container",
-  //       scroller: "body",
-  //       start: "top 0%",
-  //       end: "top -700%",
-  //       pin: true,
-  //       scrub: 2,
-  //     }
-  //   });
-  // }
-
-  // // Setup animations for history items
-  // setupHistoryItemAnimations() {
-  //   const historyItems = this.container.querySelectorAll('.history-item');
-
-  //   historyItems.forEach((item, index) => {
-  //     // Add entrance animation
-  //     gsap.fromTo(item,
-  //       {
-  //         opacity: 0,
-  //         y: 50,
-  //         scale: 0.9
-  //       },
-  //       {
-  //         opacity: 1,
-  //         y: 0,
-  //         scale: 1,
-  //         duration: 0.6,
-  //         ease: "power2.out",
-  //         delay: index * 0.1,
-  //         scrollTrigger: {
-  //           trigger: item,
-  //           start: "top 80%",
-  //           end: "top 20%",
-  //           toggleActions: "play none none reverse"
-  //         }
-  //       }
-  //     );
-
-  //     // Add hover animations
-  //     item.addEventListener('mouseenter', () => {
-  //       gsap.to(item, {
-  //         scale: 1.02,
-  //         duration: 0.3,
-  //         ease: "power2.out"
-  //       });
-  //     });
-
-  //     item.addEventListener('mouseleave', () => {
-  //       gsap.to(item, {
-  //         scale: 1,
-  //         duration: 0.3,
-  //         ease: "power2.out"
-  //       });
-  //     });
-  //   });
-
-  //   // Setup timeline indicator animations
-  //   const indicators = this.container.querySelectorAll('.indicator');
-  //   indicators.forEach((indicator, index) => {
-  //     gsap.fromTo(indicator,
-  //       {
-  //         scale: 0,
-  //         opacity: 0
-  //       },
-  //       {
-  //         scale: 1,
-  //         opacity: 1,
-  //         duration: 0.4,
-  //         ease: "back.out(1.7)",
-  //         delay: index * 0.1 + 0.2,
-  //         scrollTrigger: {
-  //           trigger: indicator,
-  //           start: "top 80%",
-  //           end: "top 20%",
-  //           toggleActions: "play none none reverse"
-  //         }
-  //       }
-  //     );
-  //   });
-
-  //   // Setup video animations
-  //   const videos = this.container.querySelectorAll('iframe');
-  //   videos.forEach((video, index) => {
-  //     gsap.fromTo(video,
-  //       {
-  //         opacity: 0,
-  //         scale: 0.8,
-  //         rotation: -5
-  //       },
-  //       {
-  //         opacity: 1,
-  //         scale: 1,
-  //         rotation: 0,
-  //         duration: 0.8,
-  //         ease: "power2.out",
-  //         delay: index * 0.1 + 0.3,
-  //         scrollTrigger: {
-  //           trigger: video,
-  //           start: "top 80%",
-  //           end: "top 20%",
-  //           toggleActions: "play none none reverse"
-  //         }
-  //       }
-  //     );
-  //   });
-  // }
 }

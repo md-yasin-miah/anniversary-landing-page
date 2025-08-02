@@ -1,50 +1,11 @@
 // GSAP Animation for Nulsen Logo Leaf Shapes
 document.addEventListener('DOMContentLoaded', function () {
-  // gsap.to(".horizontal-section-container .horizontal-section", {
-  //   transform: "translateX(-100%)",
-  //   scrollTrigger: {
-  //     trigger: ".horizontal-section-container",
-  //     scroller: "body",
-  //     start: "top 0%",
-  //     end: "top -700%",
-  //     pin: true,
-  //     scrub: 2,
-  //   }
-  // })
-  gsap.to(".event-gallery-text p", {
-    transform: "translateX(-145%)",
-    scrollTrigger: {
-      trigger: ".event-gallery-text",
-      scroller: "body",
-      start: "top 70%",
-      end: "top 5%",
-      scrub: 2,
-    }
-  })
-
-  gsap.to(".years-gallery-text p", {
-    transform: "translateX(-43%)",
-    scrollTrigger: {
-      trigger: ".years-gallery-text",
-      scroller: "body",
-      start: "top 60%",
-      end: "top 10%",
-      scrub: 2,
-    }
-  })
-
-
-
-
-
   // gallery carousel
   const wrapper = document.querySelector(".wrapper");
 
   const boxes = gsap.utils.toArray(".box");
 
   let activeElement;
-  let isAutoScrolling = true;
-  let isDragging = false;
 
   const loop = horizontalLoop(boxes, {
     paused: false, // Start with auto-scroll enabled
@@ -118,29 +79,10 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 });
-// boxes.forEach((box, i) => box.addEventListener("click", () => loop.toIndex(i, { duration: 0.8, ease: "power1.inOut" })));
-
 // document.querySelector(".toggle").addEventListener("click", () => wrapper.classList.toggle("show-overflow"));
 // document.querySelector(".next").addEventListener("click", () => loop.next({ duration: 0.4, ease: "power1.inOut" }));
 // document.querySelector(".prev").addEventListener("click", () => loop.previous({ duration: 0.4, ease: "power1.inOut" }));
 
-
-
-
-/*
-This helper function makes a group of elements animate along the x-axis in a seamless, responsive loop.
-
-Features:
- - Uses xPercent so that even if the widths change (like if the window gets resized), it should still work in most cases.
- - When each item animates to the left or right enough, it will loop back to the other side
- - Optionally pass in a config object with values like draggable: true, center: true, speed (default: 1, which travels at roughly 100 pixels per second), paused (boolean), repeat, reversed, and paddingRight.
- - The returned timeline will have the following methods added to it:
-   - next() - animates to the next element using a timeline.tweenTo() which it returns. You can pass in a vars object to control duration, easing, etc.
-   - previous() - animates to the previous element using a timeline.tweenTo() which it returns. You can pass in a vars object to control duration, easing, etc.
-   - toIndex() - pass in a zero-based index value of the element that it should animate to, and optionally pass in a vars object to control duration, easing, etc. Always goes in the shortest direction
-   - current() - returns the current index (if an animation is in-progress, it reflects the final index)
-   - times - an Array of the times on the timeline where each element hits the "starting" spot.
- */
 function horizontalLoop(items, config) {
   let timeline;
   items = gsap.utils.toArray(items);

@@ -101,6 +101,7 @@ Embedded YouTube video with title.
   "itemType": "with-video",
   "title": "The 60's",
   "videoSrc": "https://www.youtube.com/embed/VIDEO_ID"
+  "class": "any tailwind class name"
 }
 ```
 

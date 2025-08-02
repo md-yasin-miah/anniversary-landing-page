@@ -1,3 +1,4 @@
+
 // Timeline Usage Example
 // This file shows how to use the TimelineRenderer class
 
@@ -54,132 +55,7 @@ document.addEventListener('DOMContentLoaded', function () {
     console.error('Failed to load timeline data:', error);
   });
 
-  // Initialize GSAP animations after timeline is rendered
-  function initializeGSAPAnimations() {
-    setTimeout(() => {
-      console.log('Initializing GSAP animations...');
 
-      // Setup horizontal scroll animation for timeline
-      const timelineSection = document.querySelector('.timeline-section');
-      if (timelineSection) {
-        // Kill any existing ScrollTrigger animations for timeline
-        ScrollTrigger.getAll().forEach(trigger => {
-          if (trigger.vars.trigger === timelineSection) {
-            trigger.kill();
-          }
-        });
-
-        // Create new horizontal scroll animation
-        gsap.to(".horizontal-section-container .horizontal-section", {
-          transform: "translateX(-100%)",
-          scrollTrigger: {
-            trigger: ".horizontal-section-container",
-            scroller: "body",
-            start: "top 0%",
-            end: "top -700%",
-            pin: true,
-            scrub: 2,
-          }
-        })
-      }
-
-      // // Setup animations for history items
-      // const historyItems = document.querySelectorAll('.history-item');
-      // historyItems.forEach((item, index) => {
-      //   // Add entrance animation
-      //   gsap.fromTo(item,
-      //     {
-      //       opacity: 0,
-      //       y: 50,
-      //       scale: 0.9
-      //     },
-      //     {
-      //       opacity: 1,
-      //       y: 0,
-      //       scale: 1,
-      //       duration: 0.6,
-      //       ease: "power2.out",
-      //       delay: index * 0.1,
-      //       scrollTrigger: {
-      //         trigger: item,
-      //         start: "top 80%",
-      //         end: "top 20%",
-      //         toggleActions: "play none none reverse"
-      //       }
-      //     }
-      //   );
-
-      //   // Add hover animations
-      //   item.addEventListener('mouseenter', () => {
-      //     gsap.to(item, {
-      //       scale: 1.02,
-      //       duration: 0.3,
-      //       ease: "power2.out"
-      //     });
-      //   });
-
-      //   item.addEventListener('mouseleave', () => {
-      //     gsap.to(item, {
-      //       scale: 1,
-      //       duration: 0.3,
-      //       ease: "power2.out"
-      //     });
-      //   });
-      // });
-
-      // // Setup timeline indicator animations
-      // const indicators = document.querySelectorAll('.indicator');
-      // indicators.forEach((indicator, index) => {
-      //   gsap.fromTo(indicator,
-      //     {
-      //       scale: 0,
-      //       opacity: 0
-      //     },
-      //     {
-      //       scale: 1,
-      //       opacity: 1,
-      //       duration: 0.4,
-      //       ease: "back.out(1.7)",
-      //       delay: index * 0.1 + 0.2,
-      //       scrollTrigger: {
-      //         trigger: indicator,
-      //         start: "top 80%",
-      //         end: "top 20%",
-      //         toggleActions: "play none none reverse"
-      //       }
-      //     }
-      //   );
-      // });
-
-      // // Setup video animations
-      // const videos = document.querySelectorAll('iframe');
-      // videos.forEach((video, index) => {
-      //   gsap.fromTo(video,
-      //     {
-      //       opacity: 0,
-      //       scale: 0.8,
-      //       rotation: -5
-      //     },
-      //     {
-      //       opacity: 1,
-      //       scale: 1,
-      //       rotation: 0,
-      //       duration: 0.8,
-      //       ease: "power2.out",
-      //       delay: index * 0.1 + 0.3,
-      //       scrollTrigger: {
-      //         trigger: video,
-      //         start: "top 80%",
-      //         end: "top 20%",
-      //         toggleActions: "play none none reverse"
-      //       }
-      //     }
-      //   );
-      // });
-
-      console.log('GSAP animations initialized successfully!');
-    }, 500);
-  }
 
   // Example: Add a new section dynamically
   function addNewSection() {
@@ -284,4 +160,152 @@ async function initializeTimelineWithData() {
   // Set and render
   timelineRenderer.setTimelineData(data);
   timelineRenderer.render();
-} 
+}
+
+// initializeGSAPAnimations
+function initializeGSAPAnimations() {
+  setTimeout(() => {
+    console.log('Initializing GSAP animations...');
+
+    // Setup horizontal scroll animation for timeline
+    const timelineSection = document.querySelector('.timeline-section');
+    if (timelineSection) {
+      // Kill any existing ScrollTrigger animations for timeline
+      ScrollTrigger.getAll().forEach(trigger => {
+        if (trigger.vars.trigger === timelineSection) {
+          trigger.kill();
+        }
+      });
+
+      gsap.to(".horizontal-section-container .horizontal-section", {
+        transform: "translateX(-100%)",
+        scrollTrigger: {
+          trigger: ".horizontal-section-container",
+          scroller: "body",
+          start: "top 0%",
+          end: "top -700%",
+          pin: true,
+          scrub: 2,
+        }
+      })
+
+      gsap.to(".event-gallery-text p", {
+        transform: "translateX(-145%)",
+        scrollTrigger: {
+          trigger: ".event-gallery-text",
+          scroller: "body",
+          start: "top 70%",
+          end: "top 5%",
+          scrub: 2,
+        }
+      })
+
+      gsap.to(".years-gallery-text p", {
+        transform: "translateX(-43%)",
+        scrollTrigger: {
+          trigger: ".years-gallery-text",
+          scroller: "body",
+          start: "top 60%",
+          end: "top 10%",
+          scrub: 2,
+        }
+      })
+    }
+
+    // // Setup animations for history items
+    // const historyItems = document.querySelectorAll('.history-item');
+    // historyItems.forEach((item, index) => {
+    //   // Add entrance animation
+    //   gsap.fromTo(item,
+    //     {
+    //       opacity: 0,
+    //       y: 50,
+    //       scale: 0.9
+    //     },
+    //     {
+    //       opacity: 1,
+    //       y: 0,
+    //       scale: 1,
+    //       duration: 0.6,
+    //       ease: "power2.out",
+    //       delay: index * 0.1,
+    //       scrollTrigger: {
+    //         trigger: item,
+    //         start: "top 80%",
+    //         end: "top 20%",
+    //         toggleActions: "play none none reverse"
+    //       }
+    //     }
+    //   );
+
+    //   // Add hover animations
+    //   item.addEventListener('mouseenter', () => {
+    //     gsap.to(item, {
+    //       scale: 1.02,
+    //       duration: 0.3,
+    //       ease: "power2.out"
+    //     });
+    //   });
+
+    //   item.addEventListener('mouseleave', () => {
+    //     gsap.to(item, {
+    //       scale: 1,
+    //       duration: 0.3,
+    //       ease: "power2.out"
+    //     });
+    //   });
+    // });
+
+    // // Setup timeline indicator animations
+    // const indicators = document.querySelectorAll('.indicator');
+    // indicators.forEach((indicator, index) => {
+    //   gsap.fromTo(indicator,
+    //     {
+    //       scale: 0,
+    //       opacity: 0
+    //     },
+    //     {
+    //       scale: 1,
+    //       opacity: 1,
+    //       duration: 0.4,
+    //       ease: "back.out(1.7)",
+    //       delay: index * 0.1 + 0.2,
+    //       scrollTrigger: {
+    //         trigger: indicator,
+    //         start: "top 80%",
+    //         end: "top 20%",
+    //         toggleActions: "play none none reverse"
+    //       }
+    //     }
+    //   );
+    // });
+
+    // // Setup video animations
+    // const videos = document.querySelectorAll('iframe');
+    // videos.forEach((video, index) => {
+    //   gsap.fromTo(video,
+    //     {
+    //       opacity: 0,
+    //       scale: 0.8,
+    //       rotation: -5
+    //     },
+    //     {
+    //       opacity: 1,
+    //       scale: 1,
+    //       rotation: 0,
+    //       duration: 0.8,
+    //       ease: "power2.out",
+    //       delay: index * 0.1 + 0.3,
+    //       scrollTrigger: {
+    //         trigger: video,
+    //         start: "top 80%",
+    //         end: "top 20%",
+    //         toggleActions: "play none none reverse"
+    //       }
+    //     }
+    //   );
+    // });
+
+    console.log('GSAP animations initialized successfully!');
+  }, 500);
+}
