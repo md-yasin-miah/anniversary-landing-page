@@ -199,7 +199,7 @@
     {
       "type": "content-section",
       "data": {
-        "type": "graphical-section",
+        "type": "image-content",
         "imageSrc": "./assets/vector/nulsan-logo-yellow.svg",
         "imageAlt": "nulsan-logo",
         "class": "min-w-[555px] flex justify-center items-center"
@@ -221,7 +221,7 @@
         },
         {
           "type": "full-video",
-          "videoSrc": "https://www.youtube.com/embed/yMfpy83Wfck?si=xNwCyaAfU38nReoP?start=6&autoplay=1&mute=1"
+          "videoSrc": "https://www.youtube.com/embed/yMfpy83Wfck?si=8cVDFw8RgZqO6N3z?start=6&autoplay=1&mute=1"
         }
       ]
     }

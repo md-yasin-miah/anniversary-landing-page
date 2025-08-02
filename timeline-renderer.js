@@ -139,7 +139,7 @@ class TimelineRenderer {
   // Render basic history item (title + description)
   renderBasicHistoryItem(item) {
     return `
-      <div class="history-item">
+      <div class="history-item ${item?.class || ''}">
         <div class="history-item-content">
           <div class="indicator"></div>
           <h6 class="timeline-title-3">${item?.title}</h6>
@@ -253,7 +253,7 @@ class TimelineRenderer {
   // Render image content section
   renderImageContent(data) {
     return `
-      <div class="image-content-section ${data.class || ''}">
+      <div class="image-content-section px-20 ${data.class || ''}">
         <img src="${data.imageSrc}" alt="${data.imageAlt || ''}" class="content-image">
         ${data.caption ? `<p class="image-caption">${data.caption}</p>` : ''}
       </div>
