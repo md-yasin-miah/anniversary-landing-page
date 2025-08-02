@@ -129,5 +129,15 @@
     "type": "timeline-header",
     "title1": "1982-1989",
     "title2": "Small steps"
+  },
+  {
+    "type": "history-area",
+    "items": [
+      {
+        "itemType": "basic",
+        "title": "The Early 80's",
+        "description": "Listen to Ea anim laboris sit laborum pariatur consectetur nostrud id aliquip cupidatat esse dolor do qui duis."
+      }
+    ]
   }
 ]

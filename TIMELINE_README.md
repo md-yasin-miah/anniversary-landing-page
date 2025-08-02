@@ -67,7 +67,7 @@ Creates a full-width video section.
 }
 ```
 
-### Timeline Item Types
+### Timeline Items Types
 
 #### Basic Item (`basic`)
 Simple title and description.

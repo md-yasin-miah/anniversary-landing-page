@@ -124,7 +124,7 @@
 /* ***********HORIZONTAL SECTION START********* */
 /* TODO: overflow-x: hidden */
 .horizontal-section-container {
-  overflow-x: scroll;
+  overflow-x: hidden;
 }
 
 .horizontal-section {

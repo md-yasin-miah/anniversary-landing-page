@@ -172,7 +172,6 @@ class TimelineRenderer {
 
   // Render full-width video section
   renderFullVideo(data) {
-    console.log('full-video type called', data);
     const fullVideoHTML = `
       <div class="h-full ml-12 z-10">
         <iframe class="aspect-video rounded-[20px]" width="auto" height="100%"

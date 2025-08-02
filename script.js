@@ -1,16 +1,16 @@
 // GSAP Animation for Nulsen Logo Leaf Shapes
 document.addEventListener('DOMContentLoaded', function () {
-  gsap.to(".horizontal-section-container .horizontal-section", {
-    transform: "translateX(-100%)",
-    scrollTrigger: {
-      trigger: ".horizontal-section-container",
-      scroller: "body",
-      start: "top 0%",
-      end: "top -700%",
-      pin: true,
-      scrub: 2,
-    }
-  })
+  // gsap.to(".horizontal-section-container .horizontal-section", {
+  //   transform: "translateX(-100%)",
+  //   scrollTrigger: {
+  //     trigger: ".horizontal-section-container",
+  //     scroller: "body",
+  //     start: "top 0%",
+  //     end: "top -700%",
+  //     pin: true,
+  //     scrub: 2,
+  //   }
+  // })
   gsap.to(".event-gallery-text p", {
     transform: "translateX(-145%)",
     scrollTrigger: {
