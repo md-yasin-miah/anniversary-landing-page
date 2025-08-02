@@ -204,6 +204,26 @@
         "imageAlt": "nulsan-logo",
         "class": "min-w-[555px] flex justify-center items-center"
       }
+    },
+    {
+      "type": "timeline-section",
+      "data": [
+        {
+          "type": "history-area",
+          "items": [
+            {
+              "itemType": "basic",
+              "title": "Early 90's",
+              "description": "Listen to Ea anim laboris sit laborum pariatur consectetur nostrud id aliquip cupidatat esse dolor do qui duis.",
+              "class": "ml-10"
+            }
+          ]
+        },
+        {
+          "type": "full-video",
+          "videoSrc": "https://www.youtube.com/embed/yMfpy83Wfck?si=xNwCyaAfU38nReoP?start=6&autoplay=1&mute=1"
+        }
+      ]
     }
   ]
 }
