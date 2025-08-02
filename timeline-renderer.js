@@ -183,7 +183,7 @@ class TimelineRenderer {
   renderAdditionalContentHistoryItem(item) {
     const additionalContent = item.additionalContent ? `
       <div class="additional-content-col">
-        <figure style="min-width: ${item.additionalContent.figureWidth || 'auto'};">
+        <figure class="${item.additionalContent.figureClass || ''}" style="min-width: ${item.additionalContent.figureWidth || 'auto'};">
           <img src="${item.additionalContent.imageSrc}" alt="${item.additionalContent.imageAlt || ''}">
         </figure>
         <p class="description">${item.additionalContent.description}</p>
@@ -193,9 +193,11 @@ class TimelineRenderer {
     return `
       <div class="history-item have-additional-content">
         <div class="history-item-content">
-          <div class="indicator"></div>
-          <h6 class="timeline-title-3">${item.title}</h6>
-          ${item.description ? `<p class="description">${item.description}</p>` : ''}
+          ${item?.title ? `
+            <div class="indicator"></div>
+            <h6 class="timeline-title-3">${item?.title}</h6>
+          ` : ''}
+          ${item?.description ? `<p class="description">${item.description}</p>` : ''}
         </div>
         ${additionalContent}
       </div>

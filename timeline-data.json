@@ -222,6 +222,386 @@
         {
           "type": "full-video",
           "videoSrc": "https://www.youtube.com/embed/yMfpy83Wfck?si=8cVDFw8RgZqO6N3z?start=6&autoplay=1&mute=1"
+        },
+        {
+          "type": "history-area",
+          "items": [
+            {
+              "itemType": "basic",
+              "title": "1991-92",
+              "description": "Mission Statement and Statement of Governing Principles developed and formalised.</br></br>‘To enable people with disability to achieve and maintain a valued quality of life as part of an accepting community.’",
+              "class": "ml-40"
+            },
+            {
+              "itemType": "basic",
+              "title": "1993",
+              "description": "Western Australia establishes a Cabinet Minister for Disability and commences the Disability Services Commission (DSC), the first agency of its type in Australia."
+            },
+            {
+              "itemType": "with-additional-content",
+              "additionalContent": {
+                "imageSrc": "./assets/vector/retires-img.svg",
+                "imageAlt": "retires-img",
+                "description": "1994: Ms Jill Bennett retires after 25 years of faithful and dedicated service."
+              }
+            },
+            {
+              "itemType": "basic",
+              "title": "1993-94",
+              "description": "Ms Jill Bennett retires after 25 years of faithful and dedicated service. Mr Gordon Trewern, the then Accommodation Services Coordinator, takes over the role of Director of Nulsen on initially a 12-month term. "
+            }
+          ]
+        },
+        {
+          "type": "timeline-header",
+          "title1": "1995-1999",
+          "title2": "Aspirational title here"
+        }
+      ]
+    },
+    {
+      "type": "content-section",
+      "data": {
+        "type": "image-content",
+        "imageSrc": "./assets/vector/nulsan-logo-nh.svg",
+        "imageAlt": "nulsan-logo-nh"
+      }
+    },
+    {
+      "type": "timeline-section",
+      "data": [
+        {
+          "type": "history-area",
+          "items": [
+            {
+              "itemType": "basic",
+              "title": "February 1995",
+              "description": "A PASSING evaluation (a tool for analysing service quality according to Social Role Valorisation criteria) funded by the DSC took place, resulting in the development of an improvement framework.",
+              "class": "ml-10"
+            },
+            {
+              "itemType": "basic",
+              "title": "1995-96",
+              "description": "Nulsen begins a new business venture named ‘Independent Administration’, to provide support to small non-government organisations with payroll, accounts and insurance services."
+            },
+            {
+              "itemType": "with-additional-content",
+              "additionalContent": {
+                "imageSrc": "./assets/vector/location-sign.svg",
+                "imageAlt": "location-sign",
+                "description": "1995: Nulsen Haven and Independent Administration signage outside 28 Burton St office."
+              }
+            },
+            {
+              "itemType": "basic",
+              "title": "18 May 1997",
+              "description": "Administration offices at 28 Burton Street Cannington open. "
+            }
+          ]
+        },
+        {
+          "type": "timeline-header",
+          "title1": "2000-2004",
+          "title2": "Aspirational title here"
+        },
+        {
+          "type": "history-area",
+          "items": [
+            {
+              "itemType": "basic",
+              "title": "June 2000",
+              "description": "Mrs Peg Parkin accepts the inaugural “Award for Service Excellence” from the DSC in recognition of exceeding the quality requirements of the national disability standards in the accommodation support services provided at Rosella Place and Cardington Way."
+            },
+            {
+              "itemType": "with-additional-content",
+              "additionalContent": {
+                "imageSrc": "./assets/vector/award-for-service-excellence.svg",
+                "imageAlt": "award-for-service-excellence",
+                "description": "2000: Mrs Peg Parkin accepts the inaugural “Award for Service Excellence."
+              }
+            },
+            {
+              "itemType": "basic",
+              "title": "2001",
+              "description": "Nulsen develops its operational relationships with St John of God Hospital in Murdoch, local general practitioners and dental clinics to better manage the health and needs of aging residents."
+            },
+            {
+              "itemType": "basic",
+              "title": "2001-02",
+              "description": "Scope Community Integration Services commence providing activities for residents to enhance their skills and social development through community-based daytime options."
+            },
+            {
+              "itemType": "basic",
+              "title": "Our Leaders",
+              "description": "Listen to Gordo as he Officia dolore ea laborum commodo anim Aliqua enim ad excepteur et."
+            }
+          ]
+        },
+        {
+          "type": "full-video",
+          "videoSrc": "https://www.youtube.com/embed/Fl7XkcqaIe0?si=_JM9cSdvEhNDOcxs?start=6&autoplay=1&mute=1"
+        },
+        {
+          "type": "timeline-header",
+          "title1": "2005-2009",
+          "title2": "Aspirational title here"
+        }
+      ]
+    },
+    {
+      "type": "content-section",
+      "data": {
+        "type": "image-content",
+        "imageSrc": "./assets/vector/logo.svg",
+        "imageAlt": "logo"
+      }
+    },
+    {
+      "type": "timeline-section",
+      "data": [
+        {
+          "type": "history-area",
+          "items": [
+            {
+              "itemType": "basic",
+              "title": "2004 - 05",
+              "description": "The Nulsen Ladies Auxiliary and Southwest Radio Clubs celebrate their 50th anniversaries.",
+              "class": "ml-20"
+            },
+            {
+              "itemType": "basic",
+              "title": "January 2006",
+              "description": "White Place, Subiaco opens to expand Nulsen’s accommodation services to include support for people with Acquired Brain Injury as well as in-home support."
+            },
+            {
+              "itemType": "with-additional-content",
+              "additionalContent": {
+                "imageSrc": "./assets/vector/Youth-Patrons-pic-2006.svg",
+                "imageAlt": "Youth-Patrons-pic-2006",
+                "description": "2006: Nulsen Youth Patrons from Hale School."
+              }
+            },
+            {
+              "itemType": "with-additional-content",
+              "additionalContent": {
+                "imageSrc": "./assets/vector/subiaco.svg",
+                "imageAlt": "subiaco",
+                "description": "2006: White Place, Subiaco opens."
+              }
+            },
+            {
+              "itemType": "basic",
+              "title": "January 2006",
+              "description": "The Nulsen Youth Patron Program is launched in partnership with Hale School."
+            },
+            {
+              "itemType": "basic",
+              "title": "August 2008",
+              "description": "Charlesworth Estate opens, a significant milestone for families and residents."
+            },
+            {
+              "itemType": "basic",
+              "title": "2007-08",
+              "description": "Nulsen Therapy achieves preferred provider status with the DSC for Disability Professional Services, a major acknowledgement of skill and competence."
+            },
+            {
+              "itemType": "basic",
+              "title": "2007-08",
+              "description": "Reconciliation Action Plan (RAP) launched, the first by a disability services organisation in WA."
+            },
+            {
+              "itemType": "with-additional-content",
+              "additionalContent": {
+                "imageSrc": "./assets/vector/cup-celebration.svg",
+                "imageAlt": "cup-celebration",
+                "description": "2008: The Melbourne Cup celebration at Charlesworth Estate."
+              }
+            },
+            {
+              "itemType": "basic",
+              "title": "2008-09",
+              "description": "Nulsen Therapy achieves preferred provider status with the DSC for Disability Professional Services, a major acknowledgement of skill and competence."
+            },
+            {
+              "itemType": "basic",
+              "title": "November 2009",
+              "description": "Nulsen Haven Association rebrands to Nulsen Disability Services."
+            },
+            {
+              "itemType": "with-additional-content",
+              "title": "2009",
+              "description": "Nulsen Haven Association rebrands to Nulsen Disability Services.",
+              "additionalContent": {
+                "imageSrc": "./assets/vector/Group-logo.svg",
+                "imageAlt": "Group-logo",
+                "description": "2009: Nulsen Disability Services Group logo.",
+                "figureWidth": "400px",
+                "figureClass": "mb-4"
+              }
+            }
+          ]
+        },
+        {
+          "type": "timeline-header",
+          "title1": "2010-2014",
+          "title2": "Aspirational title here"
+        }
+      ]
+    },
+    {
+      "type": "timeline-section",
+      "data": [
+        {
+          "type": "history-area",
+          "items": [
+            {
+              "itemType": "basic",
+              "title": "Our Support Workers",
+              "description": "Listen to Angie, Wendy & Tanya as they ficia dolore ea laborum commodo anim Aliqua enim ad excepteur et."
+            }
+          ]
+        },
+        {
+          "type": "full-video",
+          "videoSrc": "https://www.youtube.com/embed/Fl7XkcqaIe0?si=_JM9cSdvEhNDOcxs?start=6&autoplay=1&mute=1"
+        },
+        {
+          "type": "history-area",
+          "items": [
+            {
+              "itemType": "basic",
+              "title": "2010-11",
+              "description": "Partnership with Goldfields Individual and Family Support Association (GIFSA) to provide culturally appropriate disability accommodation supports for six Aboriginal people, enabling them to return to Country from an aged care facility in Perth.",
+              "class": "ml-20"
+            },
+            {
+              "itemType": "with-additional-content",
+              "additionalContent": {
+                "imageSrc": "./assets/images/gardening.png",
+                "imageAlt": "gardening",
+                "description": "2010: Ms Kathy Rouse and Greg Barr enjoying gardening together at City Farm."
+              }
+            },
+            {
+              "itemType": "basic",
+              "title": "2011-12",
+              "description": "Media personality Ms Tina Altieri retires as Nulsen Patron after 13 years. Mr Malcolm McCusker AC, Governor of Western Australia, accepts the invitation to become new Patron."
+            },
+            {
+              "itemType": "basic",
+              "title": "May 2013",
+              "description": "National Disability Insurance Scheme Act 2013 proclaimed in Federal Parliament, establishing the National Disability Insurance Agency."
+            },
+            {
+              "itemType": "with-additional-content",
+              "additionalContent": {
+                "imageSrc": "./assets/images/new-home-opening.png",
+                "imageAlt": "new-home-opening",
+                "description": "2013: Nulsen partners with GIFSA to open a new home in Kalgoorlie."
+              }
+            },
+            {
+              "itemType": "basic",
+              "title": "July 2014",
+              "description": "NDIS trial sites commence in WA."
+            },
+            {
+              "itemType": "basic",
+              "title": "Our Colleagues",
+              "description": "Listen to Barry as he ficia dolore ea laborum commodo anim Aliqua enim ad excepteur et."
+            }
+          ]
+        },
+        {
+          "type": "full-video",
+          "videoSrc": "https://www.youtube.com/embed/vBBmCAlcNh4?si=UF02wvYBK5siO8K3?start=6&autoplay=1&mute=1"
+        },
+        {
+          "type": "timeline-header",
+          "title1": "2015-2019",
+          "title2": "Aspirational title here"
+        }
+      ]
+    },
+    {
+      "type": "content-section",
+      "data": {
+        "type": "image-content",
+        "imageSrc": "./assets/vector/nulsen-group.svg",
+        "imageAlt": "nulsen-group",
+        "class": "min-w-[400px]"
+      }
+    },
+    {
+      "type": "timeline-section",
+      "data": [
+        {
+          "type": "history-area",
+          "items": [
+            {
+              "itemType": "basic",
+              "title": "2015-17",
+              "description": "Nulsen commences supports to 40 people moving from six state government disability accommodation services."
+            },
+            {
+              "itemType": "basic",
+              "title": "1 July 2016",
+              "description": "National launch of the NDIS."
+            },
+            {
+              "itemType": "basic",
+              "title": "September 2016",
+              "description": "Nulsen Opportunity Shoppe in Victoria Park closes after 50 years of community service."
+            },
+            {
+              "itemType": "basic",
+              "title": "2016-17",
+              "description": "Nulsen Disability Services Group rebrands to Nulsen Disability Services."
+            },
+            {
+              "itemType": "with-additional-content",
+              "additionalContent": {
+                "imageSrc": "./assets/images/Nulsen-Opportunity-Shoppe-in-Victoria-Park.png",
+                "imageAlt": "Nulsen-Opportunity-Shoppe-in-Victoria-Park",
+                "description": "Nulsen Opportunity Shoppe in Victoria Park served 50 years of community service."
+              }
+            },
+            {
+              "itemType": "with-video",
+              "title": "Our Supports",
+              "description": "Listen to Ethel, Ruth & Eddie ficia dolore ea laborum commodo anim Aliqua enim ad excepteur et.",
+              "videoSrc": "https://www.youtube.com/embed/M1cXcW5c778?si=5bAY3VauMyl0euZJ?start=6&autoplay=1&mute=1"
+            },
+            {
+              "itemType": "basic",
+              "title": "2017-18",
+              "description": "Nulsen’s total revenue exceeds $50 million for the first time, supporting 253 services, including 206 residents in accommodation support services."
+            },
+            {
+              "itemType": "basic",
+              "title": "December 2017",
+              "description": "Bilateral Agreement between Australian and WA Governments signed following decision to join national NDIS."
+            },
+            {
+              "itemType": "with-additional-content",
+              "title": "2018",
+              "description": "Nulsen Group formed to provide governance model to allow for growth alongside Nulsen Disability Services.",
+              "additionalContent": {
+                "imageSrc": "./assets/vector/nulsen-logo-groups.svg",
+                "imageAlt": "nulsen-logo-groups"
+              }
+            },
+            {
+              "itemType": "basic",
+              "title": "2018",
+              "description": "Nulsen Group formed to provide governance model to allow for growth alongside Nulsen Disability Services, largely influenced by NDIS funding uncertainty."
+            },
+            {
+              "itemType": "basic",
+              "title": "January 2018",
+              "description": "NDIS Quality and Safeguards Commission commences."
+            }
+          ]
         }
       ]
     }
