@@ -1,321 +1,257 @@
-# Timeline Renderer Documentation
+# Enhanced Timeline System
 
-This system allows you to dynamically render timeline sections with different content types using JavaScript. The timeline renderer supports various content types and can be easily extended.
+This enhanced timeline system allows you to create multiple timeline sections with other content sections in between. The system dynamically renders content into the `.horizontal-section-content` container.
 
-## Files Overview
+## Features
 
-- `timeline-renderer.js` - Main renderer class
-- `timeline-usage.js` - Usage examples and helper functions
-- `timeline-data.json` - Sample data structure
-- `TIMELINE_README.md` - This documentation
-
-## Quick Start
-
-1. Include the JavaScript files in your HTML:
-```html
-<script src="./timeline-renderer.js"></script>
-<script src="./timeline-usage.js"></script>
-```
-
-2. Initialize the renderer:
-```javascript
-const timelineRenderer = new TimelineRenderer('.timeline-section');
-```
-
-3. Set your data and render:
-```javascript
-timelineRenderer.setTimelineData(yourData);
-timelineRenderer.render();
-```
+- **Multiple Timeline Sections**: Create multiple timeline sections with different periods
+- **Mixed Content**: Add non-timeline content sections between timeline sections
+- **Dynamic Rendering**: All content is rendered dynamically from JSON data
+- **Flexible Structure**: Support for various content types (videos, text, images, etc.)
+- **GSAP Animations**: Built-in animations for smooth user experience
 
 ## Data Structure
 
-The timeline data is an array of sections, where each section has a `type` property that determines how it's rendered.
+The timeline data is structured as follows:
 
-### Section Types
-
-#### 1. Timeline Header (`timeline-header`)
-Creates a section with two title lines.
-
-```javascript
+```json
 {
-  "type": "timeline-header",
-  "title1": "1954-1972",
-  "title2": "The foundations of Nulsen"
-}
-```
-
-#### 2. History Area (`history-area`)
-Contains multiple timeline items.
-
-```javascript
-{
-  "type": "history-area",
-  "items": [
-    // Array of timeline items
-  ]
-}
-```
-
-#### 3. Full Video (`full-video`)
-Creates a full-width video section.
-
-```javascript
-{
-  "type": "full-video",
-  "videoSrc": "https://www.youtube.com/embed/VIDEO_ID"
-}
-```
-
-### Timeline Items Types
-
-#### Basic Item (`basic`)
-Simple title and description.
-
-```javascript
-{
-  "itemType": "basic",
-  "title": "23 September 1954",
-  "description": "The Daily News article published."
-}
-```
-
-#### Figure Item (`with-figure`)
-Image with title.
-
-```javascript
-{
-  "itemType": "with-figure",
-  "imageSrc": "./assets/vector/mica-logo.svg",
-  "imageAlt": "mica-logo",
-  "figureWidth": "185px",
-  "title": "Original MICA logo"
-}
-```
-
-#### Video Item (`with-video`)
-Embedded YouTube video with title.
-
-```javascript
-{
-  "itemType": "with-video",
-  "title": "The 60's",
-  "videoSrc": "https://www.youtube.com/embed/VIDEO_ID"
-  "class": "any tailwind class name"
-}
-```
-
-#### Additional Content Item (`with-additional-content`)
-Main content plus additional content in a column layout.
-
-```javascript
-{
-  "itemType": "with-additional-content",
-  "title": "1967",
-  "description": "Main description here.",
-  "additionalContent": {
-    "imageSrc": "./assets/vector/day-room.svg",
-    "imageAlt": "day-room",
-    "figureWidth": "auto",
-    "description": "Additional content description."
-  }
-}
-```
-
-#### Row Content Item (`row-content`)
-Content in a row layout (no main title/description).
-
-```javascript
-{
-  "itemType": "row-content",
-  "imageSrc": "./assets/vector/radio-presentation.svg",
-  "imageAlt": "radio-presentation",
-  "description": "Description text here."
-}
-```
-
-## API Methods
-
-### TimelineRenderer Class
-
-#### Constructor
-```javascript
-new TimelineRenderer(containerSelector)
-```
-- `containerSelector`: CSS selector for the timeline container (default: '.timeline-section')
-
-#### Methods
-
-##### setTimelineData(data)
-Sets the timeline data and prepares for rendering.
-
-##### render()
-Renders the entire timeline based on the current data.
-
-##### addSection(section)
-Adds a new section to the timeline and re-renders.
-
-##### updateSection(index, newData)
-Updates a specific section at the given index.
-
-##### removeSection(index)
-Removes a section at the given index.
-
-##### getTimelineData()
-Returns the current timeline data array.
-
-## Usage Examples
-
-### Basic Usage
-```javascript
-// Initialize
-const timelineRenderer = new TimelineRenderer('.timeline-section');
-
-// Set data
-const data = [
-  {
-    type: 'timeline-header',
-    title1: '1954-1972',
-    title2: 'The foundations of Nulsen'
-  },
-  {
-    type: 'history-area',
-    items: [
-      {
-        itemType: 'basic',
-        title: '23 September 1954',
-        description: 'The Daily News article published.'
-      }
-    ]
-  }
-];
-
-// Render
-timelineRenderer.setTimelineData(data);
-timelineRenderer.render();
-```
-
-### Loading from JSON File
-```javascript
-async function loadTimeline() {
-  const timelineRenderer = new TimelineRenderer('.timeline-section');
-  
-  try {
-    const response = await fetch('./timeline-data.json');
-    const data = await response.json();
-    
-    timelineRenderer.setTimelineData(data);
-    timelineRenderer.render();
-  } catch (error) {
-    console.error('Error loading timeline data:', error);
-  }
-}
-```
-
-### Dynamic Updates
-```javascript
-// Add a new section
-timelineRenderer.addSection({
-  type: 'history-area',
-  items: [
+  "sections": [
     {
-      itemType: 'basic',
-      title: '1985',
-      description: 'New timeline item added dynamically.'
+      "type": "timeline-section",
+      "data": [
+        {
+          "type": "timeline-header",
+          "title1": "1954-1972",
+          "title2": "The foundations of Nulsen"
+        },
+        {
+          "type": "history-area",
+          "items": [
+            {
+              "itemType": "basic",
+              "title": "23 September 1954",
+              "description": "The Daily News article published."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "content-section",
+      "data": {
+        "type": "full-video",
+        "videoSrc": "https://www.youtube.com/embed/example"
+      }
     }
   ]
-});
-
-// Update existing section
-timelineRenderer.updateSection(0, {
-  title1: '1954-1972 (Updated)',
-  title2: 'Updated subtitle'
-});
-
-// Remove last section
-timelineRenderer.removeSection(timelineRenderer.getTimelineData().length - 1);
+}
 ```
 
-## Helper Functions
+## Section Types
 
-### createTimelineDataFromAPI(apiData)
-Transforms API data to timeline format.
+### Timeline Sections (`timeline-section`)
 
-### loadTimelineDataFromFile(filePath)
-Loads timeline data from a JSON file.
+Timeline sections contain historical data with headers and timeline items.
 
-### initializeTimelineWithData()
-Complete initialization example with async data loading.
+**Timeline Items:**
+- `timeline-header`: Section headers with title1 and title2
+- `history-area`: Container for multiple timeline items
+- `graphical-section`: Images or graphics
 
-## Customization
+**History Item Types:**
+- `basic`: Simple title and description
+- `with-figure`: Item with an image/figure
+- `with-video`: Item with embedded video
+- `with-additional-content`: Item with additional content in columns
+- `row-content`: Content in row layout
 
-### Adding New Item Types
-To add a new item type, extend the `renderHistoryItem` method:
+### Content Sections (`content-section`)
+
+Content sections are non-timeline content that can be placed between timeline sections.
+
+**Content Types:**
+- `full-video`: Full-width video content
+- `text-content`: Text content with title and description
+- `image-content`: Image content with optional caption
+
+## Usage
+
+### Basic Setup
 
 ```javascript
-renderHistoryItem(item) {
-  switch (item.itemType) {
-    // ... existing cases
-    case 'your-new-type':
-      return this.renderYourNewType(item);
-    default:
-      return this.renderBasicHistoryItem(item);
+// Initialize the timeline renderer
+const timelineRenderer = new TimelineRenderer('.horizontal-section-content');
+
+// Load and render data
+loadTimelineData().then(data => {
+  timelineRenderer.setSectionsData(data);
+  timelineRenderer.render();
+});
+```
+
+### Adding New Sections
+
+```javascript
+// Add a new timeline section
+const newTimelineSection = {
+  type: 'timeline-section',
+  data: [
+    {
+      type: 'timeline-header',
+      title1: '1995-2000',
+      title2: 'New Era'
+    },
+    {
+      type: 'history-area',
+      items: [
+        {
+          itemType: 'basic',
+          title: '1995',
+          description: 'Example timeline item.'
+        }
+      ]
+    }
+  ]
+};
+timelineRenderer.addSection(newTimelineSection);
+
+// Add a content section
+const newContentSection = {
+  type: 'content-section',
+  data: {
+    type: 'full-video',
+    videoSrc: 'https://www.youtube.com/embed/example',
+    class: 'mr-[120px]'
   }
-}
-
-renderYourNewType(item) {
-  return `
-    <div class="history-item your-custom-class">
-      <!-- Your custom HTML structure -->
-    </div>
-  `;
-}
+};
+timelineRenderer.addSection(newContentSection);
 ```
 
-### Styling
-The renderer uses existing CSS classes. You can customize the appearance by modifying your CSS:
+### Available Functions
 
-- `.timeline-title-1` - Main timeline period
-- `.timeline-title-2` - Timeline subtitle
-- `.timeline-title-3` - Item titles
-- `.history-item` - Individual timeline items
-- `.history-item-content` - Content wrapper
-- `.indicator` - Timeline indicator dot
-- `.description` - Description text
+- `addSection(section)`: Add a new section at the end
+- `insertSection(index, section)`: Insert section at specific position
+- `updateSection(index, newData)`: Update a specific section
+- `removeSection(index)`: Remove a specific section
+- `moveSection(fromIndex, toIndex)`: Move section to different position
+- `getSectionsData()`: Get current sections data
 
-## Best Practices
+### Global Functions (for testing)
 
-1. **Data Validation**: Always validate your data before rendering
-2. **Error Handling**: Wrap render calls in try-catch blocks
-3. **Performance**: For large datasets, consider pagination or lazy loading
-4. **Accessibility**: Ensure all images have proper alt text
-5. **Responsive Design**: Test on different screen sizes
+The following functions are available globally in the browser console:
 
-## Troubleshooting
+- `addNewTimelineSection()`: Add a simple timeline section
+- `addNewContentSection()`: Add a video content section
+- `addTextContentSection()`: Add a text content section
+- `addCompleteTimelineSection()`: Add a complete timeline section with multiple items
+- `addMixedContentSection()`: Add a mixed content section
+- `updateSection(index, data)`: Update a specific section
+- `removeSection(index)`: Remove a specific section
+- `insertSectionAtPosition()`: Insert section at specific position
 
-### Common Issues
+## Examples
 
-1. **Container not found**: Ensure the selector matches your HTML structure
-2. **Images not loading**: Check file paths and ensure images exist
-3. **Videos not playing**: Verify YouTube embed URLs are correct
-4. **Styling issues**: Check that CSS classes are properly defined
-
-### Debug Mode
-Enable console logging by modifying the renderer:
+### Timeline Section with Multiple Items
 
 ```javascript
-render() {
-  console.log('Rendering timeline with data:', this.timelineData);
-  // ... rest of render method
-}
+const timelineSection = {
+  type: 'timeline-section',
+  data: [
+    {
+      type: 'timeline-header',
+      title1: '2000-2010',
+      title2: 'Digital Transformation Era'
+    },
+    {
+      type: 'history-area',
+      items: [
+        {
+          itemType: 'basic',
+          title: '2000',
+          description: 'Digital transformation begins.'
+        },
+        {
+          itemType: 'with-figure',
+          imageSrc: './assets/vector/logo.svg',
+          imageAlt: 'Logo',
+          figureWidth: '200px',
+          title: 'New logo introduced'
+        },
+        {
+          itemType: 'with-video',
+          title: 'The Digital Age',
+          videoSrc: 'https://www.youtube.com/embed/example'
+        }
+      ]
+    }
+  ]
+};
 ```
 
-## Browser Support
+### Content Section with Text
 
-- Modern browsers (ES6+)
-- IE11+ (with polyfills)
-- Mobile browsers
+```javascript
+const textSection = {
+  type: 'content-section',
+  data: {
+    type: 'text-content',
+    title: 'Special Achievement',
+    description: 'This is a significant milestone in our history.',
+    class: 'max-w-[600px] flex flex-col gap-6'
+  }
+};
+```
 
-## License
+### Content Section with Image
 
-This timeline renderer is provided as-is for educational and development purposes. 
+```javascript
+const imageSection = {
+  type: 'content-section',
+  data: {
+    type: 'image-content',
+    imageSrc: './assets/images/achievement.jpg',
+    imageAlt: 'Achievement',
+    caption: 'Celebrating our success',
+    class: 'flex justify-center items-center'
+  }
+};
+```
+
+## Styling
+
+The system uses Tailwind CSS classes for styling. You can add custom classes to any section or item using the `class` property.
+
+## Animations
+
+The system includes GSAP animations for:
+- Timeline sections entrance animations
+- Content sections entrance animations
+- History items hover effects
+- Timeline indicators animations
+- Video content animations
+
+## File Structure
+
+- `timeline-data.json`: Contains the timeline data structure
+- `timeline-renderer.js`: The main TimelineRenderer class
+- `timeline-usage.js`: Usage examples and initialization
+- `index.html`: HTML structure with `.horizontal-section-content` container
+
+## Browser Console Testing
+
+Open the browser console and use the global functions to test the timeline system:
+
+```javascript
+// Add a new timeline section
+addNewTimelineSection();
+
+// Add a content section
+addNewContentSection();
+
+// Add a complete timeline section
+addCompleteTimelineSection();
+
+// Add a mixed content section
+addMixedContentSection();
+``` 

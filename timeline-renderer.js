@@ -1,59 +1,102 @@
 class TimelineRenderer {
   constructor(
-    containerSelector = '.timeline-section'
+    containerSelector = '.horizontal-section-content'
   ) {
     this.container = document.querySelector(containerSelector);
-    this.timelineData = [];
+    this.sectionsData = [];
   }
 
-  // Set timeline data
-  setTimelineData(data) {
-    this.timelineData = data;
+  // Set sections data
+  setSectionsData(data) {
+    this.sectionsData = data.sections || data;
   }
 
-  // Render the entire timeline
+  // Render all sections
   render() {
     if (!this.container) {
-      console.error('Timeline container not found');
+      console.error('Container not found:', this.containerSelector);
       return;
     }
 
-    // Clear existing content except the purple line
-    const purpleLine = this.container.querySelector('.bg-purple');
-    this.container.innerHTML = '';
-    if (purpleLine) {
-      this.container.appendChild(purpleLine);
-    }
+    // Clear existing content
+    // this.container.innerHTML = '';
 
     // Render each section
-    this.timelineData.forEach((section, index) => {
+    this.sectionsData.forEach((section, index) => {
       this.renderSection(section, index);
     });
-
   }
 
   // Render individual section based on type
   renderSection(section, index) {
     switch (section.type) {
-      case 'timeline-header':
-        this.renderTimelineHeader(section);
+      case 'timeline-section':
+        this.renderTimelineSection(section, index);
         break;
-      case 'history-area':
-        this.renderHistoryArea(section);
-        break;
-      case 'full-video':
-        this.renderFullVideo(section);
-        break;
-      case 'graphical-section':
-        this.renderGraphicalSection(section);
+      case 'content-section':
+        this.renderContentSection(section, index);
         break;
       default:
         console.warn(`Unknown section type: ${section.type}`);
     }
   }
 
+  // Render timeline section
+  renderTimelineSection(section, index) {
+    // Create timeline section container
+    const timelineSectionHTML = `
+      <div class="timeline-section relative flex h-full items-end" data-section-index="${index}">
+        <div class="w-full h-[1px] bg-purple absolute top-1/2 -translate-y-1/2 left-0"></div>
+      </div>
+    `;
+    this.container.insertAdjacentHTML('beforeend', timelineSectionHTML);
+
+    // Get the newly created timeline section
+    const timelineSection = this.container.querySelector(`[data-section-index="${index}"]`);
+
+    // Render timeline content
+    section.data.forEach((timelineItem, itemIndex) => {
+      this.renderTimelineItem(timelineItem, timelineSection, itemIndex);
+    });
+  }
+
+  // Render content section (non-timeline content)
+  renderContentSection(section, index) {
+    const contentHTML = this.renderContentItem(section.data);
+    this.container.insertAdjacentHTML('beforeend', contentHTML);
+  }
+
+  // Render timeline item
+  renderTimelineItem(item, container, index) {
+    switch (item.type) {
+      case 'timeline-header':
+        this.renderTimelineHeader(item, container);
+        break;
+      case 'history-area':
+        this.renderHistoryArea(item, container);
+        break;
+      case 'full-video':
+        return this.renderFullVideo(item, container);
+      default:
+        console.warn(`Unknown timeline item type: ${item.type}`);
+    }
+  }
+
+  // Render content item
+  renderContentItem(item) {
+    switch (item.type) {
+      case 'text-content':
+        return this.renderTextContent(item);
+      case 'image-content':
+        return this.renderImageContent(item);
+      default:
+        console.warn(`Unknown content item type: ${item.type}`);
+        return '';
+    }
+  }
+
   // Render timeline header section
-  renderTimelineHeader(data) {
+  renderTimelineHeader(data, container) {
     const headerHTML = `
       <div class="pl-[170px] pr-[340px] h-full flex items-center">
         <div>
@@ -62,17 +105,17 @@ class TimelineRenderer {
         </div>
       </div>
     `;
-    this.container.insertAdjacentHTML('beforeend', headerHTML);
+    container.insertAdjacentHTML('beforeend', headerHTML);
   }
 
   // Render history area with multiple items
-  renderHistoryArea(data) {
+  renderHistoryArea(data, container) {
     const historyAreaHTML = `
       <div class="history-area">
         ${data.items.map(item => this.renderHistoryItem(item)).join('')}
       </div>
     `;
-    this.container.insertAdjacentHTML('beforeend', historyAreaHTML);
+    container.insertAdjacentHTML('beforeend', historyAreaHTML);
   }
 
   // Render individual history item
@@ -99,8 +142,8 @@ class TimelineRenderer {
       <div class="history-item">
         <div class="history-item-content">
           <div class="indicator"></div>
-          <h6 class="timeline-title-3">${item.title}</h6>
-          <p class="description">${item.description}</p>
+          <h6 class="timeline-title-3">${item?.title}</h6>
+          <p class="description">${item?.description}</p>
         </div>
       </div>
     `;
@@ -173,8 +216,19 @@ class TimelineRenderer {
     `;
   }
 
+  // Render graphical section
+  renderGraphicalSection(data, container) {
+    const graphicalSectionHTML = `
+      <div class="h-full z-10 ${data?.class || ''}">
+        <img src="${data?.imageSrc}" alt="${data?.imageAlt || ''}">
+      </div>
+    `;
+    container.insertAdjacentHTML('beforeend', graphicalSectionHTML);
+  }
+
   // Render full-width video section
-  renderFullVideo(data) {
+  renderFullVideo(data, container) {
+    console.log('renderFullVideo', data);
     const fullVideoHTML = `
       <div class="h-full ml-12 z-10 ${data.class || ''}">
         <iframe class="aspect-video rounded-[20px]" width="auto" height="100%"
@@ -183,43 +237,71 @@ class TimelineRenderer {
           referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </div>
     `;
-    this.container.insertAdjacentHTML('beforeend', fullVideoHTML);
+    container.insertAdjacentHTML('beforeend', fullVideoHTML);
   }
 
-  // render graphical section
-  renderGraphicalSection(data) {
-    const graphicalSectionHTML = `
-      <div class="h-full z-10 ${data?.class || ''}">
-        <img src="${data?.imageSrc}" alt="${data?.imageAlt || ''}">
+  // Render text content section
+  renderTextContent(data) {
+    return `
+      <div class="text-content-section ${data.class || ''}">
+        <h2 class="text-title">${data.title}</h2>
+        <p class="text-description">${data.description}</p>
       </div>
     `;
-    this.container.insertAdjacentHTML('beforeend', graphicalSectionHTML);
   }
 
-  // Add new section to timeline
+  // Render image content section
+  renderImageContent(data) {
+    return `
+      <div class="image-content-section ${data.class || ''}">
+        <img src="${data.imageSrc}" alt="${data.imageAlt || ''}" class="content-image">
+        ${data.caption ? `<p class="image-caption">${data.caption}</p>` : ''}
+      </div>
+    `;
+  }
+
+  // Add new section
   addSection(section) {
-    this.timelineData.push(section);
-    this.renderSection(section, this.timelineData.length - 1);
+    this.sectionsData.push(section);
+    this.renderSection(section, this.sectionsData.length - 1);
   }
 
   // Update specific section
   updateSection(index, newData) {
-    if (index >= 0 && index < this.timelineData.length) {
-      this.timelineData[index] = { ...this.timelineData[index], ...newData };
+    if (index >= 0 && index < this.sectionsData.length) {
+      this.sectionsData[index] = { ...this.sectionsData[index], ...newData };
       this.render();
     }
   }
 
   // Remove section
   removeSection(index) {
-    if (index >= 0 && index < this.timelineData.length) {
-      this.timelineData.splice(index, 1);
+    if (index >= 0 && index < this.sectionsData.length) {
+      this.sectionsData.splice(index, 1);
       this.render();
     }
   }
 
-  // Get timeline data
-  getTimelineData() {
-    return this.timelineData;
+  // Get sections data
+  getSectionsData() {
+    return this.sectionsData;
+  }
+
+  // Insert section at specific index
+  insertSection(index, section) {
+    if (index >= 0 && index <= this.sectionsData.length) {
+      this.sectionsData.splice(index, 0, section);
+      this.render();
+    }
+  }
+
+  // Move section from one position to another
+  moveSection(fromIndex, toIndex) {
+    if (fromIndex >= 0 && fromIndex < this.sectionsData.length &&
+      toIndex >= 0 && toIndex < this.sectionsData.length) {
+      const section = this.sectionsData.splice(fromIndex, 1)[0];
+      this.sectionsData.splice(toIndex, 0, section);
+      this.render();
+    }
   }
 }

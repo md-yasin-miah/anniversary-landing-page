@@ -1,199 +1,209 @@
-[
-  {
-    "type": "timeline-header",
-    "title1": "1954-1972",
-    "title2": "The foundations of Nulsen"
-  },
-  {
-    "type": "history-area",
-    "items": [
-      {
-        "itemType": "with-figure",
-        "imageSrc": "./assets/vector/mica-logo.svg",
-        "imageAlt": "mica-logo",
-        "figureWidth": "185px",
-        "title": "Original MICA logo"
-      },
-      {
-        "itemType": "with-figure",
-        "imageSrc": "./assets/vector/bill-and-ena.svg",
-        "imageAlt": "bill-and-ena",
-        "figureWidth": "290px",
-        "title": "Bill and Ena Burns"
-      },
-      {
-        "itemType": "with-figure",
-        "imageSrc": "./assets/vector/opening-of-nulsen.svg",
-        "imageAlt": "opening-of-nulsen",
-        "figureWidth": "220px",
-        "title": "1956: Official opening of refurbished Nulsen Haven."
-      },
-      {
-        "itemType": "basic",
-        "title": "23 September 1954",
-        "description": "The Daily News article \"A Father Speaks Up for Some the World Forgets\" published."
-      },
-      {
-        "itemType": "basic",
-        "title": "8 October 1954",
-        "description": "Agreement to form the Mentally Incurable Children's Association (MICA) and election of office bearers, including inaugural President William R Burns."
-      },
-      {
-        "itemType": "basic",
-        "title": "9 August 1955",
-        "description": "\"Dear Brutus\" at 517 Great Eastern Highway, Redcliffe purchased as the first home for MICA."
-      },
-      {
-        "itemType": "basic",
-        "title": "7 October 1956",
-        "description": "The refurbished \"Nulsen Haven\" officially opened by Premier A R G Hawke, and Minister for Health Emil Nulsen."
-      },
-      {
-        "itemType": "basic",
-        "title": "September 1957",
-        "description": "The first Women's Radio Service Club meeting held in Bunbury. Perth members later renamed themselves the \"Wandana Club\"."
-      },
-      {
-        "itemType": "basic",
-        "title": "21 November 1965",
-        "description": "\"Wedderburn\" new Nulsen Haven hostel officially opened by Minister for Health the Hon G C McKinnon."
-      },
-      {
-        "itemType": "with-video",
-        "title": "The 60's",
-        "videoSrc": "https://www.youtube.com/embed/M1cXcW5c778?start=6&autoplay=1&mute=1"
-      },
-      {
-        "itemType": "with-additional-content",
-        "title": "1967",
-        "description": "Nulsen Ladies' Auxiliary Opportunity Shoppe opens in Victoria Park.",
-        "additionalContent": {
-          "imageSrc": "./assets/vector/day-room.svg",
-          "imageAlt": "day-room",
-          "description": "Day room in orginal Haven."
+{
+  "sections": [
+    {
+      "type": "timeline-section",
+      "data": [
+        {
+          "type": "timeline-header",
+          "title1": "1954-1972",
+          "title2": "The foundations of Nulsen"
+        },
+        {
+          "type": "history-area",
+          "items": [
+            {
+              "itemType": "with-figure",
+              "imageSrc": "./assets/vector/mica-logo.svg",
+              "imageAlt": "mica-logo",
+              "figureWidth": "185px",
+              "title": "Original MICA logo"
+            },
+            {
+              "itemType": "with-figure",
+              "imageSrc": "./assets/vector/bill-and-ena.svg",
+              "imageAlt": "bill-and-ena",
+              "figureWidth": "290px",
+              "title": "Bill and Ena Burns"
+            },
+            {
+              "itemType": "with-figure",
+              "imageSrc": "./assets/vector/opening-of-nulsen.svg",
+              "imageAlt": "opening-of-nulsen",
+              "figureWidth": "220px",
+              "title": "1956: Official opening of refurbished Nulsen Haven."
+            },
+            {
+              "itemType": "basic",
+              "title": "23 September 1954",
+              "description": "The Daily News article \"A Father Speaks Up for Some the World Forgets\" published."
+            },
+            {
+              "itemType": "basic",
+              "title": "8 October 1954",
+              "description": "Agreement to form the Mentally Incurable Children's Association (MICA) and election of office bearers, including inaugural President William R Burns."
+            },
+            {
+              "itemType": "basic",
+              "title": "9 August 1955",
+              "description": "\"Dear Brutus\" at 517 Great Eastern Highway, Redcliffe purchased as the first home for MICA."
+            },
+            {
+              "itemType": "basic",
+              "title": "7 October 1956",
+              "description": "The refurbished \"Nulsen Haven\" officially opened by Premier A R G Hawke, and Minister for Health Emil Nulsen."
+            },
+            {
+              "itemType": "basic",
+              "title": "September 1957",
+              "description": "The first Women's Radio Service Club meeting held in Bunbury. Perth members later renamed themselves the \"Wandana Club\"."
+            },
+            {
+              "itemType": "basic",
+              "title": "21 November 1965",
+              "description": "\"Wedderburn\" new Nulsen Haven hostel officially opened by Minister for Health the Hon G C McKinnon."
+            },
+            {
+              "itemType": "with-video",
+              "title": "The 60's",
+              "videoSrc": "https://www.youtube.com/embed/M1cXcW5c778?start=6&autoplay=1&mute=1"
+            },
+            {
+              "itemType": "with-additional-content",
+              "title": "1967",
+              "description": "Nulsen Ladies' Auxiliary Opportunity Shoppe opens in Victoria Park.",
+              "additionalContent": {
+                "imageSrc": "./assets/vector/day-room.svg",
+                "imageAlt": "day-room",
+                "description": "Day room in orginal Haven."
+              }
+            },
+            {
+              "itemType": "row-content",
+              "imageSrc": "./assets/vector/radio-presentation.svg",
+              "imageAlt": "radio-presentation",
+              "description": "Jane Marshall, radio presenter who spoke with family who had to leave call to tend to her child."
+            },
+            {
+              "itemType": "with-additional-content",
+              "title": "The Early 70's"
+            }
+          ]
+        },
+        {
+          "type": "full-video",
+          "videoSrc": "https://www.youtube.com/embed/-xw_gLsaSbg?si=h_WbiK42sexsQ6Oq?start=6&autoplay=1&mute=1"
+        },
+        {
+          "type": "timeline-header",
+          "title1": "1973-1981",
+          "title2": "Making a house a home"
+        },
+        {
+          "type": "history-area",
+          "items": [
+            {
+              "itemType": "with-video",
+              "title": "Late 70's",
+              "videoSrc": "https://www.youtube.com/embed/TsItV1ZJGro?si=clsg_A5-uskoQZsZ?start=6&autoplay=1&mute=1"
+            },
+            {
+              "itemType": "basic",
+              "title": "1973",
+              "description": "Commencement of resident training at Nulsen, leading an evolution in disability services."
+            },
+            {
+              "itemType": "with-additional-content",
+              "title": "1976",
+              "description": "Ms Jill Bennett appointed Matron to usher in a new era.",
+              "additionalContent": {
+                "imageSrc": "./assets/vector/resident-training.svg",
+                "imageAlt": "resident-training",
+                "figureWidth": "388px",
+                "description": "1973: Commencement of resident training at Nulsen, leading an evolution in disability services."
+              }
+            },
+            {
+              "itemType": "basic",
+              "title": "May 1977",
+              "description": "Nulsen commences its first May campaign, raising funds and publicity. A year later, the \"horse raffle\" became a major part of the May campaign for 14 years."
+            }
+          ]
+        },
+        {
+          "type": "timeline-header",
+          "title1": "1982-1989",
+          "title2": "Small steps"
+        },
+        {
+          "type": "history-area",
+          "items": [
+            {
+              "itemType": "basic",
+              "title": "The Early 80's",
+              "description": "Listen to Ea anim laboris sit laborum pariatur consectetur nostrud id aliquip cupidatat esse dolor do qui duis."
+            }
+          ]
+        },
+        {
+          "type": "full-video",
+          "videoSrc": "https://www.youtube.com/embed/F2YwQYmwCZQ?si=psOfR2OJoD9kQoCL?start=6&autoplay=1&mute=1",
+          "class": "mr-[120px]"
+        },
+        {
+          "type": "history-area",
+          "items": [
+            {
+              "itemType": "basic",
+              "title": "1981",
+              "description": "“Normalisation” formally adopted at Nulsen based on standards and principles embodied in report submitted by the Murdoch Group."
+            },
+            {
+              "itemType": "basic",
+              "title": "2 October 1983",
+              "description": "MICA formally becomes Nulsen Haven Association Inc (for the training and care of severely and profoundly Intellectually Handicapped People)."
+            },
+            {
+              "itemType": "basic",
+              "title": "January 1987",
+              "description": "Six residents from urgent wait list move into experimental group home at Yorna Road, Kalamunda."
+            },
+            {
+              "itemType": "basic",
+              "title": "July 1987",
+              "description": "Landmark legislation Disability Services Act 1986 comes into effect."
+            },
+            {
+              "itemType": "basic",
+              "title": "April 1988",
+              "description": "Implementation of 10-year Transition Plan commences with key components - the Personal Future Planning process, PASSING workshops and in-service workshops aimed at providing “information and inspiration”."
+            },
+            {
+              "itemType": "basic",
+              "title": "8 May 1989",
+              "description": "The first two residents move into their own home in the community, in Willetton."
+            },
+            {
+              "itemType": "basic",
+              "title": "May 1989",
+              "description": "Independent Living Services commences, with around 40 community activities in place within 2 years."
+            }
+          ]
+        },
+        {
+          "type": "timeline-header",
+          "title1": "1990-1994",
+          "title2": "Big jump"
         }
-      },
-      {
-        "itemType": "row-content",
-        "imageSrc": "./assets/vector/radio-presentation.svg",
-        "imageAlt": "radio-presentation",
-        "description": "Jane Marshall, radio presenter who spoke with family who had to leave call to tend to her child."
-      },
-      {
-        "itemType": "with-additional-content",
-        "title": "The Early 70's"
+      ]
+    },
+    {
+      "type": "content-section",
+      "data": {
+        "type": "graphical-section",
+        "imageSrc": "./assets/vector/nulsan-logo-yellow.svg",
+        "imageAlt": "nulsan-logo",
+        "class": "min-w-[555px] flex justify-center items-center"
       }
-    ]
-  },
-  {
-    "type": "full-video",
-    "videoSrc": "https://www.youtube.com/embed/-xw_gLsaSbg?si=h_WbiK42sexsQ6Oq?start=6&autoplay=1&mute=1"
-  },
-  {
-    "type": "timeline-header",
-    "title1": "1973-1981",
-    "title2": "Making a house a home"
-  },
-  {
-    "type": "history-area",
-    "items": [
-      {
-        "itemType": "with-video",
-        "title": "Late 70's",
-        "videoSrc": "https://www.youtube.com/embed/TsItV1ZJGro?si=clsg_A5-uskoQZsZ?start=6&autoplay=1&mute=1"
-      },
-      {
-        "itemType": "basic",
-        "title": "1973",
-        "description": "Commencement of resident training at Nulsen, leading an evolution in disability services."
-      },
-      {
-        "itemType": "with-additional-content",
-        "title": "1976",
-        "description": "Ms Jill Bennett appointed Matron to usher in a new era.",
-        "additionalContent": {
-          "imageSrc": "./assets/vector/resident-training.svg",
-          "imageAlt": "resident-training",
-          "figureWidth": "388px",
-          "description": "1973: Commencement of resident training at Nulsen, leading an evolution in disability services."
-        }
-      },
-      {
-        "itemType": "basic",
-        "title": "May 1977",
-        "description": "Nulsen commences its first May campaign, raising funds and publicity. A year later, the \"horse raffle\" became a major part of the May campaign for 14 years."
-      }
-    ]
-  },
-  {
-    "type": "timeline-header",
-    "title1": "1982-1989",
-    "title2": "Small steps"
-  },
-  {
-    "type": "history-area",
-    "items": [
-      {
-        "itemType": "basic",
-        "title": "The Early 80's",
-        "description": "Listen to Ea anim laboris sit laborum pariatur consectetur nostrud id aliquip cupidatat esse dolor do qui duis."
-      }
-    ]
-  },
-  {
-    "type": "full-video",
-    "videoSrc": "https://www.youtube.com/embed/F2YwQYmwCZQ?si=psOfR2OJoD9kQoCL?start=6&autoplay=1&mute=1",
-    "class": "mr-[120px]"
-  },
-  {
-    "type": "history-area",
-    "items": [
-      {
-        "itemType": "basic",
-        "title": "1981",
-        "description": "“Normalisation” formally adopted at Nulsen based on standards and principles embodied in report submitted by the Murdoch Group."
-      },
-      {
-        "itemType": "basic",
-        "title": "2 October 1983",
-        "description": "MICA formally becomes Nulsen Haven Association Inc (for the training and care of severely and profoundly Intellectually Handicapped People)."
-      },
-      {
-        "itemType": "basic",
-        "title": "January 1987",
-        "description": "Six residents from urgent wait list move into experimental group home at Yorna Road, Kalamunda."
-      },
-      {
-        "itemType": "basic",
-        "title": "July 1987",
-        "description": "Landmark legislation Disability Services Act 1986 comes into effect."
-      },
-      {
-        "itemType": "basic",
-        "title": "April 1988",
-        "description": "Implementation of 10-year Transition Plan commences with key components - the Personal Future Planning process, PASSING workshops and in-service workshops aimed at providing “information and inspiration”."
-      },
-      {
-        "itemType": "basic",
-        "title": "8 May 1989",
-        "description": "The first two residents move into their own home in the community, in Willetton."
-      },
-      {
-        "itemType": "basic",
-        "title": "May 1989",
-        "description": "Independent Living Services commences, with around 40 community activities in place within 2 years."
-      }
-    ]
-  },
-  {
-    "type": "timeline-header",
-    "title1": "1990-1994",
-    "title2": "Big jump"
-  },
-  {
-    "type": "graphical-section",
-    "imageSrc": "./assets/vector/nulsan-logo-yellow.svg",
-    "imageAlt": "nulsan-logo",
-    "class": "min-w-[555px] flex justify-center items-center"
-  }
-]
+    }
+  ]
+}
