@@ -122,15 +122,15 @@
 }
 
 /* ***********HORIZONTAL SECTION START********* */
-
+/* TODO: overflow-x: hidden */
 .horizontal-section-container {
-  overflow-x: hidden;
+  overflow-x: scroll;
 }
 
 .horizontal-section {
   background-image: url(./assets/vector/horizontal-bg.svg);
+  background-size: cover;
   background-repeat: no-repeat;
-  background-size: 100% 100%;
   width: fit-content;
   max-height: 820px;
   height: 100vh;

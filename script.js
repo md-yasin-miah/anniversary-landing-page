@@ -1,260 +1,123 @@
 // GSAP Animation for Nulsen Logo Leaf Shapes
 document.addEventListener('DOMContentLoaded', function () {
-  // Get all the leaf shape paths from the SVG
-  const leafShapes = document.querySelectorAll('.logo path[fill="#8F64AA"], .logo path[fill="#F48066"]');
-
-  // Create a curved path that matches the animation sequence
-  const curvedPath = {
-    curviness: 1.2,
-    values: [
-      { x: -120, y: -40 },
-      { x: -80, y: -60 },
-      { x: -40, y: -50 },
-      { x: 0, y: -30 },
-      { x: 40, y: -10 },
-      { x: 80, y: 10 },
-      { x: 120, y: 30 },
-      { x: 160, y: 50 },
-      { x: 200, y: 70 }
-    ]
-  };
-
-  // Set initial scattered positions (matching the scattered state from your images)
-  const scatteredPositions = [
-    { x: -150, y: -20, scale: 0.7, rotation: -20 },
-    { x: -100, y: -50, scale: 0.8, rotation: 15 },
-    { x: -50, y: -30, scale: 0.6, rotation: -10 },
-    { x: 0, y: -60, scale: 0.9, rotation: 25 },
-    { x: 50, y: -10, scale: 0.7, rotation: -15 },
-    { x: 100, y: -40, scale: 0.8, rotation: 20 },
-    { x: 150, y: 10, scale: 0.6, rotation: -5 },
-    { x: 200, y: -20, scale: 0.9, rotation: 30 },
-    { x: 250, y: 30, scale: 0.7, rotation: -25 },
-    { x: 300, y: 0, scale: 0.8, rotation: 10 },
-    { x: 350, y: 50, scale: 0.6, rotation: -20 },
-    { x: 400, y: 20, scale: 0.9, rotation: 15 }
-  ];
-
-  // Create the main timeline
-  const tl = gsap.timeline({
-    // repeat: -1,
-    repeatDelay: 4
-  });
-
-  // Set initial scattered state (this represents the scattered leaves from your images)
-  leafShapes.forEach((leaf, index) => {
-    const pos = scatteredPositions[index] || scatteredPositions[0];
-    gsap.set(leaf, {
-      x: pos.x,
-      y: pos.y,
-      scale: pos.scale,
-      rotation: pos.rotation,
-      opacity: 1
-    });
-  });
-
-  // Animation sequence: scattered -> move along curve -> cluster together
-  tl.to(leafShapes, {
-    duration: 0.3,
-    opacity: 0.7,
-    scale: 0.8,
-    ease: "power2.in"
+  gsap.to(".horizontal-section-container .horizontal-section", {
+    transform: "translateX(-100%)",
+    scrollTrigger: {
+      trigger: ".horizontal-section-container",
+      scroller: "body",
+      start: "top 0%",
+      end: "top -700%",
+      pin: true,
+      scrub: 2,
+    }
   })
-    .to(leafShapes, {
-      duration: 2.5,
-      motionPath: {
-        path: curvedPath.values,
-        curviness: curvedPath.curviness,
-        autoRotate: true,
-        alignOrigin: [0.5, 0.5]
-      },
-      ease: "power2.inOut",
-      stagger: 0.08
-    }, "-=0.2")
-    .to(leafShapes, {
-      duration: 1.2,
-      x: 0,
-      y: 0,
-      rotation: 0,
-      scale: 1,
-      opacity: 1,
-      ease: "power2.out",
-      stagger: 0.05
-    }, "-=1.5");
+  gsap.to(".event-gallery-text p", {
+    transform: "translateX(-145%)",
+    scrollTrigger: {
+      trigger: ".event-gallery-text",
+      scroller: "body",
+      start: "top 70%",
+      end: "top 5%",
+      scrub: 2,
+    }
+  })
 
-  // Add a burst effect for some leaves (like the scattering effect in your images)
-  const burstLeaves = leafShapes.slice(0, 8); // First 8 leaves will have burst effect
-  tl.to(burstLeaves, {
-    duration: 0.4,
-    scale: 1.15,
-    ease: "power2.out"
-  }, "+=0.3")
-    .to(burstLeaves, {
-      duration: 0.3,
-      scale: 1,
-      ease: "power2.in"
-    });
+  gsap.to(".years-gallery-text p", {
+    transform: "translateX(-43%)",
+    scrollTrigger: {
+      trigger: ".years-gallery-text",
+      scroller: "body",
+      start: "top 60%",
+      end: "top 10%",
+      scrub: 2,
+    }
+  })
 
-  // Add subtle floating animation for all leaves
-  leafShapes.forEach((leaf, index) => {
-    gsap.to(leaf, {
-      duration: 4 + Math.random() * 3,
-      y: -2 + Math.random() * 4,
-      rotation: -0.5 + Math.random() * 1,
-      ease: "power1.inOut",
-      repeat: -1,
-      yoyo: true,
-      delay: index * 0.1
-    });
+
+
+
+
+  // gallery carousel
+  const wrapper = document.querySelector(".wrapper");
+
+  const boxes = gsap.utils.toArray(".box");
+
+  let activeElement;
+  let isAutoScrolling = true;
+  let isDragging = false;
+
+  const loop = horizontalLoop(boxes, {
+    paused: false, // Start with auto-scroll enabled
+    draggable: true, // make it draggable
+    center: true, // active element is the one in the center of the container rather than th left edge
+    speed: 1.4, // Control auto-scroll speed (lower = slower)
+    repeat: -1, // Infinite repeat
+    onChange: (element, index) => { // when the active element changes, this function gets called.
+      activeElement && activeElement.classList.remove("active");
+      element.classList.add("active");
+      activeElement = element;
+    },
+    paddingRight: 0 // Add some padding to ensure smooth transition
   });
 
-  // Add click to restart animation
-  const logoContainer = document.querySelector('.logo');
-  if (logoContainer) {
-    logoContainer.style.cursor = 'pointer';
-    logoContainer.addEventListener('click', () => {
-      tl.restart();
-    });
-  }
+  // Add rotation animation during drag
+  if (loop.draggable) {
+    const cards = document.querySelectorAll('.card');
+    let startX = 0;
 
-  // Add hover effect
-  if (logoContainer) {
-    logoContainer.addEventListener('mouseenter', () => {
-      gsap.to(leafShapes, {
-        duration: 0.4,
-        scale: 1.08,
-        ease: "power2.out"
+    // Function to apply directional rotation based on drag
+    function applyDirectionalRotation(dragDistance) {
+      const rotationAmount = Math.min(Math.abs(dragDistance) * 0.1, -1); // Max 3 degrees
+      const direction = dragDistance > 0 ? 1 : -1;
+
+      cards.forEach((card, index) => {
+        // Apply rotation based on drag direction and card position
+        const cardRotation = rotationAmount * direction * (1 + index * 0.1);
+
+        gsap.to(card, {
+          rotation: cardRotation,
+          duration: 0.5,
+          ease: "power2.out",
+          scrub: 2,
+        });
       });
+    }
+
+    // Function to reset rotation with bouncy effect
+    function resetRotationWithBounce() {
+      cards.forEach((card, index) => {
+        gsap.to(card, {
+          rotation: 0,
+          duration: 0.8,
+          ease: "power2.out",
+          delay: index * 0.05, // Stagger the bounce effect
+          onComplete: () => {
+            // Ensure exact reset
+            gsap.set(card, { rotation: 0 });
+          }
+        });
+      });
+    }
+
+    // Track drag start
+    loop.draggable.addEventListener("press", () => {
+      startX = loop.draggable.x;
+      currentDragDirection = 0;
     });
 
-    logoContainer.addEventListener('mouseleave', () => {
-      gsap.to(leafShapes, {
-        duration: 0.4,
-        scale: 1,
-        ease: "power2.out"
-      });
+    // Update rotation during drag
+    loop.draggable.addEventListener("drag", () => {
+      const dragDistance = loop.draggable.x - startX;
+      currentDragDirection = dragDistance;
+      applyDirectionalRotation(dragDistance);
+    });
+
+    // Bouncy reset on drag end
+    loop.draggable.addEventListener("release", () => {
+      resetRotationWithBounce();
     });
   }
 });
-
-
-gsap.to(".horizontal-section-container .horizontal-section", {
-  transform: "translateX(-100%)",
-  scrollTrigger: {
-    trigger: ".horizontal-section-container",
-    scroller: "body",
-    start: "top 0%",
-    end: "top -700%",
-    pin: true,
-    scrub: 2,
-  }
-})
-gsap.to(".event-gallery-text p", {
-  transform: "translateX(-145%)",
-  scrollTrigger: {
-    trigger: ".event-gallery-text",
-    scroller: "body",
-    start: "top 70%",
-    end: "top 5%",
-    scrub: 2,
-  }
-})
-
-gsap.to(".years-gallery-text p", {
-  transform: "translateX(-43%)",
-  scrollTrigger: {
-    trigger: ".years-gallery-text",
-    scroller: "body",
-    start: "top 60%",
-    end: "top 10%",
-    scrub: 2,
-  }
-})
-
-
-
-
-
-// gallery carousel
-const wrapper = document.querySelector(".wrapper");
-
-const boxes = gsap.utils.toArray(".box");
-
-let activeElement;
-let isAutoScrolling = true;
-let isDragging = false;
-
-const loop = horizontalLoop(boxes, {
-  paused: false, // Start with auto-scroll enabled
-  draggable: true, // make it draggable
-  center: true, // active element is the one in the center of the container rather than th left edge
-  speed: 1.4, // Control auto-scroll speed (lower = slower)
-  repeat: -1, // Infinite repeat
-  onChange: (element, index) => { // when the active element changes, this function gets called.
-    activeElement && activeElement.classList.remove("active");
-    element.classList.add("active");
-    activeElement = element;
-  },
-  paddingRight: 0 // Add some padding to ensure smooth transition
-});
-
-// Add rotation animation during drag
-if (loop.draggable) {
-  const cards = document.querySelectorAll('.card');
-  let startX = 0;
-
-  // Function to apply directional rotation based on drag
-  function applyDirectionalRotation(dragDistance) {
-    const rotationAmount = Math.min(Math.abs(dragDistance) * 0.1, -1); // Max 3 degrees
-    const direction = dragDistance > 0 ? 1 : -1;
-
-    cards.forEach((card, index) => {
-      // Apply rotation based on drag direction and card position
-      const cardRotation = rotationAmount * direction * (1 + index * 0.1);
-
-      gsap.to(card, {
-        rotation: cardRotation,
-        duration: 0.5,
-        ease: "power2.out",
-        scrub: 2,
-      });
-    });
-  }
-
-  // Function to reset rotation with bouncy effect
-  function resetRotationWithBounce() {
-    cards.forEach((card, index) => {
-      gsap.to(card, {
-        rotation: 0,
-        duration: 0.8,
-        ease: "power2.out",
-        delay: index * 0.05, // Stagger the bounce effect
-        onComplete: () => {
-          // Ensure exact reset
-          gsap.set(card, { rotation: 0 });
-        }
-      });
-    });
-  }
-
-  // Track drag start
-  loop.draggable.addEventListener("press", () => {
-    startX = loop.draggable.x;
-    currentDragDirection = 0;
-  });
-
-  // Update rotation during drag
-  loop.draggable.addEventListener("drag", () => {
-    const dragDistance = loop.draggable.x - startX;
-    currentDragDirection = dragDistance;
-    applyDirectionalRotation(dragDistance);
-  });
-
-  // Bouncy reset on drag end
-  loop.draggable.addEventListener("release", () => {
-    resetRotationWithBounce();
-  });
-}
 // boxes.forEach((box, i) => box.addEventListener("click", () => loop.toIndex(i, { duration: 0.8, ease: "power1.inOut" })));
 
 // document.querySelector(".toggle").addEventListener("click", () => wrapper.classList.toggle("show-overflow"));
