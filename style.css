@@ -132,7 +132,6 @@
   background-size: cover;
   background-repeat: no-repeat;
   width: fit-content;
-  max-height: 820px;
   height: 100vh;
   flex-shrink: 0;
   padding-top: var(--horizontal-section-padding-top);
