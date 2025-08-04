@@ -3,6 +3,18 @@ document.addEventListener('DOMContentLoaded', function () {
   //********* menu animation START *********/
   const menuBtn = document.querySelector("#nav-burgar-btn");
   const menuSection = document.querySelector(".menu-section");
+  const navigation = document.querySelector("#navigation");
+  const windowHeight = window.innerHeight - navigation.offsetHeight;
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY >= windowHeight) {
+      navigation.classList.add("fixed");
+      navigation.classList.remove("sticky");
+    } else {
+      navigation.classList.remove("fixed");
+      navigation.classList.add("sticky");
+    }
+  });
   // on toggle menu
   menuBtn.addEventListener("click", () => {
     if (menuBtn.classList.contains("active")) {

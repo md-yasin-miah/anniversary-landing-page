@@ -315,7 +315,20 @@ function initializeGSAPAnimations() {
           trigger.kill();
         }
       });
-
+      // .ruler will will be sticky to the top-0 left-0 of the window
+      // gsap.to(".ruler", {
+      //   position: "sticky",
+      //   top: 0,
+      //   left: 0,
+      //   scrollTrigger: {
+      //     trigger: ".horizontal-section-container",
+      //     scroller: "body",
+      //     start: "top 0%",
+      //     end: "top -700%",
+      //     pin: true,
+      //     scrub: 2,
+      //   }
+      // })
       gsap.to(".horizontal-section-container .horizontal-section", {
         transform: "translateX(-100%)",
         scrollTrigger: {
