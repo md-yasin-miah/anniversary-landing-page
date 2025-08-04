@@ -1,12 +1,52 @@
 // GSAP Animation for Nulsen Logo Leaf Shapes
 document.addEventListener('DOMContentLoaded', function () {
-  // gallery carousel
-  const wrapper = document.querySelector(".wrapper");
-
+  //********* menu animation START *********/
+  const menuBtn = document.querySelector("#nav-burgar-btn");
+  const menuSection = document.querySelector(".menu-section");
+  // on toggle menu
+  menuBtn.addEventListener("click", () => {
+    if (menuBtn.classList.contains("active")) {
+      const containerWidth = menuSection.offsetWidth;
+      const offset = 63.11;
+      const finalX = containerWidth - offset;
+      gsap.to(menuSection, {
+        x: `${finalX}px`,
+        duration: 0.5,
+        ease: "power2.out",
+      });
+      gsap.to(menuSection.querySelector(":first-child"), {
+        opacity: 1,
+        duration: 0.5,
+        ease: "power2.out",
+      });
+      menuBtn.classList.remove("active");
+    } else {
+      gsap.to(menuSection, {
+        x: "0%",
+        duration: 0.5,
+        ease: "power2.out",
+      })
+      gsap.to(menuSection.querySelector(":first-child"), {
+        opacity: 0,
+        duration: 0.5,
+        ease: "power2.out",
+      });
+      menuBtn.classList.add("active");
+    }
+  });
+  // on close menu
+  menuSection.addEventListener("click", () => {
+    console.log("menuSection clicked");
+    gsap.to(menuSection, {
+      x: "100%",
+      duration: 0.5,
+      ease: "power2.out",
+    });
+  });
+  //********* menu animation END *********/
+  //********* gallery slider animation START *********/
   const boxes = gsap.utils.toArray(".box");
-
   let activeElement;
-
   const loop = horizontalLoop(boxes, {
     paused: false, // Start with auto-scroll enabled
     draggable: true, // make it draggable
@@ -78,11 +118,8 @@ document.addEventListener('DOMContentLoaded', function () {
       resetRotationWithBounce();
     });
   }
+  //********* gallery slider animation END *********/
 });
-// document.querySelector(".toggle").addEventListener("click", () => wrapper.classList.toggle("show-overflow"));
-// document.querySelector(".next").addEventListener("click", () => loop.next({ duration: 0.4, ease: "power1.inOut" }));
-// document.querySelector(".prev").addEventListener("click", () => loop.previous({ duration: 0.4, ease: "power1.inOut" }));
-
 function horizontalLoop(items, config) {
   let timeline;
   items = gsap.utils.toArray(items);

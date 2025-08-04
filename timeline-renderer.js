@@ -182,11 +182,11 @@ class TimelineRenderer {
   // Render history item with additional content (column layout)
   renderAdditionalContentHistoryItem(item) {
     const additionalContent = item.additionalContent ? `
-      <div class="additional-content-col">
+      <div class="additional-content-col shrink-0">
         <figure class="${item.additionalContent.figureClass || ''}" style="min-width: ${item.additionalContent.figureWidth || 'auto'};">
           <img src="${item.additionalContent.imageSrc}" alt="${item.additionalContent.imageAlt || ''}">
         </figure>
-        <p class="description">${item.additionalContent.description}</p>
+        <p class="description">${item?.additionalContent?.description || ''}</p>
       </div>
     ` : '';
 
