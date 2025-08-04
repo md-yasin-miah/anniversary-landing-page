@@ -315,22 +315,9 @@ function initializeGSAPAnimations() {
           trigger.kill();
         }
       });
-      // .ruler will will be sticky to the top-0 left-0 of the window
-      // gsap.to(".ruler", {
-      //   position: "sticky",
-      //   top: 0,
-      //   left: 0,
-      //   scrollTrigger: {
-      //     trigger: ".horizontal-section-container",
-      //     scroller: "body",
-      //     start: "top 0%",
-      //     end: "top -700%",
-      //     pin: true,
-      //     scrub: 2,
-      //   }
-      // })
       gsap.to(".horizontal-section-container .horizontal-section", {
-        transform: "translateX(-100%)",
+        // transform: "translateX(-100%)",
+        x: "-100%",
         scrollTrigger: {
           trigger: ".horizontal-section-container",
           scroller: "body",
@@ -340,6 +327,44 @@ function initializeGSAPAnimations() {
           scrub: 2,
         }
       })
+      ScrollTrigger.create({
+        trigger: ".horizontal-section-container",
+        scroller: "body",
+        start: "top top",
+        end: "top -700%",
+        onEnter: () => {
+          gsap.set(".ruler", {
+            position: "fixed",
+            top: 0,
+            left: 0,
+            zIndex: 51,
+          });
+        },
+        onLeave: () => {
+          gsap.set(".ruler", {
+            position: "absolute",
+            top: 0,
+            left: 0,
+            zIndex: 51,
+          });
+        },
+        onEnterBack: () => {
+          gsap.set(".ruler", {
+            position: "fixed",
+            top: 0,
+            left: 0,
+            zIndex: 51,
+          });
+        },
+        onLeaveBack: () => {
+          gsap.set(".ruler", {
+            position: "absolute",
+            top: 0,
+            left: 0,
+            zIndex: 51,
+          });
+        },
+      });
 
       gsap.to(".event-gallery-text p", {
         transform: "translateX(-145%)",

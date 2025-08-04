@@ -1,11 +1,12 @@
 // GSAP Animation for Nulsen Logo Leaf Shapes
 document.addEventListener('DOMContentLoaded', function () {
-  //********* menu animation START *********/
   const menuBtn = document.querySelector("#nav-burgar-btn");
   const menuSection = document.querySelector(".menu-section");
   const navigation = document.querySelector("#navigation");
   const windowHeight = window.innerHeight - navigation.offsetHeight;
+  const horizontalSectionArea = document.querySelector(".horizontal-section-area");
 
+  //********* menu animation START *********/
   window.addEventListener("scroll", () => {
     if (window.scrollY >= windowHeight) {
       navigation.classList.add("fixed");
