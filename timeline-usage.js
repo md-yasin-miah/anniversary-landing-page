@@ -1,18 +1,9 @@
-
-// Timeline Usage Example
-// This file shows how to use the enhanced TimelineRenderer class
-
-// Wait for DOM to be ready
 document.addEventListener('DOMContentLoaded', function () {
-  console.log('DOM loaded, initializing enhanced timeline...');
-
-  // Check if GSAP is available
   if (typeof gsap === 'undefined') {
     console.error('GSAP is not loaded!');
     return;
   }
 
-  // Check if ScrollTrigger is available
   if (typeof ScrollTrigger === 'undefined') {
     console.error('ScrollTrigger is not loaded!');
     return;
@@ -54,229 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }).catch(error => {
     console.error('Failed to load timeline data:', error);
   });
-
-  // Example: Add a new timeline section dynamically
-  function addNewTimelineSection() {
-    const newTimelineSection = {
-      type: 'timeline-section',
-      data: [
-        {
-          type: 'timeline-header',
-          title1: '1995-2000',
-          title2: 'New Era'
-        },
-        {
-          type: 'history-area',
-          items: [
-            {
-              itemType: 'basic',
-              title: '1995',
-              description: 'Example of a dynamically added timeline section.'
-            }
-          ]
-        }
-      ]
-    };
-    timelineRenderer.addSection(newTimelineSection);
-  }
-
-  // Example: Add a new content section dynamically
-  function addNewContentSection() {
-    const newContentSection = {
-      type: 'content-section',
-      data: {
-        type: 'full-video',
-        videoSrc: 'https://www.youtube.com/embed/example?start=6&autoplay=1&mute=1',
-        class: 'mr-[120px]'
-      }
-    };
-    timelineRenderer.addSection(newContentSection);
-  }
-
-  // Example: Add a text content section
-  function addTextContentSection() {
-    const textContentSection = {
-      type: 'content-section',
-      data: {
-        type: 'text-content',
-        title: 'Important Milestone',
-        description: 'This is a significant moment in our history that deserves special attention.',
-        class: 'max-w-[600px] flex flex-col gap-6'
-      }
-    };
-    timelineRenderer.addSection(textContentSection);
-  }
-
-  // Example: Update a section
-  function updateSection() {
-    timelineRenderer.updateSection(0, {
-      type: 'timeline-section',
-      data: [
-        {
-          type: 'timeline-header',
-          title1: '1954-1972 (Updated)',
-          title2: 'The foundations of Nulsen (Updated)'
-        }
-      ]
-    });
-  }
-
-  // Example: Remove a section
-  function removeSection() {
-    const sectionsCount = timelineRenderer.getSectionsData().length;
-    if (sectionsCount > 0) {
-      timelineRenderer.removeSection(sectionsCount - 1);
-    }
-  }
-
-  // Example: Insert section at specific position
-  function insertSectionAtPosition() {
-    const newSection = {
-      type: 'content-section',
-      data: {
-        type: 'image-content',
-        imageSrc: './assets/vector/example.svg',
-        imageAlt: 'Example image',
-        caption: 'This is an example caption',
-        class: 'flex justify-center items-center'
-      }
-    };
-    timelineRenderer.insertSection(1, newSection); // Insert at index 1
-  }
-
-  // Make functions available globally for testing
-  window.timelineRenderer = timelineRenderer;
-  window.addNewTimelineSection = addNewTimelineSection;
-  window.addNewContentSection = addNewContentSection;
-  window.addTextContentSection = addTextContentSection;
-  window.updateSection = updateSection;
-  window.removeSection = removeSection;
-  window.insertSectionAtPosition = insertSectionAtPosition;
-
-  // Example: Add a complete new timeline section with multiple items
-  window.addCompleteTimelineSection = function () {
-    const newTimelineSection = {
-      type: 'timeline-section',
-      data: [
-        {
-          type: 'timeline-header',
-          title1: '2000-2010',
-          title2: 'Digital Transformation Era'
-        },
-        {
-          type: 'history-area',
-          items: [
-            {
-              itemType: 'basic',
-              title: '2000',
-              description: 'Nulsen embraces digital transformation and modern technology.'
-            },
-            {
-              itemType: 'with-figure',
-              imageSrc: './assets/vector/mica-logo.svg',
-              imageAlt: 'Digital logo',
-              figureWidth: '200px',
-              title: 'New digital systems implemented'
-            },
-            {
-              itemType: 'with-video',
-              title: 'The Digital Age',
-              videoSrc: 'https://www.youtube.com/embed/example?start=6&autoplay=1&mute=1'
-            }
-          ]
-        }
-      ]
-    };
-    timelineRenderer.addSection(newTimelineSection);
-  };
-
-  // Example: Add a mixed content section
-  window.addMixedContentSection = function () {
-    const mixedSection = {
-      type: 'content-section',
-      data: {
-        type: 'text-content',
-        title: 'Special Achievement',
-        description: 'This section demonstrates how you can add custom content between timeline sections. It can contain any type of content including text, images, videos, or custom HTML.',
-        class: 'max-w-[800px] flex flex-col gap-8 p-8 bg-white/10 rounded-[20px] backdrop-blur-sm'
-      }
-    };
-    timelineRenderer.addSection(mixedSection);
-  };
-
-  console.log('Timeline functions available globally:');
-  console.log('- addNewTimelineSection() - Add a simple timeline section');
-  console.log('- addNewContentSection() - Add a video content section');
-  console.log('- addTextContentSection() - Add a text content section');
-  console.log('- addCompleteTimelineSection() - Add a complete timeline section with multiple items');
-  console.log('- addMixedContentSection() - Add a mixed content section');
-  console.log('- updateSection(index, data) - Update a specific section');
-  console.log('- removeSection(index) - Remove a specific section');
-  console.log('- insertSectionAtPosition() - Insert section at specific position');
 });
-
-// Helper function to create timeline data from API or other sources
-function createTimelineDataFromAPI(apiData) {
-  const sections = apiData.map(item => {
-    // Transform API data to timeline format
-    switch (item.contentType) {
-      case 'timeline':
-        return {
-          type: 'timeline-section',
-          data: [
-            {
-              type: 'timeline-header',
-              title1: item.period,
-              title2: item.subtitle
-            },
-            {
-              type: 'history-area',
-              items: item.events.map(event => ({
-                itemType: 'basic',
-                title: event.date,
-                description: event.description
-              }))
-            }
-          ]
-        };
-      case 'video':
-        return {
-          type: 'content-section',
-          data: {
-            type: 'full-video',
-            videoSrc: item.videoUrl,
-            class: item.class || ''
-          }
-        };
-      case 'text':
-        return {
-          type: 'content-section',
-          data: {
-            type: 'text-content',
-            title: item.title,
-            description: item.description,
-            class: item.class || ''
-          }
-        };
-      case 'image':
-        return {
-          type: 'content-section',
-          data: {
-            type: 'image-content',
-            imageSrc: item.imageUrl,
-            imageAlt: item.imageAlt,
-            caption: item.caption,
-            class: item.class || ''
-          }
-        };
-      default:
-        return null;
-    }
-  }).filter(Boolean); // Remove null items
-
-  return { sections };
-}
-
 // Example of loading timeline data from a JSON file
 async function loadTimelineDataFromFile(filePath) {
   try {
@@ -305,6 +74,7 @@ async function initializeTimelineWithData() {
 function initializeGSAPAnimations() {
   setTimeout(() => {
     console.log('Initializing GSAP animations...');
+    const tl = gsap.timeline();
     const windowWidth = window.innerWidth;
     const horizontalSection = document.querySelector('.horizontal-section');
     const horizontalSectionWidth = horizontalSection.offsetWidth;
@@ -392,152 +162,161 @@ function initializeGSAPAnimations() {
       })
     }
 
-    // Setup animations for timeline sections
-    const timelineSections = document.querySelectorAll('.timeline-section');
-    timelineSections.forEach((section, index) => {
-      // Add entrance animation for timeline sections
-      gsap.fromTo(section,
-        {
-          opacity: 0,
-          x: 100,
-          scale: 0.95
-        },
-        {
-          opacity: 1,
-          x: 0,
-          scale: 1,
-          duration: 0.8,
-          ease: "power2.out",
-          delay: index * 0.2,
-          scrollTrigger: {
-            trigger: section,
-            start: "top 80%",
-            end: "top 20%",
-            toggleActions: "play none none reverse"
-          }
-        }
-      );
-    });
+    // // Setup animations for timeline sections
+    // const timelineSections = document.querySelectorAll('.timeline-section');
+    // // timelineSections.forEach((section, index) => {
+    // //   // Add entrance animation for timeline sections
+    // //   gsap.fromTo(section,
+    // //     {
+    // //       opacity: 0,
+    // //       x: 100,
+    // //       scale: 0.95
+    // //     },
+    // //     {
+    // //       opacity: 1,
+    // //       x: 0,
+    // //       scale: 1,
+    // //       duration: 0.8,
+    // //       ease: "power2.out",
+    // //       delay: index * 0.2,
+    // //       scrollTrigger: {
+    // //         trigger: section,
+    // //         start: "right 100%",
+    // //         end: "right 0%",
+    // //         toggleActions: "play none none reverse",
+    // //         // markers: true
+    // //       }
+    // //     }
+    // //   );
+    // // });
 
-    // Setup animations for content sections
-    const contentSections = document.querySelectorAll('.text-content-section, .image-content-section');
-    contentSections.forEach((section, index) => {
-      gsap.fromTo(section,
-        {
-          opacity: 0,
-          y: 50,
-          rotation: -2
-        },
-        {
-          opacity: 1,
-          y: 0,
-          rotation: 0,
-          duration: 0.6,
-          ease: "power2.out",
-          delay: index * 0.1,
-          scrollTrigger: {
-            trigger: section,
-            start: "top 80%",
-            end: "top 20%",
-            toggleActions: "play none none reverse"
-          }
-        }
-      );
-    });
-
-    // Setup animations for history items
-    // const historyItems = document.querySelectorAll('.history-item');
-    // historyItems.forEach((item, index) => {
-    //   // Add entrance animation
-    //   gsap.fromTo(item,
+    // // Setup animations for content sections
+    // const contentSections = document.querySelectorAll('.text-content-section, .image-content-section');
+    // contentSections.forEach((section, index) => {
+    //   gsap.fromTo(section,
     //     {
     //       opacity: 0,
-    //       y: 30,
-    //       scale: 0.9
+    //       y: 50,
+    //       rotation: -2
     //     },
     //     {
     //       opacity: 1,
     //       y: 0,
-    //       scale: 1,
-    //       duration: 0.5,
+    //       rotation: 0,
+    //       duration: 0.6,
     //       ease: "power2.out",
-    //       delay: index * 0.05,
+    //       delay: index * 0.1,
     //       scrollTrigger: {
-    //         trigger: item,
+    //         trigger: section,
+    //         start: "top 80%",
+    //         end: "top 20%",
+    //         toggleActions: "play none none reverse"
+    //       }
+    //     }
+    //   );
+    // });
+
+    // Setup animations for history items
+    document.querySelectorAll('.history-item').forEach((item, index) => {
+      const indicator = item.querySelector('.indicator');
+      const content = item.querySelector('.history-item-content');
+
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: item,
+          containerAnimation: ScrollTrigger.getById('parentHorizontal'), // nest into parent scroll
+          start: "left center",
+          end: "left center-=100px",
+          scrub: true,
+          toggleActions: "play reverse play reverse",
+          markers: true
+        }
+      });
+
+      tl.from(indicator, {
+        scale: 0,
+        opacity: 0,
+        transformOrigin: "center center",
+        duration: 0.4,
+        ease: "back.out(1.7)"
+      });
+
+      tl.from(content, {
+        opacity: 0,
+        scale: 0.95,
+        duration: 0.4,
+        ease: "power2.out"
+      }, "<0.1");
+    });
+
+
+    // // Add hover animations
+    // item.addEventListener('mouseenter', () => {
+    //   gsap.to(item, {
+    //     scale: 1.02,
+    //     duration: 0.3,
+    //     ease: "power2.out"
+    //   });
+    // });
+
+    // item.addEventListener('mouseleave', () => {
+    //   gsap.to(item, {
+    //     scale: 1,
+    //     duration: 0.3,
+    //     ease: "power2.out"
+    //   });
+    // });
+    // });
+
+    // Setup timeline indicator animations
+    // const indicators = document.querySelectorAll('.indicator');
+    // indicators.forEach((indicator, index) => {
+    //   gsap.fromTo(indicator,
+    //     {
+    //       scale: 0,
+    //       opacity: 0
+    //     },
+    //     {
+    //       scale: 1,
+    //       opacity: 1,
+    //       duration: 0.4,
+    //       ease: "back.out(1.7)",
+    //       delay: index * 0.05 + 0.2,
+    //       scrollTrigger: {
+    //         trigger: indicator,
     //         start: "top 85%",
     //         end: "top 15%",
     //         toggleActions: "play none none reverse"
     //       }
     //     }
     //   );
-
-    //   // Add hover animations
-    //   item.addEventListener('mouseenter', () => {
-    //     gsap.to(item, {
-    //       scale: 1.02,
-    //       duration: 0.3,
-    //       ease: "power2.out"
-    //     });
-    //   });
-
-    //   item.addEventListener('mouseleave', () => {
-    //     gsap.to(item, {
-    //       scale: 1,
-    //       duration: 0.3,
-    //       ease: "power2.out"
-    //     });
-    //   });
     // });
 
-    // Setup timeline indicator animations
-    const indicators = document.querySelectorAll('.indicator');
-    indicators.forEach((indicator, index) => {
-      gsap.fromTo(indicator,
-        {
-          scale: 0,
-          opacity: 0
-        },
-        {
-          scale: 1,
-          opacity: 1,
-          duration: 0.4,
-          ease: "back.out(1.7)",
-          delay: index * 0.05 + 0.2,
-          scrollTrigger: {
-            trigger: indicator,
-            start: "top 85%",
-            end: "top 15%",
-            toggleActions: "play none none reverse"
-          }
-        }
-      );
-    });
-
     // Setup video animations
-    const videos = document.querySelectorAll('iframe');
-    videos.forEach((video, index) => {
-      gsap.fromTo(video,
-        {
-          opacity: 0,
-          scale: 0.8,
-          rotation: -3
-        },
-        {
-          opacity: 1,
-          scale: 1,
-          rotation: 0,
-          duration: 0.8,
-          ease: "power2.out",
-          delay: index * 0.1 + 0.3,
-          scrollTrigger: {
-            trigger: video,
-            start: "top 80%",
-            end: "top 20%",
-            toggleActions: "play none none reverse"
-          }
-        }
-      );
-    });
+    // const videos = document.querySelectorAll('iframe');
+    // videos.forEach((video, index) => {
+    //   gsap.fromTo(video,
+    //     {
+    //       opacity: 0,
+    //       scale: 0.8,
+    //       rotation: -3
+    //     },
+    //     {
+    //       opacity: 1,
+    //       scale: 1,
+    //       rotation: 0,
+    //       duration: 0.8,
+    //       ease: "power2.out",
+    //       delay: index * 0.1 + 0.3,
+    //       scrollTrigger: {
+    //         trigger: video,
+    //         start: "top 80%",
+    //         end: "top 20%",
+    //         toggleActions: "play none none reverse"
+    //       }
+    //     }
+    //   );
+    // });
 
     console.log('GSAP animations initialized successfully!');
   }, 500);
