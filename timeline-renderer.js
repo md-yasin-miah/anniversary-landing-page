@@ -232,7 +232,7 @@ class TimelineRenderer {
   renderFullVideo(data, container) {
     console.log('renderFullVideo', data);
     const fullVideoHTML = `
-      <div class="h-full ml-12 z-10 ${data.class || ''}">
+      <div class="h-full ml-12 z-10 ${data.class || ''} py-8">
         <iframe class="aspect-video rounded-[20px]" width="auto" height="100%"
           src="${data.videoSrc}" title="YouTube video player" frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

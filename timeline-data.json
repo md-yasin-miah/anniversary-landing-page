@@ -6,7 +6,8 @@
         {
           "type": "timeline-header",
           "title1": "1954-1972",
-          "title2": "The foundations of Nulsen"
+          "title2": "The foundations of Nulsen",
+          "class": "bg-title-gradient-3"
         },
         {
           "type": "history-area",
@@ -132,7 +133,8 @@
         {
           "type": "timeline-header",
           "title1": "1982-1989",
-          "title2": "Small steps"
+          "title2": "Small steps",
+          "class": "bg-title-gradient-3"
         },
         {
           "type": "history-area",
@@ -588,7 +590,8 @@
               "description": "Nulsen Group formed to provide governance model to allow for growth alongside Nulsen Disability Services.",
               "additionalContent": {
                 "imageSrc": "./assets/vector/nulsen-logo-groups.svg",
-                "imageAlt": "nulsen-logo-groups"
+                "imageAlt": "nulsen-logo-groups",
+                "figureWidth": "400px"
               }
             },
             {

@@ -318,11 +318,11 @@ function initializeGSAPAnimations() {
           trigger.kill();
         }
       });
-      gsap.to(horizontalSection, {
+      gsap.to('.horizontal-section-container .horizontal-section', {
         // transform: "translateX(-100%)",
         x: horizontalTransform,
         scrollTrigger: {
-          trigger: horizontalSectionContainer,
+          trigger: ".horizontal-section-container",
           scroller: "body",
           start: "top 0%",
           end: `top -${horizontalSectionWidth * 3 / 5}px`,
@@ -331,7 +331,7 @@ function initializeGSAPAnimations() {
         }
       })
       ScrollTrigger.create({
-        trigger: horizontalSectionContainer,
+        trigger: ".horizontal-section-container",
         scroller: "body",
         start: "top top",
         end: `top -${horizontalSectionWidth * 3 / 5}px`,
