@@ -59,39 +59,89 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
   // Curve drawing animation
-  gsap.fromTo("#myCurve",
-    { drawSVG: "0%" },
-    {
-      drawSVG: "100%",
-      duration: 5,
-      ease: "power1.inOut"
-    }
-  );
-  // Leaves animation
-  // Leaf floating-in animation (from left only)
+  gsap.registerPlugin(ScrollTrigger);
+
+  let masterTL = gsap.timeline({ paused: true });
+
+  // Curve draw animation
+  const path = document.querySelector("#myCurve");
+  const pathLength = path.getTotalLength();
+  gsap.set(path, {
+    strokeDasharray: pathLength,
+    strokeDashoffset: pathLength,
+  });
+
+  // Animate the stroke dash offset from full hidden to 0 (fully visible)
+  masterTL.to(path, {
+    strokeDashoffset: 0,
+    duration: 5,
+    ease: "power1.inOut",
+  });
+
+  // Leaves floating animation
   gsap.utils.toArray(".myCurve-leaf").forEach((leaf, i) => {
-    gsap.from(leaf, {
-      left: "0%", // All leaves come from left
-      top: "0%",
+    masterTL.fromTo(leaf, {
+      left: "0%", // Comes from left
+      top: "0%",  // Optional: add Y movement
       rotateX: gsap.utils.random(-30, 30),
       rotateY: gsap.utils.random(-40, 40),
       rotateZ: gsap.utils.random(-20, 20),
       opacity: 0,
-      duration: 3,
-      delay: 0.6 + i * 0.5, // nice stagger
+    }, {
+      left: getComputedStyle(leaf).left,
+      top: getComputedStyle(leaf).top,
+      rotateX: 0,
+      rotateY: 0,
+      rotateZ: 0,
+      opacity: 1,
+      duration: 3.5,
       ease: "power3.out"
-    });
+    }, "<" + (i > 4 ? 0.2 : i * 0.3)); // stagger
   });
 
-  // Optional: add some idle wind sway after they land
-  // gsap.to(".myCurve-leaf", {
-  //   rotateZ: () => gsap.utils.random(-5, 5),
-  //   y: () => gsap.utils.random(-3, 3),
-  //   duration: 2.5,
-  //   ease: "sine.inOut",
-  //   repeat: -1,
-  //   yoyo: true,
-  //   delay: 3 // after all leaves have arrived
+  let intervalId;
+
+  // 👉 ScrollTrigger to control repeated play every 10s
+  ScrollTrigger.create({
+    trigger: "#myCurve",
+    start: "top 80%",
+    end: "bottom top",
+    onEnter: () => {
+      masterTL.restart();
+      intervalId = setInterval(() => {
+        masterTL.restart();
+      }, 10000); // repeat every 10s
+    },
+    onLeave: () => clearInterval(intervalId),
+    onEnterBack: () => {
+      masterTL.restart();
+      intervalId = setInterval(() => {
+        masterTL.restart();
+      }, 10000);
+    },
+    onLeaveBack: () => clearInterval(intervalId)
+  });
+  // gsap.fromTo("#myCurve",
+  //   { drawSVG: "0%" },
+  //   {
+  //     drawSVG: "100%",
+  //     duration: 5,
+  //     ease: "power1.inOut"
+  //   }
+  // );
+  // // Leaf floating animation
+  // gsap.utils.toArray(".myCurve-leaf").forEach((leaf, i) => {
+  //   gsap.from(leaf, {
+  //     left: "0%", // All leaves come from left
+  //     top: "0%",
+  //     rotateX: gsap.utils.random(-30, 30),
+  //     rotateY: gsap.utils.random(-40, 40),
+  //     rotateZ: gsap.utils.random(-20, 20),
+  //     opacity: 0,
+  //     duration: 3,
+  //     delay: 0.6 + i * 0.5, // nice stagger
+  //     ease: "power3.out"
+  //   });
   // });
   //********* menu animation END *********/
   //********* gallery slider animation START *********/
