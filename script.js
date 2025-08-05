@@ -29,9 +29,9 @@ document.addEventListener('DOMContentLoaded', function () {
       });
       tl.to(".menu-item", {
         opacity: 0,
-        duration: 0.2,
+        duration: 0.1,
         ease: "power2.out",
-      });
+      }, "<");
       tl.to(menuSection.querySelector(":first-child"), {
         opacity: 1,
         duration: 0.1,
@@ -45,16 +45,16 @@ document.addEventListener('DOMContentLoaded', function () {
         duration: 0.1,
         ease: "power2.out",
       });
-      tl.to(".menu-item", {
-        opacity: 1,
-        duration: 0.2,
-        ease: "power2.out",
-      });
       tl.to(menuSection, {
         x: "0%",
-        duration: 0.5,
+        duration: 0.1,
         ease: "power2.out",
       })
+      tl.to(".menu-item", {
+        opacity: 1,
+        duration: 0.5,
+        ease: "power2.out",
+      }, "<");
       menuBtn.classList.add("active");
     }
   });
@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', function () {
       opacity: 1,
       duration: 3,
       ease: "power3.out"
-    }, "<" + (i * 0.3));
+    }, "<" + (i > 4 ? 0.2 : i * 0.3)); // stagger
   });
 
   // ScrollTrigger to control repeating animation
@@ -120,22 +120,6 @@ document.addEventListener('DOMContentLoaded', function () {
     },
     onLeaveBack: () => clearInterval(intervalId)
   });
-
-
-  // // Leaf floating animation
-  // gsap.utils.toArray(".myCurve-leaf").forEach((leaf, i) => {
-  //   gsap.from(leaf, {
-  //     left: "0%", // All leaves come from left
-  //     top: "0%",
-  //     rotateX: gsap.utils.random(-30, 30),
-  //     rotateY: gsap.utils.random(-40, 40),
-  //     rotateZ: gsap.utils.random(-20, 20),
-  //     opacity: 0,
-  //     duration: 3,
-  //     delay: 0.6 + i * 0.5, // nice stagger
-  //     ease: "power3.out"
-  //   });
-  // });
   //********* menu animation END *********/
   //********* gallery slider animation START *********/
   const boxes = gsap.utils.toArray(".box");
