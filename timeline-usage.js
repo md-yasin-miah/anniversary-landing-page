@@ -325,7 +325,7 @@ function initializeGSAPAnimations() {
           trigger: horizontalSectionContainer,
           scroller: "body",
           start: "top 0%",
-          end: `top -${horizontalSectionWidth * 2 / 3}px`,
+          end: `top -${horizontalSectionWidth * 3 / 5}px`,
           pin: true,
           scrub: 2,
         }
@@ -334,7 +334,7 @@ function initializeGSAPAnimations() {
         trigger: horizontalSectionContainer,
         scroller: "body",
         start: "top top",
-        end: `top -${horizontalSectionWidth * 2 / 3}px`,
+        end: `top -${horizontalSectionWidth * 3 / 5}px`,
         onEnter: () => {
           gsap.set(".ruler", {
             position: "fixed",
@@ -374,8 +374,8 @@ function initializeGSAPAnimations() {
         scrollTrigger: {
           trigger: ".event-gallery-text",
           scroller: "body",
-          start: "top 70%",
-          end: "top 5%",
+          start: "top 90%",
+          end: "top 30%",
           scrub: 2,
         }
       })
@@ -385,8 +385,8 @@ function initializeGSAPAnimations() {
         scrollTrigger: {
           trigger: ".years-gallery-text",
           scroller: "body",
-          start: "top 60%",
-          end: "top 10%",
+          start: "top 90%",
+          end: "top 30%",
           scrub: 2,
         }
       })
