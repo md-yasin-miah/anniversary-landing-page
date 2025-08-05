@@ -46,7 +46,7 @@
       <div class="flex flex-col md:flex-row justify-center items-center h-full px-4 md:px-0">
         <div class="w-full md:w-fit h-fit flex flex-col md:flex-row justify-center items-center gap-10 md:gap-12">
           <!-- Nulsen Logo -->
-          <div class="w-72 h-36 md:w-[350px] md:h-[160px]">
+          <div id="logo" class="w-72 h-36 md:w-[350px] md:h-[160px]">
             <svg class="logo w-full h-full" xmlns="http://www.w3.org/2000/svg" width="370" height="185"
               viewBox="0 0 370 185" fill="none">
               <path
@@ -124,7 +124,7 @@
             </svg>
           </div>
           <!-- 70 Years Logo -->
-          <div class="md:w-[214.89px] md:h-[181.45px]">
+          <div id="70-years-logo" class="md:w-[214.89px] md:h-[181.45px]">
             <svg xmlns="http://www.w3.org/2000/svg" width="216" height="183" viewBox="0 0 216 183" fill="none">
               <path
                 d="M71.0867 3.07598C47.9367 15.646 23.2467 25.056 1.00672 29.826C0.566719 29.016 0.386719 27.926 0.386719 26.386V8.24598C0.386719 4.25598 1.55672 3.07598 5.55672 3.07598H71.0867Z"
@@ -159,7 +159,8 @@
       </div>
       <div class="absolute left-0 -bottom-10 z-50 max-sm:hidden">
         <div class="relative">
-          <svg width="1440" height="179" xmlns="http://www.w3.org/2000/svg">
+          <svg id="myCurveSvg" viewBox="0 0 1440 179" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"
+            class="w-full h-auto">
             <path id="myCurve"
               d="M-62 100.166C-50.3428 62.191 52.8506 -51.6043 271.803 39.5348C545.493 153.459 563.11 224.511 870.251 130.334C1177.39 36.1565 1381.14 19.4476 1445 25.5235"
               stroke="#43324E" fill="transparent" />

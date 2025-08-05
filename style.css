@@ -17,12 +17,13 @@
   --horizontal-section-history-item-gap: 40px;
 }
 
-/* .container {
-  width: 100%;
-  padding-right: 2.5rem;
-  padding-left: 2.5rem;
-  margin: 0 auto;
-} */
+#myCurveSvg {
+  width: 100vw;
+  height: 100%;
+  /* or auto, or whatever height fits your design */
+  display: block;
+}
+
 .container {
   margin-left: auto;
   margin-right: auto;

@@ -58,18 +58,17 @@ document.addEventListener('DOMContentLoaded', function () {
       menuBtn.classList.add("active");
     }
   });
-  // Curve drawing animation
   gsap.registerPlugin(ScrollTrigger);
 
-  let masterTL = gsap.timeline({ paused: true });
-
-  // Curve draw animation
   const path = document.querySelector("#myCurve");
   const pathLength = path.getTotalLength();
+
   gsap.set(path, {
     strokeDasharray: pathLength,
     strokeDashoffset: pathLength,
   });
+
+  let masterTL = gsap.timeline({ paused: true });
 
   // Animate the stroke dash offset from full hidden to 0 (fully visible)
   masterTL.to(path, {
@@ -78,11 +77,11 @@ document.addEventListener('DOMContentLoaded', function () {
     ease: "power1.inOut",
   });
 
-  // Leaves floating animation
+  // Leaves animation same as before...
   gsap.utils.toArray(".myCurve-leaf").forEach((leaf, i) => {
     masterTL.fromTo(leaf, {
-      left: "0%", // Comes from left
-      top: "0%",  // Optional: add Y movement
+      left: "0%",
+      top: "0%",
       rotateX: gsap.utils.random(-30, 30),
       rotateY: gsap.utils.random(-40, 40),
       rotateZ: gsap.utils.random(-20, 20),
@@ -94,14 +93,14 @@ document.addEventListener('DOMContentLoaded', function () {
       rotateY: 0,
       rotateZ: 0,
       opacity: 1,
-      duration: 3.5,
+      duration: 3,
       ease: "power3.out"
-    }, "<" + (i > 4 ? 0.2 : i * 0.3)); // stagger
+    }, "<" + (i * 0.3));
   });
 
+  // ScrollTrigger to control repeating animation
   let intervalId;
 
-  // 👉 ScrollTrigger to control repeated play every 10s
   ScrollTrigger.create({
     trigger: "#myCurve",
     start: "top 80%",
@@ -110,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function () {
       masterTL.restart();
       intervalId = setInterval(() => {
         masterTL.restart();
-      }, 10000); // repeat every 10s
+      }, 10000);
     },
     onLeave: () => clearInterval(intervalId),
     onEnterBack: () => {
@@ -121,14 +120,8 @@ document.addEventListener('DOMContentLoaded', function () {
     },
     onLeaveBack: () => clearInterval(intervalId)
   });
-  // gsap.fromTo("#myCurve",
-  //   { drawSVG: "0%" },
-  //   {
-  //     drawSVG: "100%",
-  //     duration: 5,
-  //     ease: "power1.inOut"
-  //   }
-  // );
+
+
   // // Leaf floating animation
   // gsap.utils.toArray(".myCurve-leaf").forEach((leaf, i) => {
   //   gsap.from(leaf, {
