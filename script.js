@@ -58,14 +58,40 @@ document.addEventListener('DOMContentLoaded', function () {
       menuBtn.classList.add("active");
     }
   });
-  // on close menu
-  // menuSection.addEventListener("click", () => {
-  //   console.log("menuSection clicked");
-  //   gsap.to(menuSection, {
-  //     x: "100%",
-  //     duration: 0.5,
-  //     ease: "power2.out",
-  //   });
+  // Curve drawing animation
+  gsap.fromTo("#myCurve",
+    { drawSVG: "0%" },
+    {
+      drawSVG: "100%",
+      duration: 5,
+      ease: "power1.inOut"
+    }
+  );
+  // Leaves animation
+  // Leaf floating-in animation (from left only)
+  gsap.utils.toArray(".myCurve-leaf").forEach((leaf, i) => {
+    gsap.from(leaf, {
+      left: "0%", // All leaves come from left
+      top: "0%",
+      rotateX: gsap.utils.random(-30, 30),
+      rotateY: gsap.utils.random(-40, 40),
+      rotateZ: gsap.utils.random(-20, 20),
+      opacity: 0,
+      duration: 3,
+      delay: 0.6 + i * 0.5, // nice stagger
+      ease: "power3.out"
+    });
+  });
+
+  // Optional: add some idle wind sway after they land
+  // gsap.to(".myCurve-leaf", {
+  //   rotateZ: () => gsap.utils.random(-5, 5),
+  //   y: () => gsap.utils.random(-3, 3),
+  //   duration: 2.5,
+  //   ease: "sine.inOut",
+  //   repeat: -1,
+  //   yoyo: true,
+  //   delay: 3 // after all leaves have arrived
   // });
   //********* menu animation END *********/
   //********* gallery slider animation START *********/
