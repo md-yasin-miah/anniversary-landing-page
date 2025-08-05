@@ -17,12 +17,32 @@
   --horizontal-section-history-item-gap: 40px;
 }
 
-.section-container {
+/* .container {
   width: 100%;
-  /* max-width: 1356px; */
   padding-right: 2.5rem;
   padding-left: 2.5rem;
   margin: 0 auto;
+} */
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  width: 100%
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem
+  }
 }
 
 .counter-section {
@@ -343,6 +363,157 @@
 
 
 /* ***********HORIZONTAL SECTION END********* */
+
+/* Responsive Gallery Carousel */
+@media (max-width: 768px) {
+  .box {
+    padding: 8px;
+    min-width: 120px;
+  }
+
+  .card {
+    min-width: 200px;
+    min-height: 200px;
+  }
+
+  .box:nth-child(even) {
+    margin-top: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .box {
+    padding: 5px;
+    min-width: 100px;
+  }
+
+  .card {
+    min-width: 150px;
+    min-height: 150px;
+  }
+
+  .box:nth-child(even) {
+    margin-top: 10px;
+  }
+}
+
+/* Responsive Text Adjustments */
+@media (max-width: 768px) {
+
+  .event-gallery-text,
+  .years-gallery-text {
+    overflow-x: auto;
+  }
+
+  .event-gallery-text div,
+  .years-gallery-text div {
+    white-space: nowrap;
+    min-width: max-content;
+  }
+}
+
+/* Responsive Button Adjustments */
+@media (max-width: 640px) {
+  .primary-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Responsive Container Adjustments */
+@media (max-width: 1024px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+}
+
+/* Additional Responsive Improvements */
+@media (max-width: 768px) {
+  .second-part-body {
+    background-size: cover;
+    background-position: center;
+  }
+
+  /* Improve text readability on mobile */
+  .text-offWhite {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Better spacing for mobile */
+  .gap-6 {
+    gap: 1.25rem;
+  }
+
+  .gap-8 {
+    gap: 1.75rem;
+  }
+
+  .gap-12 {
+    gap: 2.5rem;
+  }
+
+  .gap-16 {
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 480px) {
+
+  /* Even better spacing for small mobile */
+  .gap-6 {
+    gap: 1rem;
+  }
+
+  .gap-8 {
+    gap: 1.5rem;
+  }
+
+  .gap-12 {
+    gap: 2rem;
+  }
+
+  .gap-16 {
+    gap: 2.5rem;
+  }
+
+  /* Improve button touch targets */
+  .primary-btn {
+    min-height: 44px;
+    padding: 12px 18px;
+  }
+}
+
+/* Ensure images are responsive */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Improve iframe responsiveness */
+iframe {
+  max-width: 100%;
+}
+
+/* Better focus states for accessibility */
+.primary-btn:focus {
+  outline: 2px solid #8E64AA;
+  outline-offset: 2px;
+}
+
+/* Smooth transitions for better UX */
+.card,
+.primary-btn,
+.founder-card {
+  transition: all 0.3s ease-in-out;
+}
 
 /* Founder Cards Hover Effect */
 .founder-card {

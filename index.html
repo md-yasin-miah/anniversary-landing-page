@@ -18,7 +18,20 @@
             offWhite: '#F9F7EC',
             bgColor: '#E7E5CC',
             purple: '#8E64AA',
-          }
+          },
+          // screens: {
+          //   'xs': '475px',
+          //   'sm': '640px',
+          //   'md': '768px',
+          //   'lg': '1024px',
+          //   'xl': '1280px',
+          //   '2xl': '1536px',
+          // },
+          // spacing: {
+          //   '18': '4.5rem',
+          //   '88': '22rem',
+          //   '128': '32rem',
+          // }
         }
       }
     }
@@ -27,15 +40,15 @@
 
 <body class="bg-bgColor">
   <!-- ***********FIRST PART********* -->
-  <div>
+  <div class="w-full">
     <!-- *** Hero section START *** -->
-    <div class="w-full h-[calc(100vh-128px)]">
-      <div class="flex justify-center items-center h-full">
-        <div class="w-fit h-fit flex justify-center items-center gap-12">
+    <div class="w-full h-[calc(100vh-128px)] md:h-[calc(100vh-128px)]">
+      <div class="flex flex-col md:flex-row justify-center items-center h-full px-4 md:px-0">
+        <div class="w-full md:w-fit h-fit flex flex-col md:flex-row justify-center items-center gap-6 md:gap-12">
           <!-- Nulsen Logo -->
-          <div class="w-[368.66px] h-[183.58px]">
-            <svg class="logo" xmlns="http://www.w3.org/2000/svg" width="370" height="185" viewBox="0 0 370 185"
-              fill="none">
+          <div class="w-48 h-24 md:w-[368.66px] md:h-[183.58px]">
+            <svg class="logo w-full h-full" xmlns="http://www.w3.org/2000/svg" width="370" height="185"
+              viewBox="0 0 370 185" fill="none">
               <path
                 d="M216.506 67.922C224.855 68.982 231.086 74.5729 230.797 76.4247C230.509 78.2765 223.193 82.1673 214.844 81.1175C206.496 80.0676 200.194 74.1605 200.553 72.6148C200.913 71.0691 208.158 66.8797 216.506 67.922Z"
                 fill="#8F64AA" />
@@ -105,13 +118,13 @@
             </svg>
           </div>
           <!-- Divider -->
-          <div>
+          <div class="hidden md:block">
             <svg xmlns="http://www.w3.org/2000/svg" width="3" height="161" viewBox="0 0 3 161" fill="none">
               <path d="M1.38672 1.05078L1.38673 159.652" stroke="#D5D3BB" stroke-width="2" stroke-linecap="round" />
             </svg>
           </div>
           <!-- 70 Years Logo -->
-          <div class="w-[214.89px] h-[181.45px]">
+          <div class="md:w-[214.89px] md:h-[181.45px]">
             <svg xmlns="http://www.w3.org/2000/svg" width="216" height="183" viewBox="0 0 216 183" fill="none">
               <path
                 d="M71.0867 3.07598C47.9367 15.646 23.2467 25.056 1.00672 29.826C0.566719 29.016 0.386719 27.926 0.386719 26.386V8.24598C0.386719 4.25598 1.55672 3.07598 5.55672 3.07598H71.0867Z"
@@ -145,52 +158,55 @@
         </div>
       </div>
     </div>
-    <!-- *** Hero section END *** -->
     <div class="counter-section">
       <div id="navigation"
-        class="px-[43px] py-[35px] flex justify-between items-center bg-bgColor w-full sticky top-0 z-40 rounded-b-[20px]">
-        <img src="./assets/vector/logo-with-years.svg" alt="logo-with-years">
+        class="px-4 md:px-[43px] py-4 md:py-[35px] flex justify-between items-center bg-bgColor w-full sticky top-0 z-40 rounded-b-[20px]">
+        <img src="./assets/vector/logo-with-years.svg" alt="logo-with-years" class="w-32 md:w-auto">
         <div data-property-1="Default" class="inline-flex justify-start items-center rounded-md overflow-hidden">
           <div class="flex menu-section justify-center items-center translate-x-[calc(100%-63.11px)]">
             <button
-              class="menu h-12 px-4 py-3.5 bg-colorbtn rounded-md inline-flex flex-col justify-center items-center gap-2.5">
-              <div class="text-nowrap text-orange-50 text-sm font-medium font-['Acherus_Grotesque']">menu</div>
+              class="menu h-10 md:h-12 px-3 md:px-4 py-2.5 md:py-3.5 bg-colorbtn rounded-md inline-flex flex-col justify-center items-center gap-2 md:gap-2.5">
+              <div class="text-nowrap text-orange-50 text-xs md:text-sm font-medium font-['Acherus_Grotesque']">menu
+              </div>
             </button>
-            <div class="flex items-center gap-2 pr-2 menu-item">
+            <div class="flex items-center gap-1 md:gap-2 pr-1 md:pr-2 menu-item">
               <button
-                class="h-12 px-4 py-3.5 bg-colorbtn rounded-md inline-flex flex-col justify-center items-center gap-2.5">
-                <div class="text-nowrap text-orange-50 text-sm font-medium font-['Acherus_Grotesque']">menu 1</div>
+                class="h-10 md:h-12 px-3 md:px-4 py-2.5 md:py-3.5 bg-colorbtn rounded-md inline-flex flex-col justify-center items-center gap-2 md:gap-2.5">
+                <div class="text-nowrap text-orange-50 text-xs md:text-sm font-medium font-['Acherus_Grotesque']">menu 1
+                </div>
               </button>
               <button
-                class="h-12 px-4 py-3.5 bg-colorbtn rounded-md inline-flex flex-col justify-center items-center gap-2.5">
-                <div class="text-nowrap text-orange-50 text-sm font-medium font-['Acherus_Grotesque']">menu 2</div>
+                class="h-10 md:h-12 px-3 md:px-4 py-2.5 md:py-3.5 bg-colorbtn rounded-md inline-flex flex-col justify-center items-center gap-2 md:gap-2.5">
+                <div class="text-nowrap text-orange-50 text-xs md:text-sm font-medium font-['Acherus_Grotesque']">menu 2
+                </div>
               </button>
               <button
-                class="h-12 px-4 py-3.5 bg-colorbtn rounded-md inline-flex flex-col justify-center items-center gap-2.5">
-                <div class="text-nowrap text-orange-50 text-sm font-medium font-['Acherus_Grotesque']">menu 2</div>
+                class="h-10 md:h-12 px-3 md:px-4 py-2.5 md:py-3.5 bg-colorbtn rounded-md inline-flex flex-col justify-center items-center gap-2 md:gap-2.5">
+                <div class="text-nowrap text-orange-50 text-xs md:text-sm font-medium font-['Acherus_Grotesque']">menu 2
+                </div>
               </button>
             </div>
           </div>
           <button id="nav-burgar-btn"
-            class="p-3.5 bg-colorbtn z-10 rounded-md inline-flex flex-col justify-center items-center gap-2.5">
-            <div class="flex flex-col justify-start items-start gap-2">
-              <div class="w-5 h-[1px] outline-offset-[-1.20px] bg-white"></div>
-              <div class="w-5 h-[1px] outline-offset-[-1.20px] bg-white"></div>
-              <div class="w-5 h-[1px] outline-offset-[-1.20px] bg-white"></div>
+            class="p-2.5 md:p-3.5 bg-colorbtn z-10 rounded-md inline-flex flex-col justify-center items-center gap-2 md:gap-2.5">
+            <div class="flex flex-col justify-start items-start gap-1.5 md:gap-2">
+              <div class="w-4 md:w-5 h-[1px] outline-offset-[-1.20px] bg-white"></div>
+              <div class="w-4 md:w-5 h-[1px] outline-offset-[-1.20px] bg-white"></div>
+              <div class="w-4 md:w-5 h-[1px] outline-offset-[-1.20px] bg-white"></div>
             </div>
           </button>
         </div>
       </div>
-      <div class="w-full h-[calc(100vh+20px)]">
-        <div class="w-full h-fit px-10 py-52 flex gap-8 justify-center items-center">
-          <div>
+      <div class="w-full md:h-[calc(100vh+20px)] h-fit">
+        <div class="container h-fit py-20 md:py-52 flex flex-col md:flex-row gap-8 justify-center items-center">
+          <div class="w-full md:w-auto">
             <div
-              class="w-96 text-center justify-start text-orange-50 text-6xl font-semibold font-['Acherus_Grotesque'] leading-[72px]">
+              class="w-full md:w-96 text-center justify-start text-orange-50 text-4xl md:text-6xl font-semibold font-['Acherus_Grotesque'] leading-[48px] md:leading-[72px]">
               64%
             </div>
-            <div class="w-36 h-0 outline outline-1 m-auto outline-offset-[-0.50px] outline-white"></div>
+            <div class="w-24 md:w-36 h-0 outline outline-1 m-auto outline-offset-[-0.50px] outline-white"></div>
             <div
-              class="w-96 mt-12 text-center justify-start text-orange-50 text-base font-medium font-['Acherus_Grotesque'] leading-normal">
+              class="w-full md:w-96 mt-8 md:mt-12 text-center justify-start text-orange-50 text-sm md:text-base font-medium font-['Acherus_Grotesque'] leading-normal px-4 md:px-0">
               Culpa veniam adipisicing laborum esse enim dolore commodo nisi non adipisicing ad. Irure ea laborum
               reprehenderit
               Lorem eiusmod ea non nulla Lorem ex sunt in consectetur eu. Cillum excepteur officia ullamco laboris. Ad
@@ -198,27 +214,27 @@
               cupidatat dolor.
             </div>
           </div>
-          <div>
+          <div class="w-full md:w-auto">
             <div
-              class="w-96 text-center justify-start text-orange-50 text-6xl font-semibold font-['Acherus_Grotesque'] leading-[72px]">
+              class="w-full md:w-96 text-center justify-start text-orange-50 text-4xl md:text-6xl font-semibold font-['Acherus_Grotesque'] leading-[48px] md:leading-[72px]">
               1 IN 5
             </div>
-            <div class="w-36 h-0 outline outline-1 m-auto outline-offset-[-0.50px] outline-white"></div>
+            <div class="w-24 md:w-36 h-0 outline outline-1 m-auto outline-offset-[-0.50px] outline-white"></div>
             <div
-              class="w-96 mt-12 text-center justify-start text-orange-50 text-base font-medium font-['Acherus_Grotesque'] leading-normal">
+              class="w-full md:w-96 mt-8 md:mt-12 text-center justify-start text-orange-50 text-sm md:text-base font-medium font-['Acherus_Grotesque'] leading-normal px-4 md:px-0">
               Culpa veniam adipisicing laborum esse enim dolore commodo nisi non adipisicing ad. Irure ea laborum
               reprehenderit
               Lorem eiusmod ea non nulla Lorem ex sunt in consectetur eu. Cillum excepteur officia ullamco laboris. Ad
               eu
               cupidatat dolor.</div>
           </div>
-          <div>
+          <div class="w-full md:w-auto">
             <div
-              class="w-96 text-center justify-start text-orange-50 text-6xl font-semibold font-['Acherus_Grotesque'] leading-[72px]">
+              class="w-full md:w-96 text-center justify-start text-orange-50 text-4xl md:text-6xl font-semibold font-['Acherus_Grotesque'] leading-[48px] md:leading-[72px]">
               684</div>
-            <div class="w-36 h-0 outline outline-1 m-auto outline-offset-[-0.50px] outline-white"></div>
+            <div class="w-24 md:w-36 h-0 outline outline-1 m-auto outline-offset-[-0.50px] outline-white"></div>
             <div
-              class="w-96 mt-12 text-center justify-start text-orange-50 text-base font-medium font-['Acherus_Grotesque'] leading-normal">
+              class="w-full md:w-96 mt-8 md:mt-12 text-center justify-start text-orange-50 text-sm md:text-base font-medium font-['Acherus_Grotesque'] leading-normal px-4 md:px-0">
               Culpa veniam adipisicing laborum esse enim dolore commodo nisi non adipisicing ad. Irure ea laborum
               reprehenderit
               Lorem eiusmod ea non nulla Lorem ex sunt in consectetur eu. Cillum excepteur officia ullamco laboris. Ad
@@ -229,29 +245,33 @@
       </div>
     </div>
     <div class="w-full bg-gradient-to-b from-[#5576BA] to-[#97B9F8] relative">
-      <div class="w-full relative pt-[175px] px-[68px] justify-center flex gap-[214px]">
-        <div class="w-96 inline-flex flex-col justify-start items-start gap-9 relative">
-          <img class="w-96 h-96 rounded-[300px]" src="./assets/images/ceo-profile.png" />
-          <div class="self-stretch flex flex-col justify-center items-center gap-2.5">
+      <div
+        class="w-full relative pt-20 md:pt-[175px] px-4 md:px-[68px] justify-center flex flex-col md:flex-row gap-8 md:gap-[214px]">
+        <div
+          class="w-full md:w-96 inline-flex flex-col justify-start items-center md:items-start gap-6 md:gap-9 relative">
+          <img class="w-64 h-64 md:w-96 md:h-96 rounded-[300px] object-cover" src="./assets/images/ceo-profile.png" />
+          <div class="self-stretch flex flex-col justify-center items-center gap-2 md:gap-2.5">
             <h3
-              class="w-full text-center text-offWhite text-2xl font-bold font-['Acherus_Grotesque'] leading-8 break-words">
+              class="w-full text-center text-offWhite text-xl md:text-2xl font-bold font-['Acherus_Grotesque'] leading-6 md:leading-8 break-words">
               Caroline Watt
             </h3>
             <p
-              class="w-full text-center text-offWhite text-[17.33px] font-['Acherus_Grotesque'] font-medium leading-[24.26px] break-words">
+              class="w-full text-center text-offWhite text-sm md:text-[17.33px] font-['Acherus_Grotesque'] font-medium leading-[20px] md:leading-[24.26px] break-words">
               Chief Executive Officer<br />Nulsen Disability Services
             </p>
           </div>
           <img src="./assets/vector/bg-shape-ceo-section.svg" alt="bg-shape"
-            class="absolute -bottom-[55px] -right-[90px]">
+            class="absolute -bottom-[55px] -right-[90px] hidden md:block">
         </div>
-        <div class="w-[678.86px] flex flex-col justify-start items-start gap-10 relative">
+        <div class="w-full md:w-[678.86px] flex flex-col justify-start items-start gap-6 md:gap-10 relative">
           <div class="w-full h-full">
-            <p class="text-offWhite text-2xl font-medium font-['Acherus_Grotesque'] leading-8 break-words">
+            <p
+              class="text-offWhite text-lg md:text-2xl font-medium font-['Acherus_Grotesque'] leading-6 md:leading-8 break-words">
               On 18 October 2024, Nulsen celebrates 70 years of supporting people with complex disability in Western
               Australia.
             </p>
-            <p class="text-offWhite text-base font-medium font-['Acherus_Grotesque'] leading-6 break-words mt-4">
+            <p
+              class="text-offWhite text-sm md:text-base font-medium font-['Acherus_Grotesque'] leading-5 md:leading-6 break-words mt-4">
               Starting as the family-founded Mental Incurable Children's Association in 1954, Nulsen has evolved and
               adapted to an everchanging landscape into a leading organisation that today, supports around 200 people
               across 60+ residential settings with a 700-strong team of employees.<br />
@@ -271,117 +291,127 @@
               We hope that we've given you the best we've had, and that you've breathed easier because of our existence.
             </p>
           </div>
-          <img src="./assets/vector/signature.svg" alt="signature" class="absolute -bottom-[72px]">
+          <img src="./assets/vector/signature.svg" alt="signature"
+            class="absolute md:-bottom-[72px] -bottom-[55px] max-sm:w-[25%]">
         </div>
       </div>
       <img src="./assets/vector/Homes.svg" alt="homes" class="w-full">
-      <img src="./assets/vector/Homes1.svg" alt="homes" class='absolute z-10 bottom-0 translate-y-[72%] left-0'>
+      <img src="./assets/vector/Homes1.svg" alt="homes"
+        class='absolute z-10 bottom-0 translate-y-[72%] left-0 msx-sm:w-[40%]'>
       <img src="./assets/vector/Homes2.svg" alt="homes"
-        class='absolute z-10 bottom-0 translate-y-[72%] left-1/2 -translate-x-1/2 '>
-      <img src="./assets/vector/Homes3.svg" alt="homes" class='absolute z-10 bottom-0 translate-y-[78%] right-0'>
+        class='absolute z-10 bottom-0 translate-y-[72%] left-1/2 -translate-x-1/2 msx-sm:w-[40%]'>
+      <img src="./assets/vector/Homes3.svg" alt="homes"
+        class='absolute z-10 bottom-0 translate-y-[78%] right-0 msx-sm:w-[40%]'>
     </div>
-    <div class="w-full h-full md:pt-[270px] relative">
+    <div class="w-full h-full pt-20 md:pt-[270px] relative">
       <img class="w-full h-full" src="./assets/images/book-mockup-bg.png" />
       <div
-        class="left-[43px] absolute top-[38%] w-fit text-offWhite text-[52px] font-['Acherus_Grotesque'] font-medium leading-[90px] break-words">
+        class="left-4 md:left-[43px] absolute top-[38%] w-fit text-offWhite text-2xl md:text-[52px] font-['Acherus_Grotesque'] font-medium leading-[36px] md:leading-[90px] break-words px-4 md:px-0">
         Let's step back in time…
       </div>
     </div>
     <!-- Founder section -->
-    <div class="w-full h-full px-[36px] py-[120px] flex flex-col justify-start items-center gap-[10px]">
-      <div class="w-full flex flex-col justify-start items-center gap-[72px]">
-        <div class="w-full flex justify-between items-end">
+    <div
+      class="w-full h-full px-4 md:px-[36px] py-16 md:py-[120px] flex flex-col justify-start items-center gap-[10px]">
+      <div class="w-full flex flex-col justify-start items-center gap-12 md:gap-[72px]">
+        <div class="w-full flex flex-col md:flex-row justify-between items-start md:items-end gap-6 md:gap-0">
           <div
-            class="flex-1 text-[#22221B] text-[90px] font-['Acherus_Grotesque'] font-medium leading-[90px] break-words">
+            class="w-full md:flex-1 text-[#22221B] text-4xl md:text-[90px] font-['Acherus_Grotesque'] font-medium leading-[40px] md:leading-[90px] break-words">
             Our <br />Founders
           </div>
           <div
-            class="w-[542.36px] text-[#22221B] text-[16px] font-['Acherus_Grotesque'] font-medium leading-[24px] break-words">
+            class="w-full md:w-[542.36px] text-[#22221B] text-sm md:text-[16px] font-['Acherus_Grotesque'] font-medium leading-[20px] md:leading-[24px] break-words">
             Frank Anderson's news story won a quick response from other parents. Within a month the Mentally Incurable
             Children's Association was formed 'to establish a special institution to care for microcephalic children and
             so ease the strain on parents'.
           </div>
         </div>
-        <div class="w-full flex flex-col justify-start items-start gap-[36px]">
-          <div class="text-[#22221B] text-[20px] font-['Acherus_Grotesque'] font-medium leading-[28px] break-words">
+        <div class="w-full flex flex-col justify-start items-start gap-6 md:gap-[36px]">
+          <div
+            class="text-[#22221B] text-lg md:text-[20px] font-['Acherus_Grotesque'] font-medium leading-[24px] md:leading-[28px] break-words">
             Here are the inaugural office bearers:
           </div>
-          <div class="w-full flex justify-start items-center gap-[32px]">
+          <div class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-[32px] justify-items-center">
             <div data-property-1="BLACK"
-              class="founder-card w-[431.55px] pb-[24px] bg-black/5 rounded-[20px] flex flex-col justify-start items-start gap-[44px] relative overflow-hidden cursor-pointer">
+              class="founder-card w-full max-w-full md:max-w-[431.55px] pb-4 md:pb-[24px] bg-black/5 rounded-[20px] flex flex-col justify-start items-start gap-6 md:gap-[44px] relative overflow-hidden cursor-pointer hover:shadow-lg transition-all duration-300">
               <img
-                class="w-[431.55px] h-[426.52px] bg-[#D9D9D9] rounded-t-[20px] object-cover transition-all duration-300"
+                class="w-full h-full md:h-[426.52px] bg-[#D9D9D9] rounded-t-[20px] object-cover transition-all duration-300"
                 src="./assets/images/founder-1.png" alt="Francis John Anderson" />
               <div
                 class="founder-overlay absolute inset-0 backdrop-blur-md bg-white/20 flex flex-col justify-center items-center opacity-0 transition-opacity duration-300 ease-in-out">
-                <div class="text-white text-center px-6">
-                  <h4 class="text-xl font-bold mb-3 drop-shadow-lg">Francis John Anderson</h4>
-                  <p class="text-sm leading-relaxed drop-shadow-lg">As Secretary, Francis played a crucial role in
+                <div class="text-white text-center px-4 md:px-6">
+                  <h4 class="text-lg md:text-xl font-bold mb-2 md:mb-3 drop-shadow-lg">Francis John Anderson</h4>
+                  <p class="text-xs md:text-sm leading-relaxed drop-shadow-lg">As Secretary, Francis played a crucial
+                    role in
                     establishing the
                     foundation of Nulsen Disability Services. His dedication to helping families with children who
                     have complex disabilities led to the creation of an organization that would support thousands of
                     people over the next 70 years.</p>
                 </div>
               </div>
-              <div class="w-full flex flex-col justify-center items-center gap-[9.53px]">
+              <div class="w-full flex flex-col justify-center items-center gap-2 md:gap-[9.53px] px-2 md:px-0">
                 <div
-                  class="w-full text-center text-[#22221B] text-[24px] font-['Acherus_Grotesque'] font-bold leading-[32px] break-words">
+                  class="w-full text-center text-[#22221B] text-lg md:text-[24px] font-['Acherus_Grotesque'] font-bold leading-[24px] md:leading-[32px] break-words">
                   Francis John Anderson
                 </div>
                 <div
-                  class="w-full text-center text-[#22221B] text-[18px] font-['Acherus_Grotesque'] font-medium leading-[28px] break-words">
+                  class="w-full text-center text-[#22221B] text-sm md:text-[18px] font-['Acherus_Grotesque'] font-medium leading-[20px] md:leading-[28px] break-words">
                   Secretary
                 </div>
               </div>
             </div>
             <div data-property-1="Variant3"
-              class="founder-card w-[429px] pb-[24px] bg-black/5 rounded-[20px] flex flex-col justify-start items-end gap-[44px] relative overflow-hidden cursor-pointer">
-              <img class="w-[429px] h-[426.52px] bg-[#D9D9D9] rounded-t-[20px] object-cover transition-all duration-300"
+              class="founder-card w-full max-w-full md:max-w-[431.55px] pb-4 md:pb-[24px] bg-black/5 rounded-[20px] flex flex-col justify-start items-start gap-6 md:gap-[44px] relative overflow-hidden cursor-pointer hover:shadow-lg transition-all duration-300">
+              <img
+                class="w-full h-full md:h-[426.52px] bg-[#D9D9D9] rounded-t-[20px] object-cover transition-all duration-300"
                 src="./assets/images/founder-2.png" alt="William Robert Burns" />
               <div
                 class="founder-overlay absolute inset-0 backdrop-blur-md bg-white/20 flex flex-col justify-center items-center opacity-0 transition-opacity duration-300 ease-in-out">
-                <div class="text-white text-center px-6">
-                  <h4 class="text-xl font-bold mb-3 drop-shadow-lg">William Robert Burns</h4>
-                  <p class="text-sm leading-relaxed drop-shadow-lg">As the first President of Nulsen, William provided
+                <div class="text-white text-center px-4 md:px-6">
+                  <h4 class="text-lg md:text-xl font-bold mb-2 md:mb-3 drop-shadow-lg">William Robert Burns</h4>
+                  <p class="text-xs md:text-sm leading-relaxed drop-shadow-lg">As the first President of Nulsen, William
+                    provided
                     strong
                     leadership during the organization's formative years. His vision and commitment to creating better
                     support systems for families with children who have complex disabilities set the standard for
                     Nulsen's mission and values.</p>
                 </div>
               </div>
-              <div class="w-full flex flex-col justify-center items-center gap-[9.53px]">
+              <div class="w-full flex flex-col justify-center items-center gap-2 md:gap-[9.53px] px-2 md:px-0">
                 <div
-                  class="w-full text-center text-[#22221B] text-[24px] font-['Acherus_Grotesque'] font-bold leading-[32px] break-words">
+                  class="w-full text-center text-[#22221B] text-lg md:text-[24px] font-['Acherus_Grotesque'] font-bold leading-[24px] md:leading-[32px] break-words">
                   William Robert Burns
                 </div>
                 <div
-                  class="w-full text-center text-[#22221B] text-[18px] font-['Acherus_Grotesque'] font-medium leading-[28px] break-words">
+                  class="w-full text-center text-[#22221B] text-sm md:text-[18px] font-['Acherus_Grotesque'] font-medium leading-[20px] md:leading-[28px] break-words">
                   President
                 </div>
               </div>
             </div>
             <div data-property-1="Variant3"
-              class="founder-card w-[431.55px] pb-[24px] bg-black/5 rounded-[20px] flex flex-col justify-start items-start gap-[44px] relative overflow-hidden cursor-pointer">
-              <img class="w-[429px] h-[426.52px] bg-[#D9D9D9] rounded-t-[20px] object-cover transition-all duration-300"
+              class="founder-card w-full max-w-full md:max-w-[431.55px] pb-4 md:pb-[24px] bg-black/5 rounded-[20px] flex flex-col justify-start items-start gap-6 md:gap-[44px] relative overflow-hidden cursor-pointer hover:shadow-lg transition-all duration-300 md:col-span-2 lg:col-span-1">
+              <img
+                class="w-full h-full md:h-[426.52px] bg-[#D9D9D9] rounded-t-[20px] object-cover transition-all duration-300"
                 src="./assets/images/founder-3.png" alt="Lloyd John Summerton" />
               <div
                 class="founder-overlay absolute inset-0 backdrop-blur-md bg-white/20 flex flex-col justify-center items-center opacity-0 transition-opacity duration-300 ease-in-out">
-                <div class="text-white text-center px-6">
-                  <h4 class="text-xl font-bold mb-3 drop-shadow-lg">Lloyd John Summerton</h4>
-                  <p class="text-sm leading-relaxed drop-shadow-lg">As Treasurer, Lloyd ensured the financial stability
+                <div class="text-white text-center px-4 md:px-6">
+                  <h4 class="text-lg md:text-xl font-bold mb-2 md:mb-3 drop-shadow-lg">Lloyd John Summerton</h4>
+                  <p class="text-xs md:text-sm leading-relaxed drop-shadow-lg">As Treasurer, Lloyd ensured the financial
+                    stability
                     of Nulsen
                     during its early years. His careful management of resources and commitment to transparency helped
                     establish the organization as a trusted and sustainable provider of disability services in Western
                     Australia.</p>
                 </div>
               </div>
-              <div class="w-full flex flex-col justify-center items-center gap-[9.53px]">
+              <div class="w-full flex flex-col justify-center items-center gap-2 md:gap-[9.53px] px-2 md:px-0">
                 <div
-                  class="w-full text-center text-[#22221B] text-[24px] font-['Acherus_Grotesque'] font-bold leading-[32px] break-words">
+                  class="w-full text-center text-[#22221B] text-lg md:text-[24px] font-['Acherus_Grotesque'] font-bold leading-[24px] md:leading-[32px] break-words">
                   Lloyd John Summerton
                 </div>
                 <div
-                  class="w-full text-center text-[#22221B] text-[18px] font-['Acherus_Grotesque'] font-medium leading-[28px] break-words">
+                  class="w-full text-center text-[#22221B] text-sm md:text-[18px] font-['Acherus_Grotesque'] font-medium leading-[20px] md:leading-[28px] break-words">
                   Treasurer
                 </div>
               </div>
@@ -455,8 +485,8 @@
             </figure>
           </div>
           <!-- ####
-            Dynamic timeline and content sections will be rendered here by TimelineRenderer
-            #### -->
+              Dynamic timeline and content sections will be rendered here by TimelineRenderer
+              #### -->
         </div>
       </div>
     </div>
@@ -464,32 +494,33 @@
   <!-- ***********HORIZONTAL SECTION END********* -->
   <!-- ***********SECOND PART********* -->
   <div class="second-part-body">
-    <div class="py-[120px] section-container">
-      <div
-        style="height: fit-content; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 36px; display: inline-flex">
+    <div class="py-8 md:py-16 lg:py-[120px] container">
+      <div class="flex flex-col justify-start items-start gap-6 md:gap-8 lg:gap-[36px]">
         <div
-          style="align-self: stretch; color: #F9F7EC; font-size: 64px; font-family: Acherus Grotesque; font-weight: 600; line-height: 72px; word-wrap: break-word">
+          class="w-full text-offWhite text-3xl md:text-5xl lg:text-[64px] font-['Acherus_Grotesque'] font-semibold leading-tight md:leading-tight lg:leading-[72px] break-words">
           Our Partners and supporters</div>
         <div
-          style="align-self: stretch; color: #F9F7EC; font-size: 36px; font-family: Acherus Grotesque; font-weight: 600; line-height: 44px; word-wrap: break-word">
-          Thank you to our residents, families, partners and <br />supporters who have been with us in our 70 years.
+          class="w-full text-offWhite text-lg md:text-2xl lg:text-[36px] font-['Acherus_Grotesque'] font-semibold leading-tight md:leading-tight lg:leading-[44px] break-words">
+          Thank you to our residents, families, partners and <br class="hidden md:block" />supporters who have been with
+          us in our 70 years.
         </div>
       </div>
     </div>
     <div class="w-full h-fit overflow-hidden border-y-[1px] border-offWhite event-gallery-text">
       <div
-        class="text-[#F9F7EC] w-full text-[181.67px] font-['Acherus_Grotesque'] font-medium leading-[181.67px] text-nowrap py-[17px] px-[42px]">
+        class="text-offWhite w-full text-4xl md:text-6xl lg:text-[181.67px] font-['Acherus_Grotesque'] font-medium leading-tight md:leading-tight lg:leading-[181.67px] text-nowrap py-2 md:py-4 lg:py-[17px] px-4 md:px-8 lg:px-[42px]">
         <p>EVENT GALLERY • EVENT GALLERY</p>
       </div>
     </div>
-    <div class="h-full flex justify-between gap-9 items-start section-container py-[120px]">
-      <div class="w-[661px] flex flex-col justify-start items-start gap-[36px]">
+    <div
+      class="container h-full flex flex-col lg:flex-row justify-between gap-6 md:gap-8 lg:gap-9 items-start py-8 md:py-16 lg:py-[120px]">
+      <div class="w-full lg:w-[661px] flex flex-col justify-start items-start gap-6 md:gap-8 lg:gap-[36px]">
         <div
-          class="w-full text-[#F9F7EC] text-[64px] font-['Acherus_Grotesque'] font-semibold leading-[72px] break-words">
+          class="w-full text-offWhite text-3xl md:text-5xl lg:text-[64px] font-['Acherus_Grotesque'] font-semibold leading-tight md:leading-tight lg:leading-[72px] break-words">
           70th Anniversary Event
         </div>
         <div
-          class="w-full text-[#F9F7EC] text-[16px] font-['Acherus_Grotesque'] font-medium leading-[24px] break-words">
+          class="w-full text-offWhite text-sm md:text-base lg:text-[16px] font-['Acherus_Grotesque'] font-medium leading-relaxed md:leading-relaxed lg:leading-[24px] break-words">
           Incididunt elit excepteur reprehenderit reprehenderit magna eu ipsum commodo magna ut labore aliquip
           commodo.
           Cillum commodo anim ipsum veniam. Non proident esse elit qui do cillum consequat officia nostrud consectetur
@@ -498,7 +529,8 @@
           nisi minim ipsum aute Lorem.
         </div>
       </div>
-      <div class="w-[661px] h-[371.81px] bg-[#D9D9D9] rounded-[20px] flex flex-col justify-between items-end">
+      <div
+        class="w-full lg:w-[661px] h-48 md:h-64 lg:h-[371.81px] overflow-hidden rounded-[20px] flex flex-col justify-between items-end">
         <iframe class="w-full h-full" src="https://www.youtube.com/embed/M1cXcW5c778" title="The 60&#39;s"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -506,17 +538,17 @@
       </div>
     </div>
     <!-- gallery carousel -->
-    <div class="w-full h-full flex flex-col justify-start items-center gap-[72px]">
-      <div class="w-full flex flex-col justify-start items-start gap-[36px] section-container">
+    <div class="w-full h-full flex flex-col justify-start items-center gap-12 md:gap-16 lg:gap-[72px]">
+      <div class="container w-full flex flex-col justify-start items-start gap-6 md:gap-8 lg:gap-[36px]">
         <div
-          class="w-[661px] text-[#F9F7EC] text-[64px] font-['Acherus_Grotesque'] font-semibold leading-[72px] break-words">
+          class="w-full lg:w-[661px] text-offWhite text-3xl md:text-5xl lg:text-[64px] font-['Acherus_Grotesque'] font-semibold leading-tight md:leading-tight lg:leading-[72px] break-words">
           Aliqua ut sit voluptate</div>
-        <div class="w-full flex justify-between items-end">
+        <div class="w-full flex flex-col lg:flex-row justify-between items-start lg:items-end gap-4 lg:gap-0">
           <div
-            class="w-[661px] text-[#F9F7EC] text-[16px] font-['Acherus_Grotesque'] font-medium leading-[24px] break-words">
+            class="w-full lg:w-[661px] text-offWhite text-sm md:text-base lg:text-[16px] font-['Acherus_Grotesque'] font-medium leading-relaxed md:leading-relaxed lg:leading-[24px] break-words">
             Incididunt elit excepteur reprehenderit reprehenderit magna eu ipsum commodo magna ut labore aliquip
             commodo. Cillum commodo anim ipsum veniam. Non proident esse elit qui do.</div>
-          <button class="primary-btn">
+          <button class="primary-btn w-full lg:w-auto">
             View event gallery
           </button>
         </div>
@@ -586,26 +618,29 @@
       </div>
     </div>
     <!-- story section -->
-    <div class="py-[120px] section-container">
-      <div class="flex items-end gap-[55px] relative">
-        <div class="rounded-[20px] bg-black/5 backdrop-blur-[2px] absolute bottom-0 left-0 w-full h-[432px]"></div>
+    <div class="container py-8 md:py-16 lg:py-[120px]">
+      <div class="flex flex-col lg:flex-row items-end gap-6 md:gap-8 lg:gap-[55px] relative">
         <div
-          class="max-w-[630px] flex-1 flex flex-col h-fit justify-start items-start gap-9 p-9 rounded-[20px] bg-black/5 backdrop-blur-[2px]">
-          <div class="text-offWhite text-[64px] font-['Acherus_Grotesque'] font-semibold leading-[72px] break-words">
+          class="rounded-[20px] bg-black/5 backdrop-blur-[2px] absolute bottom-0 left-0 w-full h-32 md:h-48 lg:h-[432px]">
+        </div>
+        <div
+          class="max-w-full lg:max-w-[630px] flex-1 flex flex-col h-fit justify-start items-start gap-6 md:gap-8 lg:gap-9 p-6 md:p-8 lg:p-9 rounded-[20px] bg-black/5 backdrop-blur-[2px]">
+          <div
+            class="text-offWhite text-3xl md:text-5xl lg:text-[64px] font-['Acherus_Grotesque'] font-semibold leading-tight md:leading-tight lg:leading-[72px] break-words">
             Aute non pariatur</div>
           <div
-            class="w-full text-offWhite text-[16px] font-['Acherus_Grotesque'] font-medium leading-[24px] break-words">
+            class="w-full text-offWhite text-sm md:text-base lg:text-[16px] font-['Acherus_Grotesque'] font-medium leading-relaxed md:leading-relaxed lg:leading-[24px] break-words">
             Aute non pariatur ullamco laboris incididunt quis incididunt eu ipsum duis sint esse elit
             in.<br /><br />In esse aute cillum quis ex enim eiusmod sint consectetur dolore ut laboris ex. Lorem
             adipisicing aute pariatur reprehenderit anim ea esse. Amet excepteur nulla adipisicing magna
             exercitation
             enim laborum laboris. Labore duis Lorem veniam id et ullamco ad consequat culpa pariatur et magna qui.
           </div>
-          <div class="flex justify-start items-start gap-9">
-            <button class="primary-btn">
+          <div class="flex flex-col sm:flex-row justify-start items-start gap-4 md:gap-6 lg:gap-9 w-full">
+            <button class="primary-btn w-full sm:w-auto">
               Read now
             </button>
-            <button class="primary-btn">
+            <button class="primary-btn w-full sm:w-auto">
               Order your copy
             </button>
           </div>
@@ -618,72 +653,72 @@
     <!-- years gallery text -->
     <div class="w-full h-fit overflow-hidden border-y-[1px] border-offWhite years-gallery-text">
       <div
-        class="text-[#F9F7EC] w-full text-[181.67px] font-['Acherus_Grotesque'] font-medium leading-[181.67px] text-nowrap py-[17px] px-[42px]">
+        class="text-offWhite w-full text-4xl md:text-6xl lg:text-[181.67px] font-['Acherus_Grotesque'] font-medium leading-tight md:leading-tight lg:leading-[181.67px] text-nowrap py-2 md:py-4 lg:py-[17px] px-4 md:px-8 lg:px-[42px]">
         <p>70 YEARS • 70 YEARS</p>
       </div>
     </div>
-    <div class="pt-[130px] overflow-hidden">
-      <div class="flex gap-10 justify-between section-container translate-y-9 !pr-0">
-        <div class="max-w-[428px] flex flex-col h-fit justify-start items-start gap-9">
-          <div class="text-[#F9F7EC] text-[64px] font-['Acherus_Grotesque'] font-semibold leading-[72px] break-words">
+    <div class="pt-8 md:pt-16 lg:pt-[130px] overflow-hidden">
+      <div
+        class="container flex flex-col lg:flex-row gap-6 md:gap-8 lg:gap-10 justify-between translate-y-2 md:translate-y-4 lg:translate-y-9 !pr-0">
+        <div
+          class="pr-[0.75rem] md:pr-0 max-w-full lg:max-w-[428px] flex flex-col h-fit justify-start items-start gap-6 md:gap-8 lg:gap-9">
+          <div
+            class="text-offWhite text-3xl md:text-5xl lg:text-[64px] font-['Acherus_Grotesque'] font-semibold leading-tight md:leading-tight lg:leading-[72px] break-words">
             70 years of support</div>
-          <div class="self-stretch flex flex-col h-fit justify-start items-start gap-9">
+          <div class="self-stretch flex flex-col h-fit justify-start items-start gap-6 md:gap-8 lg:gap-9">
             <div
-              class="w-full text-[#F9F7EC] text-[24px] font-['Acherus_Grotesque'] font-medium leading-[32px] break-words">
+              class="w-full text-offWhite text-lg md:text-xl lg:text-[24px] font-['Acherus_Grotesque'] font-medium leading-tight md:leading-tight lg:leading-[32px] break-words">
               Dignissim orci tortor platea enim pulvinar morbi dui.</div>
             <div
-              class="w-full text-[#F9F7EC] text-[16px] font-['Acherus_Grotesque'] font-medium leading-[24px] break-words">
+              class="w-full text-offWhite text-sm md:text-base lg:text-[16px] font-['Acherus_Grotesque'] font-medium leading-relaxed md:leading-relaxed lg:leading-[24px] break-words">
               Sit elementum dolor tempor diam tempus purus cursus tellus. Et hac facilisis in nibh odio erat non
               tristique. Elit et quis et eget risus commodo aliquet.</div>
-            <button class="primary-btn">
+            <button class="primary-btn w-full lg:w-auto">
               Lorem Ipsum CTA
             </button>
           </div>
         </div>
         <figure class="w-full h-full">
-          <img src="./assets/vector/70.svg" alt="70 years of support">
+          <img src="./assets/vector/70.svg" alt="70 years of support" class="w-full h-auto">
         </figure>
       </div>
     </div>
     <!-- footer section -->
     <div
-      style="background: rgba(34, 34, 27, 0.05); width: 100%; height: 100%; padding-left: 41px; padding-right: 41px; padding-top: 40px; padding-bottom: 40px; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 10px; display: inline-flex">
-      <div class="w-full flex flex-col justify-start items-start gap-6 section-container">
-        <div
-          style="align-self: stretch; flex-direction: column; justify-content: center; align-items: center; gap: 12px; display: flex">
-          <div style="align-self: stretch; height: 0px; outline: 1px #D5D3BB solid; outline-offset: -0.50px"></div>
-          <div class="w-full flex justify-between items-center px-[82px] flex-inline">
+      class="bg-[rgba(34,34,27,0.05)] w-full h-full px-4 md:px-8 lg:px-[41px] py-6 md:py-8 lg:py-[40px] flex flex-col justify-start items-start gap-2 md:gap-4 lg:gap-[10px]">
+      <div class="container w-full flex flex-col justify-start items-start gap-4 md:gap-6">
+        <div class="self-stretch flex flex-col justify-center items-center gap-2 md:gap-3">
+          <div class="self-stretch h-0 outline outline-[1px] outline-[#D5D3BB] -outline-offset-[0.5px]"></div>
+          <div
+            class="w-full flex flex-col lg:flex-row justify-between items-center gap-4 lg:gap-0 px-4 md:px-8 lg:px-[82px]">
             <div data-property-1="Default"
-              style="padding-left: 24px; padding-right: 24px; padding-top: 12px; padding-bottom: 12px; border-radius: 120px; outline: 1px var(--Off-White-Cream, #E7E5CC) solid; outline-offset: -1px; justify-content: center; align-items: center; gap: 10px; display: flex">
-              <div style="justify-content: flex-start; align-items: center; gap: 5px; display: flex">
+              class="px-4 md:px-6 py-2 md:py-3 rounded-[120px] outline outline-[1px] outline-[#E7E5CC] -outline-offset-[1px] flex justify-center items-center gap-2 md:gap-[10px]">
+              <div class="flex justify-start items-center gap-1 md:gap-[5px]">
                 <svg xmlns="http://www.w3.org/2000/svg" width="12" height="7" viewBox="0 0 12 7" fill="none">
                   <path d="M11.0273 5.80664L6.02734 0.80664L1.02734 5.80664" stroke="#E7E5CC" stroke-width="1.25"
                     stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
-                <div
-                  style="color: var(--Off-White-Cream, #E7E5CC); font-size: 12px; font-family: Acherus Grotesque; font-weight: 500; word-wrap: break-word">
+                <div class="text-[#E7E5CC] text-xs font-['Acherus_Grotesque'] font-medium break-words">
                   Back to Top</div>
               </div>
             </div>
             <div
-              style="width: 0px; height: 120px; transform-origin: top left; outline: 1px #D5D3BB solid; outline-offset: -0.50px">
+              class="hidden lg:block w-0 h-[120px] origin-top-left outline outline-[1px] outline-[#D5D3BB] -outline-offset-[0.5px]">
             </div>
-            <div
-              style="flex-direction: column; justify-content: flex-start; align-items: center; gap: 12px; display: inline-flex">
+            <div class="flex flex-col justify-start items-center gap-2 md:gap-3">
               <figure>
-                <img src="./assets/vector/logo-off-white.svg" alt="">
+                <img src="./assets/vector/logo-off-white.svg" alt="" class="w-32 md:w-40 lg:w-auto">
               </figure>
               <div
-                style="width: 411.51px; text-align: center; color: var(--Off-White-Cream, #E7E5CC); font-size: 10px; font-family: Acherus Grotesque; font-weight: 600; line-height: 14px; letter-spacing: 0.25px; word-wrap: break-word">
+                class="w-full lg:w-[411.51px] text-center text-[#E7E5CC] text-xs md:text-[10px] font-['Acherus_Grotesque'] font-semibold leading-relaxed md:leading-[14px] tracking-[0.25px] break-words">
                 Nulsen Disability Services acknowledges the Traditional Owners of the lands on which we operate. We
                 pay
                 our respects to Elders past, present and emerging. We extend these respects to all First Nations
                 Peoples
                 we work alongside.</div>
-              <div
-                style="border-radius: 120px; justify-content: flex-start; align-items: center; gap: 12px; display: inline-flex">
+              <div class="rounded-[120px] flex justify-start items-center gap-2 md:gap-3">
                 <div
-                  style="padding: 10px; background: var(--Off-White-Cream, #E7E5CC); border-radius: 120px; justify-content: flex-start; align-items: center; gap: 10px; display: flex">
+                  class="p-2 md:p-[10px] bg-[#E7E5CC] rounded-[120px] flex justify-start items-center gap-2 md:gap-[10px]">
                   <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
                     <path
                       d="M5.82734 0.958984H14.2273C17.4273 0.958984 20.0273 3.55898 20.0273 6.75898V15.159C20.0273 16.6972 19.4163 18.1725 18.3286 19.2602C17.2409 20.3479 15.7656 20.959 14.2273 20.959H5.82734C2.62734 20.959 0.0273438 18.359 0.0273438 15.159V6.75898C0.0273438 5.22073 0.638414 3.74548 1.72612 2.65777C2.81384 1.57005 4.28909 0.958984 5.82734 0.958984ZM5.62734 2.95898C4.67256 2.95898 3.75689 3.33827 3.08176 4.0134C2.40663 4.68853 2.02734 5.60421 2.02734 6.55898V15.359C2.02734 17.349 3.63734 18.959 5.62734 18.959H14.4273C15.3821 18.959 16.2978 18.5797 16.9729 17.9046C17.6481 17.2294 18.0273 16.3138 18.0273 15.359V6.55898C18.0273 4.56898 16.4173 2.95898 14.4273 2.95898H5.62734ZM15.2773 4.45898C15.6089 4.45898 15.9268 4.59068 16.1612 4.8251C16.3956 5.05952 16.5273 5.37746 16.5273 5.70898C16.5273 6.0405 16.3956 6.35845 16.1612 6.59287C15.9268 6.82729 15.6089 6.95898 15.2773 6.95898C14.9458 6.95898 14.6279 6.82729 14.3935 6.59287C14.159 6.35845 14.0273 6.0405 14.0273 5.70898C14.0273 5.37746 14.159 5.05952 14.3935 4.8251C14.6279 4.59068 14.9458 4.45898 15.2773 4.45898ZM10.0273 5.95898C11.3534 5.95898 12.6252 6.48577 13.5629 7.42345C14.5006 8.36113 15.0273 9.6329 15.0273 10.959C15.0273 12.2851 14.5006 13.5568 13.5629 14.4945C12.6252 15.4322 11.3534 15.959 10.0273 15.959C8.70126 15.959 7.42949 15.4322 6.49181 14.4945C5.55413 13.5568 5.02734 12.2851 5.02734 10.959C5.02734 9.6329 5.55413 8.36113 6.49181 7.42345C7.42949 6.48577 8.70126 5.95898 10.0273 5.95898ZM10.0273 7.95898C9.23169 7.95898 8.46863 8.27505 7.90602 8.83766C7.34341 9.40027 7.02734 10.1633 7.02734 10.959C7.02734 11.7546 7.34341 12.5177 7.90602 13.0803C8.46863 13.6429 9.23169 13.959 10.0273 13.959C10.823 13.959 11.5861 13.6429 12.1487 13.0803C12.7113 12.5177 13.0273 11.7546 13.0273 10.959C13.0273 10.1633 12.7113 9.40027 12.1487 8.83766C11.5861 8.27505 10.823 7.95898 10.0273 7.95898Z"
@@ -691,7 +726,7 @@
                   </svg>
                 </div>
                 <div
-                  style="width: 40px; padding: 10px; background: var(--Off-White-Cream, #E7E5CC); border-radius: 120px; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 10px; display: inline-flex">
+                  class="w-8 md:w-10 p-2 md:p-[10px] bg-[#E7E5CC] rounded-[120px] flex flex-col justify-start items-start gap-2 md:gap-[10px]">
                   <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
                     <path
                       d="M20.0273 10.9844C20.0273 5.46438 15.5473 0.984375 10.0273 0.984375C4.50734 0.984375 0.0273438 5.46438 0.0273438 10.9844C0.0273438 15.8244 3.46734 19.8544 8.02734 20.7844V13.9844H6.02734V10.9844H8.02734V8.48438C8.02734 6.55438 9.59734 4.98438 11.5273 4.98438H14.0273V7.98438H12.0273C11.4773 7.98438 11.0273 8.43437 11.0273 8.98438V10.9844H14.0273V13.9844H11.0273V20.9344C16.0773 20.4344 20.0273 16.1744 20.0273 10.9844Z"
@@ -699,7 +734,7 @@
                   </svg>
                 </div>
                 <div
-                  style="width: 40px; height: 40px; padding: 10px; background: var(--Off-White-Cream, #E7E5CC); border-radius: 120px; flex-direction: column; justify-content: center; align-items: center; gap: 10px; display: inline-flex">
+                  class="w-8 md:w-10 h-8 md:h-10 p-2 md:p-[10px] bg-[#E7E5CC] rounded-[120px] flex flex-col justify-center items-center gap-2 md:gap-[10px]">
                   <svg xmlns="http://www.w3.org/2000/svg" width="21" height="15" viewBox="0 0 21 15" fill="none">
                     <path
                       d="M8.02734 10.959L13.2173 7.95898L8.02734 4.95898V10.959ZM19.5873 3.12898C19.7173 3.59898 19.8073 4.22898 19.8673 5.02898C19.9373 5.82898 19.9673 6.51898 19.9673 7.11898L20.0273 7.95898C20.0273 10.149 19.8673 11.759 19.5873 12.789C19.3373 13.689 18.7573 14.269 17.8573 14.519C17.3873 14.649 16.5273 14.739 15.2073 14.799C13.9073 14.869 12.7173 14.899 11.6173 14.899L10.0273 14.959C5.83734 14.959 3.22734 14.799 2.19734 14.519C1.29734 14.269 0.717344 13.689 0.467344 12.789C0.337344 12.319 0.247344 11.689 0.187344 10.889C0.117344 10.089 0.0873437 9.39898 0.0873437 8.79898L0.0273438 7.95898C0.0273438 5.76898 0.187344 4.15898 0.467344 3.12898C0.717344 2.22898 1.29734 1.64898 2.19734 1.39898C2.66734 1.26898 3.52734 1.17898 4.84734 1.11898C6.14734 1.04898 7.33734 1.01898 8.43734 1.01898L10.0273 0.958984C14.2173 0.958984 16.8273 1.11898 17.8573 1.39898C18.7573 1.64898 19.3373 2.22898 19.5873 3.12898Z"
@@ -707,7 +742,7 @@
                   </svg>
                 </div>
                 <div
-                  style="padding: 10px; background: var(--Off-White-Cream, #E7E5CC); border-radius: 120px; justify-content: flex-start; align-items: center; gap: 10px; display: flex">
+                  class="p-2 md:p-[10px] bg-[#E7E5CC] rounded-[120px] flex justify-start items-center gap-2 md:gap-[10px]">
                   <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none">
                     <path
                       d="M16.0273 0.958984C16.5578 0.958984 17.0665 1.1697 17.4416 1.54477C17.8166 1.91984 18.0273 2.42855 18.0273 2.95898V16.959C18.0273 17.4894 17.8166 17.9981 17.4416 18.3732C17.0665 18.7483 16.5578 18.959 16.0273 18.959H2.02734C1.49691 18.959 0.988203 18.7483 0.61313 18.3732C0.238057 17.9981 0.0273438 17.4894 0.0273438 16.959V2.95898C0.0273438 2.42855 0.238057 1.91984 0.61313 1.54477C0.988203 1.1697 1.49691 0.958984 2.02734 0.958984H16.0273ZM15.5273 16.459V11.159C15.5273 10.2944 15.1839 9.46518 14.5725 8.85382C13.9611 8.24245 13.1319 7.89898 12.2673 7.89898C11.4173 7.89898 10.4273 8.41898 9.94734 9.19898V8.08898H7.15734V16.459H9.94734V11.529C9.94734 10.759 10.5673 10.129 11.3373 10.129C11.7086 10.129 12.0647 10.2765 12.3273 10.539C12.5898 10.8016 12.7373 11.1577 12.7373 11.529V16.459H15.5273ZM3.90734 6.51898C4.35291 6.51898 4.78022 6.34199 5.09528 6.02692C5.41034 5.71186 5.58734 5.28455 5.58734 4.83898C5.58734 3.90898 4.83734 3.14898 3.90734 3.14898C3.45913 3.14898 3.02927 3.32704 2.71233 3.64397C2.3954 3.96091 2.21734 4.39077 2.21734 4.83898C2.21734 5.76898 2.97734 6.51898 3.90734 6.51898ZM5.29734 16.459V8.08898H2.52734V16.459H5.29734Z"
@@ -717,46 +752,38 @@
               </div>
             </div>
             <div
-              style="width: 0px; height: 120px; transform-origin: top left; outline: 1px #D5D3BB solid; outline-offset: -0.50px">
+              class="hidden lg:block w-0 h-[120px] origin-top-left outline outline-[1px] outline-[#D5D3BB] -outline-offset-[0.5px]">
             </div>
-            <div
-              style="border-radius: 120px; justify-content: flex-start; align-items: center; gap: 12px; display: flex">
+            <div class="rounded-[120px] flex justify-start items-center gap-2 md:gap-3">
               <div data-property-1="Default"
-                style="padding-left: 24px; padding-right: 24px; padding-top: 12px; padding-bottom: 12px; border-radius: 120px; outline: 1px var(--Off-White-Cream, #E7E5CC) solid; outline-offset: -1px; justify-content: center; align-items: center; gap: 10px; display: flex">
-                <div style="justify-content: flex-start; align-items: center; gap: 5px; display: flex">
-                  <div
-                    style="color: var(--Off-White-Cream, #E7E5CC); font-size: 12px; font-family: Acherus Grotesque; font-weight: 500; text-decoration: underline; word-wrap: break-word">
+                class="px-4 md:px-6 py-2 md:py-3 rounded-[120px] outline outline-[1px] outline-[#E7E5CC] -outline-offset-[1px] flex justify-center items-center gap-2 md:gap-[10px]">
+                <div class="flex justify-start items-center gap-1 md:gap-[5px]">
+                  <div class="text-[#E7E5CC] text-xs font-['Acherus_Grotesque'] font-medium underline break-words">
                     nulsen.org.au</div>
                 </div>
               </div>
             </div>
           </div>
-          <div style="align-self: stretch; height: 0px; outline: 1px #D5D3BB solid; outline-offset: -0.50px"></div>
+          <div class="self-stretch h-0 outline outline-[1px] outline-[#D5D3BB] -outline-offset-[0.5px]"></div>
         </div>
-        <div
-          style="align-self: stretch; height: 13px; justify-content: space-between; align-items: center; display: inline-flex">
-          <div><span
-              style="color: var(--Off-White-Cream, #E7E5CC); font-size: 9px; font-family: Acherus Grotesque; font-weight: 600; word-wrap: break-word">©
+        <div class="self-stretch h-[13px] flex flex-col sm:flex-row justify-between items-center gap-2 sm:gap-0">
+          <div class="text-center sm:text-left"><span
+              class="text-[#E7E5CC] text-[9px] font-['Acherus_Grotesque'] font-semibold break-words">©
               2025 Nulsen Disability Services, an organisation of </span><span
-              style="color: var(--Off-White-Cream, #E7E5CC); font-size: 9px; font-family: Acherus Grotesque; font-weight: 600; text-decoration: underline; word-wrap: break-word">PeopleKind
+              class="text-[#E7E5CC] text-[9px] font-['Acherus_Grotesque'] font-semibold underline break-words">PeopleKind
               Group</span><span
-              style="color: var(--Off-White-Cream, #E7E5CC); font-size: 9px; font-family: Acherus Grotesque; font-weight: 600; word-wrap: break-word">.</span>
+              class="text-[#E7E5CC] text-[9px] font-['Acherus_Grotesque'] font-semibold break-words">.</span>
           </div>
-          <div style="justify-content: flex-start; align-items: center; gap: 16px; display: flex">
-            <div
-              style="color: var(--Off-White-Cream, #E7E5CC); font-size: 9px; font-family: Acherus Grotesque; font-weight: 600; word-wrap: break-word">
+          <div class="flex flex-wrap justify-center sm:justify-start items-center gap-2 md:gap-4">
+            <div class="text-[#E7E5CC] text-[9px] font-['Acherus_Grotesque'] font-semibold break-words">
               Terms</div>
-            <div
-              style="color: var(--Off-White-Cream, #E7E5CC); font-size: 9px; font-family: Acherus Grotesque; font-weight: 600; word-wrap: break-word">
+            <div class="text-[#E7E5CC] text-[9px] font-['Acherus_Grotesque'] font-semibold break-words">
               Privacy</div>
-            <div
-              style="color: var(--Off-White-Cream, #E7E5CC); font-size: 9px; font-family: Acherus Grotesque; font-weight: 600; word-wrap: break-word">
+            <div class="text-[#E7E5CC] text-[9px] font-['Acherus_Grotesque'] font-semibold break-words">
               Sitemap</div>
-            <div
-              style="color: var(--Off-White-Cream, #E7E5CC); font-size: 9px; font-family: Acherus Grotesque; font-weight: 600; word-wrap: break-word">
+            <div class="text-[#E7E5CC] text-[9px] font-['Acherus_Grotesque'] font-semibold break-words">
               Feedback</div>
-            <div
-              style="color: var(--Off-White-Cream, #E7E5CC); font-size: 9px; font-family: Acherus Grotesque; font-weight: 600; text-decoration: underline; word-wrap: break-word">
+            <div class="text-[#E7E5CC] text-[9px] font-['Acherus_Grotesque'] font-semibold underline break-words">
               Site by Start</div>
           </div>
         </div>
