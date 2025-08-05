@@ -305,33 +305,36 @@ async function initializeTimelineWithData() {
 function initializeGSAPAnimations() {
   setTimeout(() => {
     console.log('Initializing GSAP animations...');
-
+    const windowWidth = window.innerWidth;
+    const horizontalSection = document.querySelector('.horizontal-section');
+    const horizontalSectionWidth = horizontalSection.offsetWidth;
+    const horizontalTransform = -horizontalSectionWidth + windowWidth;
     // Setup horizontal scroll animation for timeline
-    const horizontalSection = document.querySelector('.horizontal-section-container');
+    const horizontalSectionContainer = document.querySelector('.horizontal-section-container');
     if (horizontalSection) {
       // Kill any existing ScrollTrigger animations for horizontal section
       ScrollTrigger.getAll().forEach(trigger => {
-        if (trigger.vars.trigger === horizontalSection) {
+        if (trigger.vars.trigger === horizontalSectionContainer) {
           trigger.kill();
         }
       });
-      gsap.to(".horizontal-section-container .horizontal-section", {
+      gsap.to(horizontalSection, {
         // transform: "translateX(-100%)",
-        x: "-100%",
+        x: horizontalTransform,
         scrollTrigger: {
-          trigger: ".horizontal-section-container",
+          trigger: horizontalSectionContainer,
           scroller: "body",
           start: "top 0%",
-          end: "top -700%",
+          end: `top -${horizontalSectionWidth * 2 / 3}px`,
           pin: true,
           scrub: 2,
         }
       })
       ScrollTrigger.create({
-        trigger: ".horizontal-section-container",
+        trigger: horizontalSectionContainer,
         scroller: "body",
         start: "top top",
-        end: "top -700%",
+        end: `top -${horizontalSectionWidth * 2 / 3}px`,
         onEnter: () => {
           gsap.set(".ruler", {
             position: "fixed",
