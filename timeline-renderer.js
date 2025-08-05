@@ -17,10 +17,6 @@ class TimelineRenderer {
       console.error('Container not found:', this.containerSelector);
       return;
     }
-
-    // Clear existing content
-    // this.container.innerHTML = '';
-
     // Render each section
     this.sectionsData.forEach((section, index) => {
       this.renderSection(section, index);

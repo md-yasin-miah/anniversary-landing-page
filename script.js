@@ -19,43 +19,54 @@ document.addEventListener('DOMContentLoaded', function () {
   // on toggle menu
   menuBtn.addEventListener("click", () => {
     if (menuBtn.classList.contains("active")) {
-      const containerWidth = menuSection.offsetWidth;
-      const offset = 63.11;
-      const finalX = containerWidth - offset;
-      gsap.to(menuSection, {
-        x: `${finalX}px`,
+      const tl = gsap.timeline();
+      const offset = menuSection.querySelector(":first-child").offsetWidth;
+
+      tl.to(menuSection, {
+        transform: `translateX(calc(100% - ${offset}px))`,
         duration: 0.5,
         ease: "power2.out",
       });
-      gsap.to(menuSection.querySelector(":first-child"), {
+      tl.to(".menu-item", {
+        opacity: 0,
+        duration: 0.2,
+        ease: "power2.out",
+      });
+      tl.to(menuSection.querySelector(":first-child"), {
         opacity: 1,
-        duration: 0.5,
+        duration: 0.1,
         ease: "power2.out",
       });
       menuBtn.classList.remove("active");
     } else {
-      gsap.to(menuSection, {
+      const tl = gsap.timeline();
+      tl.to(menuSection.querySelector(":first-child"), {
+        opacity: 0,
+        duration: 0.1,
+        ease: "power2.out",
+      });
+      tl.to(".menu-item", {
+        opacity: 1,
+        duration: 0.2,
+        ease: "power2.out",
+      });
+      tl.to(menuSection, {
         x: "0%",
         duration: 0.5,
         ease: "power2.out",
       })
-      gsap.to(menuSection.querySelector(":first-child"), {
-        opacity: 0,
-        duration: 0.5,
-        ease: "power2.out",
-      });
       menuBtn.classList.add("active");
     }
   });
   // on close menu
-  menuSection.addEventListener("click", () => {
-    console.log("menuSection clicked");
-    gsap.to(menuSection, {
-      x: "100%",
-      duration: 0.5,
-      ease: "power2.out",
-    });
-  });
+  // menuSection.addEventListener("click", () => {
+  //   console.log("menuSection clicked");
+  //   gsap.to(menuSection, {
+  //     x: "100%",
+  //     duration: 0.5,
+  //     ease: "power2.out",
+  //   });
+  // });
   //********* menu animation END *********/
   //********* gallery slider animation START *********/
   const boxes = gsap.utils.toArray(".box");

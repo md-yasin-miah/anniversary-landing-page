@@ -159,42 +159,47 @@
       </div>
     </div>
     <div class="counter-section">
-      <div id="navigation"
-        class="px-4 md:px-[43px] py-4 md:py-[35px] flex justify-between items-center bg-bgColor w-full sticky top-0 z-40 rounded-b-[20px]">
-        <img src="./assets/vector/logo-with-years.svg" alt="logo-with-years" class="w-32 md:w-auto">
-        <div data-property-1="Default" class="inline-flex justify-start items-center rounded-md overflow-hidden">
-          <div class="flex menu-section justify-center items-center translate-x-[calc(100%-63.11px)]">
-            <button
-              class="menu h-10 md:h-12 px-3 md:px-4 py-2.5 md:py-3.5 bg-colorbtn rounded-md inline-flex flex-col justify-center items-center gap-2 md:gap-2.5">
-              <div class="text-nowrap text-orange-50 text-xs md:text-sm font-medium font-['Acherus_Grotesque']">menu
+      <div id="navigation" class="py-4 md:py-[35px] bg-bgColor w-full sticky top-0 z-40 rounded-b-[20px]">
+        <div class="mx-4 md:mx-[43px] overflow-hidden flex justify-between items-center">
+          <img src="./assets/vector/logo-with-years.svg" alt="logo-with-years" class="w-32 md:w-auto">
+          <div data-property-1="Default" class="inline-flex justify-start items-center relative rounded-md">
+            <div
+              class="flex menu-section md:translate-x-[calc(100%-63.11px)] translate-x-[calc(100%-36px)] justify-center items-center absolute top-0 right-full">
+              <button
+                class="menu h-fit px-3 md:px-4 py-2.5 md:py-3.5 bg-colorbtn rounded-md inline-flex flex-col justify-center items-center gap-2 md:gap-2.5">
+                <div class="text-nowrap text-orange-50 text-xs md:text-sm font-medium font-['Acherus_Grotesque']">menu
+                </div>
+              </button>
+              <div class="flex items-center gap-1 md:gap-2 pr-1 md:pr-2 menu-item opacity-0">
+                <button
+                  class="h-fit px-3 md:px-4 py-2.5 md:py-3.5 bg-colorbtn rounded-md inline-flex flex-col justify-center items-center gap-2 md:gap-2.5">
+                  <div class="text-nowrap text-orange-50 text-xs md:text-sm font-medium font-['Acherus_Grotesque']">menu
+                    1
+                  </div>
+                </button>
+                <button
+                  class="h-fit px-3 md:px-4 py-2.5 md:py-3.5 bg-colorbtn rounded-md inline-flex flex-col justify-center items-center gap-2 md:gap-2.5">
+                  <div class="text-nowrap text-orange-50 text-xs md:text-sm font-medium font-['Acherus_Grotesque']">menu
+                    2
+                  </div>
+                </button>
+                <button
+                  class="h-fit px-3 md:px-4 py-2.5 md:py-3.5 bg-colorbtn rounded-md inline-flex flex-col justify-center items-center gap-2 md:gap-2.5">
+                  <div class="text-nowrap text-orange-50 text-xs md:text-sm font-medium font-['Acherus_Grotesque']">menu
+                    2
+                  </div>
+                </button>
+              </div>
+            </div>
+            <button id="nav-burgar-btn"
+              class="p-2.5 md:p-3.5 bg-colorbtn z-10 rounded-md inline-flex flex-col justify-center items-center gap-2 md:gap-2.5">
+              <div class="flex flex-col justify-start items-start gap-1.5 md:gap-2">
+                <div class="w-4 md:w-5 h-[1px] outline-offset-[-1.20px] bg-white"></div>
+                <div class="w-4 md:w-5 h-[1px] outline-offset-[-1.20px] bg-white"></div>
+                <div class="w-4 md:w-5 h-[1px] outline-offset-[-1.20px] bg-white"></div>
               </div>
             </button>
-            <div class="flex items-center gap-1 md:gap-2 pr-1 md:pr-2 menu-item">
-              <button
-                class="h-10 md:h-12 px-3 md:px-4 py-2.5 md:py-3.5 bg-colorbtn rounded-md inline-flex flex-col justify-center items-center gap-2 md:gap-2.5">
-                <div class="text-nowrap text-orange-50 text-xs md:text-sm font-medium font-['Acherus_Grotesque']">menu 1
-                </div>
-              </button>
-              <button
-                class="h-10 md:h-12 px-3 md:px-4 py-2.5 md:py-3.5 bg-colorbtn rounded-md inline-flex flex-col justify-center items-center gap-2 md:gap-2.5">
-                <div class="text-nowrap text-orange-50 text-xs md:text-sm font-medium font-['Acherus_Grotesque']">menu 2
-                </div>
-              </button>
-              <button
-                class="h-10 md:h-12 px-3 md:px-4 py-2.5 md:py-3.5 bg-colorbtn rounded-md inline-flex flex-col justify-center items-center gap-2 md:gap-2.5">
-                <div class="text-nowrap text-orange-50 text-xs md:text-sm font-medium font-['Acherus_Grotesque']">menu 2
-                </div>
-              </button>
-            </div>
           </div>
-          <button id="nav-burgar-btn"
-            class="p-2.5 md:p-3.5 bg-colorbtn z-10 rounded-md inline-flex flex-col justify-center items-center gap-2 md:gap-2.5">
-            <div class="flex flex-col justify-start items-start gap-1.5 md:gap-2">
-              <div class="w-4 md:w-5 h-[1px] outline-offset-[-1.20px] bg-white"></div>
-              <div class="w-4 md:w-5 h-[1px] outline-offset-[-1.20px] bg-white"></div>
-              <div class="w-4 md:w-5 h-[1px] outline-offset-[-1.20px] bg-white"></div>
-            </div>
-          </button>
         </div>
       </div>
       <div class="w-full md:h-[calc(100vh+20px)] h-fit">
@@ -297,11 +302,11 @@
       </div>
       <img src="./assets/vector/Homes.svg" alt="homes" class="w-full">
       <img src="./assets/vector/Homes1.svg" alt="homes"
-        class='absolute z-10 bottom-0 translate-y-[72%] left-0 msx-sm:w-[40%]'>
+        class='absolute z-10 bottom-0 translate-y-[72%] left-0 max-sm:w-[40%]'>
       <img src="./assets/vector/Homes2.svg" alt="homes"
-        class='absolute z-10 bottom-0 translate-y-[72%] left-1/2 -translate-x-1/2 msx-sm:w-[40%]'>
+        class='absolute z-10 bottom-0 translate-y-[72%] left-1/2 -translate-x-1/2 max-sm:w-[40%]'>
       <img src="./assets/vector/Homes3.svg" alt="homes"
-        class='absolute z-10 bottom-0 translate-y-[78%] right-0 msx-sm:w-[40%]'>
+        class='absolute z-10 bottom-0 translate-y-[78%] right-0 max-sm:w-[40%]'>
     </div>
     <div class="w-full h-full pt-20 md:pt-[270px] relative">
       <img class="w-full h-full" src="./assets/images/book-mockup-bg.png" />
