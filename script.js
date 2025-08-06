@@ -10,10 +10,10 @@ document.addEventListener('DOMContentLoaded', function () {
   window.addEventListener("scroll", () => {
     if (window.scrollY >= windowHeight) {
       navigation.classList.add("fixed");
-      navigation.classList.remove("sticky");
+      navigation.classList.remove("absolute");
     } else {
       navigation.classList.remove("fixed");
-      navigation.classList.add("sticky");
+      navigation.classList.add("absolute");
     }
   });
   // on toggle menu
