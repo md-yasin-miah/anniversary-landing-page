@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
         opacity: 1,
         duration: 0.1,
         ease: "power2.out",
-      });
+      }, "<");
       menuBtn.classList.remove("active");
     } else {
       const tl = gsap.timeline();
