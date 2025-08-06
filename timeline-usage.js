@@ -217,37 +217,36 @@ function initializeGSAPAnimations() {
     // });
 
     // Setup animations for history items
-    document.querySelectorAll('.history-item').forEach((item, index) => {
-      const indicator = item.querySelector('.indicator');
-      const content = item.querySelector('.history-item-content');
+    // document.querySelectorAll('.history-item').forEach((item, index) => {
+    //   const indicator = item.querySelector('.indicator');
+    //   const content = item.querySelector('.history-item-content');
 
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: item,
-          containerAnimation: ScrollTrigger.getById('parentHorizontal'), // nest into parent scroll
-          start: "left center",
-          end: "left center-=100px",
-          scrub: true,
-          toggleActions: "play reverse play reverse",
-          markers: true
-        }
-      });
+    //   gsap.timeline({
+    //     scrollTrigger: {
+    //       trigger: item,
+    //       containerAnimation: ScrollTrigger.getById('horizontalScroll'), // ✅ Reference parent scroll
+    //       start: "left 90%", // 🟡 Appears when 10% from right
+    //       end: "left 80%",
+    //       scrub: true,
+    //       toggleActions: "play reverse play reverse",
+    //       markers: true // optionally enable for debug
+    //     }
+    //   })
+    //     .from(indicator, {
+    //       scale: 0,
+    //       opacity: 0,
+    //       transformOrigin: "center center",
+    //       duration: 0.4,
+    //       ease: "back.out(1.7)"
+    //     })
+    //     .from(content, {
+    //       opacity: 0,
+    //       scale: 0.95,
+    //       duration: 0.4,
+    //       ease: "power2.out"
+    //     }, "<0.1");
+    // });
 
-      tl.from(indicator, {
-        scale: 0,
-        opacity: 0,
-        transformOrigin: "center center",
-        duration: 0.4,
-        ease: "back.out(1.7)"
-      });
-
-      tl.from(content, {
-        opacity: 0,
-        scale: 0.95,
-        duration: 0.4,
-        ease: "power2.out"
-      }, "<0.1");
-    });
 
 
     // // Add hover animations

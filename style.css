@@ -315,6 +315,7 @@
 
 .history-area .history-item {
   height: fit-content;
+  flex-shrink: 0;
 }
 
 .history-item.have-figure {

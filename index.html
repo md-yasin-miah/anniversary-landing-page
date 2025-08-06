@@ -40,10 +40,10 @@
 
 <body class="bg-bgColor">
   <!-- ***********FIRST PART********* -->
-  <div class="w-full overflow-hidden">
-    <!-- *** Hero section START *** -->
-    <div class="w-full h-[calc(100vh-128px)] md:h-[calc(100vh-128px)] relative">
-      <div class="flex flex-col md:flex-row justify-center items-center h-full px-4 md:px-0">
+  <!-- *** Hero section START *** -->
+  <div class="overflow-hidden">
+    <section class="h-[calc(100vh-128px)] relative">
+      <div class="container flex flex-col md:flex-row justify-center items-center h-full px-4 md:px-0">
         <div class="w-full md:w-fit h-fit flex flex-col md:flex-row justify-center items-center gap-10 md:gap-12">
           <!-- Nulsen Logo -->
           <div id="logo" class="w-72 h-36 md:w-[350px] md:h-[160px]">
@@ -157,7 +157,7 @@
           </div>
         </div>
       </div>
-      <div class="absolute left-0 -bottom-10 z-50 max-sm:hidden">
+      <div class="absolute left-0 bottom-4 z-50 max-sm:hidden">
         <div class="relative">
           <svg id="myCurveSvg" viewBox="0 0 1440 179" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"
             class="w-full h-auto">
@@ -239,9 +239,9 @@
           </svg>
         </div>
       </div>
-    </div>
-    <div class="counter-section">
-      <div id="navigation" class="py-4 md:py-[35px] bg-bgColor w-full sticky top-0 z-40 rounded-b-[20px]">
+    </section>
+    <section class="counter-section relative">
+      <div id="navigation" class="py-4 md:py-[35px] bg-bgColor w-full absolute top-0 z-40 rounded-b-[20px]">
         <div class="mx-4 md:mx-[43px] overflow-hidden flex justify-between items-center">
           <img src="./assets/vector/logo-with-years.svg" alt="logo-with-years" class="w-32 md:w-auto">
           <div data-property-1="Default" class=" inline-flex justify-start items-center relative rounded-md">
@@ -284,236 +284,235 @@
           </div>
         </div>
       </div>
-      <div class="w-full md:h-[calc(100vh+20px)] h-fit">
-        <div class="container h-fit py-20 md:py-52 flex flex-col md:flex-row gap-8 justify-center items-center">
-          <div class="w-full md:w-auto">
-            <div
-              class="w-full md:w-96 text-center justify-start text-orange-50 text-4xl md:text-6xl font-semibold font-['Acherus_Grotesque'] leading-[48px] md:leading-[72px]">
-              64%
-            </div>
-            <div class="w-24 md:w-36 h-0 outline outline-1 m-auto outline-offset-[-0.50px] outline-white"></div>
-            <div
-              class="w-full md:w-96 mt-8 md:mt-12 text-center justify-start text-orange-50 text-sm md:text-base font-medium font-['Acherus_Grotesque'] leading-normal px-4 md:px-0">
-              Culpa veniam adipisicing laborum esse enim dolore commodo nisi non adipisicing ad. Irure ea laborum
-              reprehenderit
-              Lorem eiusmod ea non nulla Lorem ex sunt in consectetur eu. Cillum excepteur officia ullamco laboris. Ad
-              eu
-              cupidatat dolor.
-            </div>
-          </div>
-          <div class="w-full md:w-auto">
-            <div
-              class="w-full md:w-96 text-center justify-start text-orange-50 text-4xl md:text-6xl font-semibold font-['Acherus_Grotesque'] leading-[48px] md:leading-[72px]">
-              1 IN 5
-            </div>
-            <div class="w-24 md:w-36 h-0 outline outline-1 m-auto outline-offset-[-0.50px] outline-white"></div>
-            <div
-              class="w-full md:w-96 mt-8 md:mt-12 text-center justify-start text-orange-50 text-sm md:text-base font-medium font-['Acherus_Grotesque'] leading-normal px-4 md:px-0">
-              Culpa veniam adipisicing laborum esse enim dolore commodo nisi non adipisicing ad. Irure ea laborum
-              reprehenderit
-              Lorem eiusmod ea non nulla Lorem ex sunt in consectetur eu. Cillum excepteur officia ullamco laboris. Ad
-              eu
-              cupidatat dolor.</div>
-          </div>
-          <div class="w-full md:w-auto">
-            <div
-              class="w-full md:w-96 text-center justify-start text-orange-50 text-4xl md:text-6xl font-semibold font-['Acherus_Grotesque'] leading-[48px] md:leading-[72px]">
-              684</div>
-            <div class="w-24 md:w-36 h-0 outline outline-1 m-auto outline-offset-[-0.50px] outline-white"></div>
-            <div
-              class="w-full md:w-96 mt-8 md:mt-12 text-center justify-start text-orange-50 text-sm md:text-base font-medium font-['Acherus_Grotesque'] leading-normal px-4 md:px-0">
-              Culpa veniam adipisicing laborum esse enim dolore commodo nisi non adipisicing ad. Irure ea laborum
-              reprehenderit
-              Lorem eiusmod ea non nulla Lorem ex sunt in consectetur eu. Cillum excepteur officia ullamco laboris. Ad
-              eu
-              cupidatat dolor.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="w-full bg-gradient-to-b from-[#5576BA] to-[#97B9F8] relative">
-      <div
-        class="w-full relative pt-20 md:pt-[175px] px-4 md:px-[68px] justify-center flex flex-col md:flex-row gap-8 md:gap-[214px]">
-        <div
-          class="w-full md:w-96 inline-flex flex-col justify-start items-center md:items-start gap-6 md:gap-9 relative">
-          <img class="w-64 h-64 md:w-96 md:h-96 rounded-[300px] object-cover" src="./assets/images/ceo-profile.png" />
-          <div class="self-stretch flex flex-col justify-center items-center gap-2 md:gap-2.5">
-            <h3
-              class="w-full text-center text-offWhite text-xl md:text-2xl font-bold font-['Acherus_Grotesque'] leading-6 md:leading-8 break-words">
-              Caroline Watt
-            </h3>
-            <p
-              class="w-full text-center text-offWhite text-sm md:text-[17.33px] font-['Acherus_Grotesque'] font-medium leading-[20px] md:leading-[24.26px] break-words">
-              Chief Executive Officer<br />Nulsen Disability Services
-            </p>
-          </div>
-          <img src="./assets/vector/bg-shape-ceo-section.svg" alt="bg-shape"
-            class="absolute -bottom-[55px] -right-[90px] hidden md:block">
-        </div>
-        <div class="w-full md:w-[678.86px] flex flex-col justify-start items-start gap-6 md:gap-10 relative">
-          <div class="w-full h-full">
-            <p
-              class="text-offWhite text-lg md:text-2xl font-medium font-['Acherus_Grotesque'] leading-6 md:leading-8 break-words">
-              On 18 October 2024, Nulsen celebrates 70 years of supporting people with complex disability in Western
-              Australia.
-            </p>
-            <p
-              class="text-offWhite text-sm md:text-base font-medium font-['Acherus_Grotesque'] leading-5 md:leading-6 break-words mt-4">
-              Starting as the family-founded Mental Incurable Children's Association in 1954, Nulsen has evolved and
-              adapted to an everchanging landscape into a leading organisation that today, supports around 200 people
-              across 60+ residential settings with a 700-strong team of employees.<br />
-              This timeline is a snapshot of some of the key moments in our journey. There are many more events, people
-              and achievements throughout Nulsen's history that would sit equally among those featured.<br />
-              Most of the events not in this timeline are, in fact, included in the compendium publication <span
-                class="italic">The Nulsen Story: 70 years of empowering people to live their best life</span> published
-              as
-              part of our official 70-year anniversary celebrations.<br /><br />
-              This document and The Nulsen Story seek to capture seven decades of unwavering commitment to supporting
-              people with respect, dignity and compassion. Through these publications, we honour the resilience and
-              achievements of all who has walked this path with us – our employees, families, community partners, and
-              all
-              who have made our work possible.<br /><br />
-              Most importantly, we honour the people that Nulsen supports now and over the years. You are the reason we
-              exist, and we shall forever be grateful for the love and joy you provide so freely.<br /><br />
-              We hope that we've given you the best we've had, and that you've breathed easier because of our existence.
-            </p>
-          </div>
-          <img src="./assets/vector/signature.svg" alt="signature"
-            class="absolute md:-bottom-[72px] -bottom-[55px] max-sm:w-[25%]">
-        </div>
-      </div>
-      <img src="./assets/vector/Homes.svg" alt="homes" class="w-full">
-      <img src="./assets/vector/Homes1.svg" alt="homes"
-        class='absolute z-10 bottom-0 translate-y-[72%] left-0 max-sm:w-[40%]'>
-      <img src="./assets/vector/Homes2.svg" alt="homes"
-        class='absolute z-10 bottom-0 translate-y-[72%] left-1/2 -translate-x-1/2 max-sm:w-[40%]'>
-      <img src="./assets/vector/Homes3.svg" alt="homes"
-        class='absolute z-10 bottom-0 translate-y-[78%] right-0 max-sm:w-[40%]'>
-    </div>
-    <div class="w-full h-full pt-20 md:pt-[270px] relative">
-      <img class="w-full h-full" src="./assets/images/book-mockup-bg.png" />
-      <div
-        class="left-4 md:left-[43px] absolute top-[38%] w-fit text-offWhite text-2xl md:text-[52px] font-['Acherus_Grotesque'] font-medium leading-[36px] md:leading-[90px] break-words px-4 md:px-0">
-        Let's step back in time…
-      </div>
-    </div>
-    <!-- Founder section -->
-    <div
-      class="w-full h-full px-4 md:px-[36px] py-16 md:py-[120px] flex flex-col justify-start items-center gap-[10px]">
-      <div class="w-full flex flex-col justify-start items-center gap-12 md:gap-[72px]">
-        <div class="w-full flex flex-col md:flex-row justify-between items-start md:items-end gap-6 md:gap-0">
+      <div class="container py-20 md:py-52 grid md:grid-cols-3 grid-cols-1 gap-8">
+        <div class="w-full md:w-auto">
           <div
-            class="w-full md:flex-1 text-[#22221B] text-4xl md:text-[90px] font-['Acherus_Grotesque'] font-medium leading-[40px] md:leading-[90px] break-words">
-            Our <br />Founders
+            class="w-full md:w-96 text-center justify-start text-orange-50 text-4xl md:text-6xl font-semibold font-['Acherus_Grotesque'] leading-[48px] md:leading-[72px]">
+            64%
           </div>
+          <div class="w-24 md:w-36 h-0 outline outline-1 m-auto outline-offset-[-0.50px] outline-white"></div>
           <div
-            class="w-full md:w-[542.36px] text-[#22221B] text-sm md:text-[16px] font-['Acherus_Grotesque'] font-medium leading-[20px] md:leading-[24px] break-words">
-            Frank Anderson's news story won a quick response from other parents. Within a month the Mentally Incurable
-            Children's Association was formed 'to establish a special institution to care for microcephalic children and
-            so ease the strain on parents'.
+            class="w-full md:w-96 mt-8 md:mt-12 text-center justify-start text-orange-50 text-sm md:text-base font-medium font-['Acherus_Grotesque'] leading-normal px-4 md:px-0">
+            Culpa veniam adipisicing laborum esse enim dolore commodo nisi non adipisicing ad. Irure ea laborum
+            reprehenderit
+            Lorem eiusmod ea non nulla Lorem ex sunt in consectetur eu. Cillum excepteur officia ullamco laboris. Ad
+            eu
+            cupidatat dolor.
           </div>
         </div>
-        <div class="w-full flex flex-col justify-start items-start gap-6 md:gap-[36px]">
+        <div class="w-full md:w-auto">
           <div
-            class="text-[#22221B] text-lg md:text-[20px] font-['Acherus_Grotesque'] font-medium leading-[24px] md:leading-[28px] break-words">
-            Here are the inaugural office bearers:
+            class="w-full md:w-96 text-center justify-start text-orange-50 text-4xl md:text-6xl font-semibold font-['Acherus_Grotesque'] leading-[48px] md:leading-[72px]">
+            1 IN 5
           </div>
-          <div class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-[32px] justify-items-center">
-            <div data-property-1="BLACK"
-              class="founder-card w-full max-w-full md:max-w-[431.55px] pb-4 md:pb-[24px] bg-black/5 rounded-[20px] flex flex-col justify-start items-start gap-6 md:gap-[44px] relative overflow-hidden cursor-pointer hover:shadow-lg transition-all duration-300">
-              <img
-                class="w-full h-full md:h-[426.52px] bg-[#D9D9D9] rounded-t-[20px] object-cover transition-all duration-300"
-                src="./assets/images/founder-1.png" alt="Francis John Anderson" />
-              <div
-                class="founder-overlay absolute inset-0 backdrop-blur-md bg-white/20 flex flex-col justify-center items-center opacity-0 transition-opacity duration-300 ease-in-out">
-                <div class="text-white text-center px-4 md:px-6">
-                  <h4 class="text-lg md:text-xl font-bold mb-2 md:mb-3 drop-shadow-lg">Francis John Anderson</h4>
-                  <p class="text-xs md:text-sm leading-relaxed drop-shadow-lg">As Secretary, Francis played a crucial
-                    role in
-                    establishing the
-                    foundation of Nulsen Disability Services. His dedication to helping families with children who
-                    have complex disabilities led to the creation of an organization that would support thousands of
-                    people over the next 70 years.</p>
-                </div>
-              </div>
-              <div class="w-full flex flex-col justify-center items-center gap-2 md:gap-[9.53px] px-2 md:px-0">
-                <div
-                  class="w-full text-center text-[#22221B] text-lg md:text-[24px] font-['Acherus_Grotesque'] font-bold leading-[24px] md:leading-[32px] break-words">
-                  Francis John Anderson
-                </div>
-                <div
-                  class="w-full text-center text-[#22221B] text-sm md:text-[18px] font-['Acherus_Grotesque'] font-medium leading-[20px] md:leading-[28px] break-words">
-                  Secretary
-                </div>
-              </div>
-            </div>
-            <div data-property-1="Variant3"
-              class="founder-card w-full max-w-full md:max-w-[431.55px] pb-4 md:pb-[24px] bg-black/5 rounded-[20px] flex flex-col justify-start items-start gap-6 md:gap-[44px] relative overflow-hidden cursor-pointer hover:shadow-lg transition-all duration-300">
-              <img
-                class="w-full h-full md:h-[426.52px] bg-[#D9D9D9] rounded-t-[20px] object-cover transition-all duration-300"
-                src="./assets/images/founder-2.png" alt="William Robert Burns" />
-              <div
-                class="founder-overlay absolute inset-0 backdrop-blur-md bg-white/20 flex flex-col justify-center items-center opacity-0 transition-opacity duration-300 ease-in-out">
-                <div class="text-white text-center px-4 md:px-6">
-                  <h4 class="text-lg md:text-xl font-bold mb-2 md:mb-3 drop-shadow-lg">William Robert Burns</h4>
-                  <p class="text-xs md:text-sm leading-relaxed drop-shadow-lg">As the first President of Nulsen, William
-                    provided
-                    strong
-                    leadership during the organization's formative years. His vision and commitment to creating better
-                    support systems for families with children who have complex disabilities set the standard for
-                    Nulsen's mission and values.</p>
-                </div>
-              </div>
-              <div class="w-full flex flex-col justify-center items-center gap-2 md:gap-[9.53px] px-2 md:px-0">
-                <div
-                  class="w-full text-center text-[#22221B] text-lg md:text-[24px] font-['Acherus_Grotesque'] font-bold leading-[24px] md:leading-[32px] break-words">
-                  William Robert Burns
-                </div>
-                <div
-                  class="w-full text-center text-[#22221B] text-sm md:text-[18px] font-['Acherus_Grotesque'] font-medium leading-[20px] md:leading-[28px] break-words">
-                  President
-                </div>
-              </div>
-            </div>
-            <div data-property-1="Variant3"
-              class="founder-card w-full max-w-full md:max-w-[431.55px] pb-4 md:pb-[24px] bg-black/5 rounded-[20px] flex flex-col justify-start items-start gap-6 md:gap-[44px] relative overflow-hidden cursor-pointer hover:shadow-lg transition-all duration-300 md:col-span-2 lg:col-span-1">
-              <img
-                class="w-full h-full md:h-[426.52px] bg-[#D9D9D9] rounded-t-[20px] object-cover transition-all duration-300"
-                src="./assets/images/founder-3.png" alt="Lloyd John Summerton" />
-              <div
-                class="founder-overlay absolute inset-0 backdrop-blur-md bg-white/20 flex flex-col justify-center items-center opacity-0 transition-opacity duration-300 ease-in-out">
-                <div class="text-white text-center px-4 md:px-6">
-                  <h4 class="text-lg md:text-xl font-bold mb-2 md:mb-3 drop-shadow-lg">Lloyd John Summerton</h4>
-                  <p class="text-xs md:text-sm leading-relaxed drop-shadow-lg">As Treasurer, Lloyd ensured the financial
-                    stability
-                    of Nulsen
-                    during its early years. His careful management of resources and commitment to transparency helped
-                    establish the organization as a trusted and sustainable provider of disability services in Western
-                    Australia.</p>
-                </div>
-              </div>
-              <div class="w-full flex flex-col justify-center items-center gap-2 md:gap-[9.53px] px-2 md:px-0">
-                <div
-                  class="w-full text-center text-[#22221B] text-lg md:text-[24px] font-['Acherus_Grotesque'] font-bold leading-[24px] md:leading-[32px] break-words">
-                  Lloyd John Summerton
-                </div>
-                <div
-                  class="w-full text-center text-[#22221B] text-sm md:text-[18px] font-['Acherus_Grotesque'] font-medium leading-[20px] md:leading-[28px] break-words">
-                  Treasurer
-                </div>
-              </div>
-            </div>
-          </div>
+          <div class="w-24 md:w-36 h-0 outline outline-1 m-auto outline-offset-[-0.50px] outline-white"></div>
+          <div
+            class="w-full md:w-96 mt-8 md:mt-12 text-center justify-start text-orange-50 text-sm md:text-base font-medium font-['Acherus_Grotesque'] leading-normal px-4 md:px-0">
+            Culpa veniam adipisicing laborum esse enim dolore commodo nisi non adipisicing ad. Irure ea laborum
+            reprehenderit
+            Lorem eiusmod ea non nulla Lorem ex sunt in consectetur eu. Cillum excepteur officia ullamco laboris. Ad
+            eu
+            cupidatat dolor.</div>
+        </div>
+        <div class="w-full md:w-auto">
+          <div
+            class="w-full md:w-96 text-center justify-start text-orange-50 text-4xl md:text-6xl font-semibold font-['Acherus_Grotesque'] leading-[48px] md:leading-[72px]">
+            684</div>
+          <div class="w-24 md:w-36 h-0 outline outline-1 m-auto outline-offset-[-0.50px] outline-white"></div>
+          <div
+            class="w-full md:w-96 mt-8 md:mt-12 text-center justify-start text-orange-50 text-sm md:text-base font-medium font-['Acherus_Grotesque'] leading-normal px-4 md:px-0">
+            Culpa veniam adipisicing laborum esse enim dolore commodo nisi non adipisicing ad. Irure ea laborum
+            reprehenderit
+            Lorem eiusmod ea non nulla Lorem ex sunt in consectetur eu. Cillum excepteur officia ullamco laboris. Ad
+            eu
+            cupidatat dolor.</div>
         </div>
       </div>
-    </div>
+    </section>
   </div>
+  <section class="w-full bg-gradient-to-b from-[#5576BA] to-[#97B9F8] relative">
+    <div
+      class="w-full relative pt-20 md:pt-[175px] px-4 md:px-[68px] justify-center flex flex-col md:flex-row gap-8 md:gap-[214px]">
+      <div
+        class="w-full md:w-96 inline-flex flex-col justify-start items-center md:items-start gap-6 md:gap-9 relative">
+        <img class="w-64 h-64 md:w-96 md:h-96 rounded-[300px] object-cover" src="./assets/images/ceo-profile.png" />
+        <div class="self-stretch flex flex-col justify-center items-center gap-2 md:gap-2.5">
+          <h3
+            class="w-full text-center text-offWhite text-xl md:text-2xl font-bold font-['Acherus_Grotesque'] leading-6 md:leading-8 break-words">
+            Caroline Watt
+          </h3>
+          <p
+            class="w-full text-center text-offWhite text-sm md:text-[17.33px] font-['Acherus_Grotesque'] font-medium leading-[20px] md:leading-[24.26px] break-words">
+            Chief Executive Officer<br />Nulsen Disability Services
+          </p>
+        </div>
+        <img src="./assets/vector/bg-shape-ceo-section.svg" alt="bg-shape"
+          class="absolute -bottom-[55px] -right-[90px] hidden md:block">
+      </div>
+      <div class="w-full md:w-[678.86px] flex flex-col justify-start items-start gap-6 md:gap-10 relative">
+        <div class="w-full h-full">
+          <p
+            class="text-offWhite text-lg md:text-2xl font-medium font-['Acherus_Grotesque'] leading-6 md:leading-8 break-words">
+            On 18 October 2024, Nulsen celebrates 70 years of supporting people with complex disability in Western
+            Australia.
+          </p>
+          <p
+            class="text-offWhite text-sm md:text-base font-medium font-['Acherus_Grotesque'] leading-5 md:leading-6 break-words mt-4">
+            Starting as the family-founded Mental Incurable Children's Association in 1954, Nulsen has evolved and
+            adapted to an everchanging landscape into a leading organisation that today, supports around 200 people
+            across 60+ residential settings with a 700-strong team of employees.<br />
+            This timeline is a snapshot of some of the key moments in our journey. There are many more events, people
+            and achievements throughout Nulsen's history that would sit equally among those featured.<br />
+            Most of the events not in this timeline are, in fact, included in the compendium publication <span
+              class="italic">The Nulsen Story: 70 years of empowering people to live their best life</span> published
+            as
+            part of our official 70-year anniversary celebrations.<br /><br />
+            This document and The Nulsen Story seek to capture seven decades of unwavering commitment to supporting
+            people with respect, dignity and compassion. Through these publications, we honour the resilience and
+            achievements of all who has walked this path with us – our employees, families, community partners, and
+            all
+            who have made our work possible.<br /><br />
+            Most importantly, we honour the people that Nulsen supports now and over the years. You are the reason we
+            exist, and we shall forever be grateful for the love and joy you provide so freely.<br /><br />
+            We hope that we've given you the best we've had, and that you've breathed easier because of our existence.
+          </p>
+        </div>
+        <img src="./assets/vector/signature.svg" alt="signature"
+          class="absolute md:-bottom-[72px] -bottom-[55px] max-sm:w-[25%]">
+      </div>
+    </div>
+    <img src="./assets/vector/Homes.svg" alt="homes" class="w-full">
+    <img src="./assets/vector/Homes1.svg" alt="homes"
+      class='absolute z-10 bottom-0 translate-y-[72%] left-0 max-sm:w-[40%]'>
+    <img src="./assets/vector/Homes2.svg" alt="homes"
+      class='absolute z-10 bottom-0 translate-y-[72%] left-1/2 -translate-x-1/2 max-sm:w-[40%]'>
+    <img src="./assets/vector/Homes3.svg" alt="homes"
+      class='absolute z-10 bottom-0 translate-y-[78%] right-0 max-sm:w-[40%]'>
+  </section>
+  <section class="w-full h-full pt-20 md:pt-[270px] relative">
+    <img class="w-full h-full" src="./assets/images/book-mockup-bg.png" />
+    <div
+      class="left-4 md:left-[43px] absolute top-[38%] w-fit text-offWhite text-2xl md:text-[52px] font-['Acherus_Grotesque'] font-medium leading-[36px] md:leading-[90px] break-words px-4 md:px-0">
+      Let's step back in time…
+    </div>
+  </section>
+  <!-- Founder section -->
+  <section
+    class="w-full h-full px-4 md:px-[36px] py-16 md:py-[120px] flex flex-col justify-start items-center gap-[10px]">
+    <div class="w-full flex flex-col justify-start items-center gap-12 md:gap-[72px]">
+      <div class="w-full flex flex-col md:flex-row justify-between items-start md:items-end gap-6 md:gap-0">
+        <div
+          class="w-full md:flex-1 text-[#22221B] text-4xl md:text-[90px] font-['Acherus_Grotesque'] font-medium leading-[40px] md:leading-[90px] break-words">
+          Our <br />Founders
+        </div>
+        <div
+          class="w-full md:w-[542.36px] text-[#22221B] text-sm md:text-[16px] font-['Acherus_Grotesque'] font-medium leading-[20px] md:leading-[24px] break-words">
+          Frank Anderson's news story won a quick response from other parents. Within a month the Mentally Incurable
+          Children's Association was formed 'to establish a special institution to care for microcephalic children and
+          so ease the strain on parents'.
+        </div>
+      </div>
+      <div class="w-full flex flex-col justify-start items-start gap-6 md:gap-[36px]">
+        <div
+          class="text-[#22221B] text-lg md:text-[20px] font-['Acherus_Grotesque'] font-medium leading-[24px] md:leading-[28px] break-words">
+          Here are the inaugural office bearers:
+        </div>
+        <div class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-[32px] justify-items-center">
+          <div data-property-1="BLACK"
+            class="founder-card w-full max-w-full md:max-w-[431.55px] pb-4 md:pb-[24px] bg-black/5 rounded-[20px] flex flex-col justify-start items-start gap-6 md:gap-[44px] relative overflow-hidden cursor-pointer hover:shadow-lg transition-all duration-300">
+            <img
+              class="w-full h-full md:h-[426.52px] bg-[#D9D9D9] rounded-t-[20px] object-cover transition-all duration-300"
+              src="./assets/images/founder-1.png" alt="Francis John Anderson" />
+            <div
+              class="founder-overlay absolute inset-0 backdrop-blur-md bg-white/20 flex flex-col justify-center items-center opacity-0 transition-opacity duration-300 ease-in-out">
+              <div class="text-white text-center px-4 md:px-6">
+                <h4 class="text-lg md:text-xl font-bold mb-2 md:mb-3 drop-shadow-lg">Francis John Anderson</h4>
+                <p class="text-xs md:text-sm leading-relaxed drop-shadow-lg">As Secretary, Francis played a crucial
+                  role in
+                  establishing the
+                  foundation of Nulsen Disability Services. His dedication to helping families with children who
+                  have complex disabilities led to the creation of an organization that would support thousands of
+                  people over the next 70 years.</p>
+              </div>
+            </div>
+            <div class="w-full flex flex-col justify-center items-center gap-2 md:gap-[9.53px] px-2 md:px-0">
+              <div
+                class="w-full text-center text-[#22221B] text-lg md:text-[24px] font-['Acherus_Grotesque'] font-bold leading-[24px] md:leading-[32px] break-words">
+                Francis John Anderson
+              </div>
+              <div
+                class="w-full text-center text-[#22221B] text-sm md:text-[18px] font-['Acherus_Grotesque'] font-medium leading-[20px] md:leading-[28px] break-words">
+                Secretary
+              </div>
+            </div>
+          </div>
+          <div data-property-1="Variant3"
+            class="founder-card w-full max-w-full md:max-w-[431.55px] pb-4 md:pb-[24px] bg-black/5 rounded-[20px] flex flex-col justify-start items-start gap-6 md:gap-[44px] relative overflow-hidden cursor-pointer hover:shadow-lg transition-all duration-300">
+            <img
+              class="w-full h-full md:h-[426.52px] bg-[#D9D9D9] rounded-t-[20px] object-cover transition-all duration-300"
+              src="./assets/images/founder-2.png" alt="William Robert Burns" />
+            <div
+              class="founder-overlay absolute inset-0 backdrop-blur-md bg-white/20 flex flex-col justify-center items-center opacity-0 transition-opacity duration-300 ease-in-out">
+              <div class="text-white text-center px-4 md:px-6">
+                <h4 class="text-lg md:text-xl font-bold mb-2 md:mb-3 drop-shadow-lg">William Robert Burns</h4>
+                <p class="text-xs md:text-sm leading-relaxed drop-shadow-lg">As the first President of Nulsen, William
+                  provided
+                  strong
+                  leadership during the organization's formative years. His vision and commitment to creating better
+                  support systems for families with children who have complex disabilities set the standard for
+                  Nulsen's mission and values.</p>
+              </div>
+            </div>
+            <div class="w-full flex flex-col justify-center items-center gap-2 md:gap-[9.53px] px-2 md:px-0">
+              <div
+                class="w-full text-center text-[#22221B] text-lg md:text-[24px] font-['Acherus_Grotesque'] font-bold leading-[24px] md:leading-[32px] break-words">
+                William Robert Burns
+              </div>
+              <div
+                class="w-full text-center text-[#22221B] text-sm md:text-[18px] font-['Acherus_Grotesque'] font-medium leading-[20px] md:leading-[28px] break-words">
+                President
+              </div>
+            </div>
+          </div>
+          <div data-property-1="Variant3"
+            class="founder-card w-full max-w-full md:max-w-[431.55px] pb-4 md:pb-[24px] bg-black/5 rounded-[20px] flex flex-col justify-start items-start gap-6 md:gap-[44px] relative overflow-hidden cursor-pointer hover:shadow-lg transition-all duration-300 md:col-span-2 lg:col-span-1">
+            <img
+              class="w-full h-full md:h-[426.52px] bg-[#D9D9D9] rounded-t-[20px] object-cover transition-all duration-300"
+              src="./assets/images/founder-3.png" alt="Lloyd John Summerton" />
+            <div
+              class="founder-overlay absolute inset-0 backdrop-blur-md bg-white/20 flex flex-col justify-center items-center opacity-0 transition-opacity duration-300 ease-in-out">
+              <div class="text-white text-center px-4 md:px-6">
+                <h4 class="text-lg md:text-xl font-bold mb-2 md:mb-3 drop-shadow-lg">Lloyd John Summerton</h4>
+                <p class="text-xs md:text-sm leading-relaxed drop-shadow-lg">As Treasurer, Lloyd ensured the financial
+                  stability
+                  of Nulsen
+                  during its early years. His careful management of resources and commitment to transparency helped
+                  establish the organization as a trusted and sustainable provider of disability services in Western
+                  Australia.</p>
+              </div>
+            </div>
+            <div class="w-full flex flex-col justify-center items-center gap-2 md:gap-[9.53px] px-2 md:px-0">
+              <div
+                class="w-full text-center text-[#22221B] text-lg md:text-[24px] font-['Acherus_Grotesque'] font-bold leading-[24px] md:leading-[32px] break-words">
+                Lloyd John Summerton
+              </div>
+              <div
+                class="w-full text-center text-[#22221B] text-sm md:text-[18px] font-['Acherus_Grotesque'] font-medium leading-[20px] md:leading-[28px] break-words">
+                Treasurer
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ***********FIRST PART END********* -->
   <!-- ***********HORIZONTAL SECTION START********* -->
   <div class="relative horizontal-section-area">
     <img src="./assets/vector/ruler.svg" alt="ruler" class="ruler">
     <div class="horizontal-section-container bg-red-200 z-50">
-      <div class="horizontal-section relative">
+      <div class="horizontal-section relative" id="horizontalScroll">
         <div class="w-fit h-full flex justify-center items-center horizontal-section-content">
           <div class="pr-[300px]">
             <svg xmlns="http://www.w3.org/2000/svg" width="139" height="362" viewBox="0 0 139 362" fill="none">

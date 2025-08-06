@@ -164,7 +164,7 @@ class TimelineRenderer {
         <div class="history-item-content have-figure">
           <div class="indicator"></div>
           <h6 class="timeline-title-3">${item.title}</h6>
-          <iframe class="aspect-video rounded-[20px]" width="350" height="200"
+          <iframe class="aspect-video rounded-[20px] flex-shrink-0" width="350" height="200"
             src="${item.videoSrc}" title="YouTube video player"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -229,7 +229,7 @@ class TimelineRenderer {
     console.log('renderFullVideo', data);
     const fullVideoHTML = `
       <div class="h-full ml-12 z-10 ${data.class || ''} py-8">
-        <iframe class="aspect-video rounded-[20px]" width="auto" height="100%"
+        <iframe class="aspect-video rounded-[20px] flex-shrink-0" width="auto" height="100%"
           src="${data.videoSrc}" title="YouTube video player" frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
