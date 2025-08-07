@@ -94,26 +94,14 @@ class TimelineRenderer {
       </div>
         `
       } else if (section.type === 'content-section') {
-        return this.renderContentSection(section, index);
+        return this.renderContentSection(section);
       } else {
         return '';
       }
     })}
         </div>
     `;
-    //     ${
-    //       this.sectionsData.map((section, index) => {
-    // switch (section.type) {
-    //   case 'timeline-section':
-    //     return this.renderTimelineSection(section, index);
-    //   case 'content-section':
-    //     return this.renderContentSection(section, index);
-    //   default:
-    //     console.warn(`Unknown section type: ${section.type}`);
-    //     return '';
-    // }
-    // }).join('')
-    // }
+
     if (horizontalScrollContainer) {
       horizontalScrollContainer.innerHTML = horizontalScrollHtml;
     }
@@ -121,6 +109,22 @@ class TimelineRenderer {
 
 
 
+  // Render content section (non-timeline content)
+  renderContentSection(section) {
+    return this.renderContentItem(section.data);
+  }
+  // Render content item
+  renderContentItem(item) {
+    switch (item.type) {
+      case 'text-content':
+        return this.renderTextContent(item);
+      case 'image-content':
+        return this.renderImageContent(item);
+      default:
+        console.warn(`Unknown content item type: ${item.type}`);
+        return '';
+    }
+  }
   // Render timeline section
   renderTimelineSection(section, index) {
     // Create timeline section container
@@ -133,11 +137,6 @@ class TimelineRenderer {
       </div>
     `;
     return timelineSectionHTML;
-  }
-
-  // Render content section (non-timeline content)
-  renderContentSection(section) {
-    return this.renderContentItem(section.data);
   }
 
   // Render timeline item
@@ -155,18 +154,7 @@ class TimelineRenderer {
     }
   }
 
-  // Render content item
-  renderContentItem(item) {
-    switch (item.type) {
-      case 'text-content':
-        return this.renderTextContent(item);
-      case 'image-content':
-        return this.renderImageContent(item);
-      default:
-        console.warn(`Unknown content item type: ${item.type}`);
-        return '';
-    }
-  }
+
 
   // Render timeline header section
   renderTimelineHeader(data) {
