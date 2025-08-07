@@ -36,7 +36,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Load and render timeline data
   loadTimelineData().then(timelineData => {
-    console.log('Timeline data loaded:', timelineData);
     timelineRenderer.setSectionsData(timelineData);
     timelineRenderer.render();
 
@@ -46,29 +45,6 @@ document.addEventListener('DOMContentLoaded', function () {
     console.error('Failed to load timeline data:', error);
   });
 });
-// Example of loading timeline data from a JSON file
-async function loadTimelineDataFromFile(filePath) {
-  try {
-    const response = await fetch(filePath);
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    console.error('Error loading timeline data:', error);
-    return { sections: [] };
-  }
-}
-
-// Example usage with async data loading
-async function initializeTimelineWithData() {
-  const timelineRenderer = new TimelineRenderer('.horizontal-section-content');
-
-  // Load data from file or API
-  const data = await loadTimelineDataFromFile('./timeline-data.json');
-
-  // Set and render
-  timelineRenderer.setSectionsData(data);
-  timelineRenderer.render();
-}
 
 // initializeGSAPAnimations
 function initializeGSAPAnimations() {
