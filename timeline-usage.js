@@ -64,8 +64,21 @@ function initializeGSAPAnimations() {
           trigger.kill();
         }
       });
-      gsap.to('.horizontal-section-container .horizontal-section', {
+      // Main horizontal scroll tween
+      const horizontalScrollTween = gsap.to('.horizontal-section', {
+        // x: horizontalTransform,
+        // ease: "none",
+        // scrollTrigger: {
+        //   trigger: ".horizontal-section-container",
+        //   start: "top top",
+        //   scroller: "body",
+        //   end: () => `+=${horizontalSectionWidth}`,
+        //   pin: true,
+        //   scrub: 2,
+        //   invalidateOnRefresh: true,
+        // }
         x: horizontalTransform,
+        ease: "none",
         scrollTrigger: {
           trigger: ".horizontal-section-container",
           scroller: "body",
@@ -73,8 +86,41 @@ function initializeGSAPAnimations() {
           end: `top -700%`,
           pin: true,
           scrub: 2,
+          invalidateOnRefresh: true,
         }
-      })
+      });
+
+      // Animate each child element (.history-item) as it enters viewport during horizontal scroll
+      gsap.utils.toArray('.history-item').forEach(item => {
+        gsap.fromTo(item,
+          {
+            opacity: 0,
+          },
+          {
+            opacity: 1,
+            // ease: "power1.in",
+            scrollTrigger: {
+              trigger: item,
+              scroller: "body",
+              containerAnimation: horizontalScrollTween,
+              start: "left center+=400px",
+              toggleActions: "play reverse play reverse",
+              markers: false,         // set to true to debug
+            }
+          }
+        );
+      });
+      // gsap.to('.horizontal-section-container .horizontal-section', {
+      //   x: horizontalTransform,
+      //   scrollTrigger: {
+      //     trigger: ".horizontal-section-container",
+      //     scroller: "body",
+      //     start: "top 0%",
+      //     end: `top -700%`,
+      //     pin: true,
+      //     scrub: 2,
+      //   }
+      // })
       ScrollTrigger.create({
         trigger: ".horizontal-section-container",
         scroller: "body",
