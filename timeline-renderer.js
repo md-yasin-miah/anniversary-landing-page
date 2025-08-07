@@ -98,7 +98,7 @@ class TimelineRenderer {
     `;
 
     if (horizontalScrollContainer) {
-      horizontalScrollContainer.innerHTML = horizontalScrollHtml;
+      horizontalScrollContainer.insertAdjacentHTML('beforeend', horizontalScrollHtml);
     }
   }
 
