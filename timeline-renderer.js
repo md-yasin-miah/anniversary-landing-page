@@ -136,12 +136,12 @@ class TimelineRenderer {
   }
 
   // Render content section (non-timeline content)
-  renderContentSection(section, index) {
+  renderContentSection(section) {
     return this.renderContentItem(section.data);
   }
 
   // Render timeline item
-  renderTimelineItem(item, container, index) {
+  renderTimelineItem(item) {
     switch (item.type) {
       case 'timeline-header':
         return this.renderTimelineHeader(item);
@@ -184,7 +184,7 @@ class TimelineRenderer {
   renderHistoryArea(data) {
     return `
       <div class="history-area">
-        ${data.items.map(item => this.renderHistoryItem(item)).join('')}
+        ${data.items.map(item => this.renderHistoryItem(item))}
       </div>
     `;
   }
