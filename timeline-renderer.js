@@ -86,15 +86,21 @@ class TimelineRenderer {
             return this.renderHistoryArea(timelineItem);
           } else if (timelineItem.type === 'full-video') {
             return this.renderFullVideo(timelineItem);
-          } else {
-            console.warn(`Unknown timeline item type: ${timelineItem.type}`);
-            return '';
           }
-        })}
+        }).join('')}
       </div>
         `
       } else if (section.type === 'content-section') {
-        return this.renderContentSection(section);
+        // return this.renderContentSection(section);
+        console.log({ section })
+        if (section.data.type === 'image-content') {
+          return this.renderImageContent(section.data);
+        } else if (section.data.type === 'text-content') {
+          return this.renderTextContent(section.data);
+        } else {
+          console.warn(`Unknown content item type: ${section.data.type}`);
+          return '';
+        }
       } else {
         return '';
       }
@@ -106,55 +112,6 @@ class TimelineRenderer {
       horizontalScrollContainer.innerHTML = horizontalScrollHtml;
     }
   }
-
-
-
-  // Render content section (non-timeline content)
-  renderContentSection(section) {
-    return this.renderContentItem(section.data);
-  }
-  // Render content item
-  renderContentItem(item) {
-    switch (item.type) {
-      case 'text-content':
-        return this.renderTextContent(item);
-      case 'image-content':
-        return this.renderImageContent(item);
-      default:
-        console.warn(`Unknown content item type: ${item.type}`);
-        return '';
-    }
-  }
-  // Render timeline section
-  renderTimelineSection(section, index) {
-    // Create timeline section container
-    const timelineSectionHTML = `
-      <div class="timeline-section relative flex h-full items-end" data-section-index="${index}">
-        <div class="w-full h-[1px] bg-purple absolute top-1/2 -translate-y-1/2 left-0"></div>
-        ${section.data.map((timelineItem, itemIndex) => {
-      return this.renderTimelineItem(timelineItem, null, itemIndex);
-    }).join('')}
-      </div>
-    `;
-    return timelineSectionHTML;
-  }
-
-  // Render timeline item
-  renderTimelineItem(item) {
-    switch (item.type) {
-      case 'timeline-header':
-        return this.renderTimelineHeader(item);
-      case 'history-area':
-        return this.renderHistoryArea(item);
-      case 'full-video':
-        return this.renderFullVideo(item);
-      default:
-        console.warn(`Unknown timeline item type: ${item.type}`);
-        return '';
-    }
-  }
-
-
 
   // Render timeline header section
   renderTimelineHeader(data) {
@@ -172,7 +129,7 @@ class TimelineRenderer {
   renderHistoryArea(data) {
     return `
       <div class="history-area">
-        ${data.items.map(item => this.renderHistoryItem(item))}
+        ${data.items.map(item => this.renderHistoryItem(item)).join('')}
       </div>
     `;
   }
@@ -189,8 +146,6 @@ class TimelineRenderer {
       return this.renderAdditionalContentHistoryItem(item);
     } else if (item.itemType === 'row-content') {
       return this.renderRowContentHistoryItem(item);
-    } else {
-      return this.renderBasicHistoryItem(item);
     }
   }
 
@@ -278,7 +233,6 @@ class TimelineRenderer {
 
   // Render full-width video section
   renderFullVideo(data) {
-    console.log('renderFullVideo', data);
     return `
       <div class="h-full ml-12 z-10 ${data.class || ''} py-8">
         <iframe class="aspect-video rounded-[20px] flex-shrink-0" width="auto" height="100%"
