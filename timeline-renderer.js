@@ -12,10 +12,6 @@ class TimelineRenderer {
   // Render all sections
   render() {
     const horizontalScrollContainer = document.querySelector('#horizontalScroll');
-    // Render each section
-    // this.sectionsData.forEach((section, index) => {
-    //   this.renderSection(section, index);
-    // });
     const horizontalScrollHtml = `
     <div class="w-fit h-full flex justify-center items-center horizontal-section-content">
           <div class="pr-[300px]">
@@ -91,21 +87,14 @@ class TimelineRenderer {
       </div>
         `
       } else if (section.type === 'content-section') {
-        // return this.renderContentSection(section);
-        console.log({ section })
         if (section.data.type === 'image-content') {
           return this.renderImageContent(section.data);
         } else if (section.data.type === 'text-content') {
           return this.renderTextContent(section.data);
-        } else {
-          console.warn(`Unknown content item type: ${section.data.type}`);
-          return '';
         }
-      } else {
-        return '';
       }
-    })}
-        </div>
+    }).join('')}
+    </div>
     `;
 
     if (horizontalScrollContainer) {

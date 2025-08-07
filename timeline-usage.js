@@ -65,13 +65,12 @@ function initializeGSAPAnimations() {
         }
       });
       gsap.to('.horizontal-section-container .horizontal-section', {
-        // transform: "translateX(-100%)",
         x: horizontalTransform,
         scrollTrigger: {
           trigger: ".horizontal-section-container",
           scroller: "body",
           start: "top 0%",
-          end: `top -${horizontalSectionWidth * 3 / 5}px`,
+          end: `top -600%`,
           pin: true,
           scrub: 2,
         }
@@ -80,7 +79,7 @@ function initializeGSAPAnimations() {
         trigger: ".horizontal-section-container",
         scroller: "body",
         start: "top top",
-        end: `top -${horizontalSectionWidth * 3 / 5}px`,
+        end: `top -600%`,
         onEnter: () => {
           gsap.set(".ruler", {
             position: "fixed",
